@@ -5,7 +5,7 @@ jobs:
       - image: circleci/python:3.6.4
     steps:
       - checkout
-      - run: Fetch secrets
+      - run:
           name: Fetch Secrets
           command: |
             sh secrets_fetch.sh
