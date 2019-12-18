@@ -5,5 +5,5 @@
 # ==============================================================================
 
 git submodule init
-git submdule update
+git submodule update
 mv secrets/secrets.yaml secrets.yaml
