@@ -11,5 +11,5 @@
 # ==============================================================================
 
 git submodule init
-git submodule update
+git submodule update --remote
 mv secrets/secrets.yaml secrets.yaml
