@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout
+      - run:
+          name: Check config
+          command: |
+            python3.6 -m venv .
+            source bin/activate
+            pip3 install --pre --upgrade homeassistant
+            hass -c . --script check_config --info all
