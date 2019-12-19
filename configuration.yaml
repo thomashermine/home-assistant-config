@@ -1,7 +1,7 @@
 default_config:
 
 homeassistant:
-  name: L'Appartement
+  name: !secret name
 
   latitude: !secret latitude
   longitude: !secret longitude
