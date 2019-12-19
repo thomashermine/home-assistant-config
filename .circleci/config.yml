@@ -7,10 +7,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Fetch Secrets
-          command: |
-            sh secrets_fetch.sh
-      - run:
           name: Check config
           command: |
             python3.6 -m venv .
@@ -22,10 +18,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Fetch Secrets
-          command: |
-            sh secrets_fetch.sh
-      - run:
           name: Docker Login
           command: |
             echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
@@ -33,12 +25,12 @@ jobs:
           name: Docker — Build
           command: |
             docker build -t $DOCKER_ORG/home-assistant-config:$CIRCLE_BUILD_NUM .
-            docker tag $DOCKER_ORG/home-assistant-config:$CIRCLE_BUILD_NUM $DOCKER_ORG/home-assistant-config:latest
+            docker tag $DOCKER_ORG/home-assistant-config:$CIRCLE_BUILD_NUM $DOCKER_ORG/home-assistant-config:unstable
       - run:
           name: Docker — Push
           command: |
             docker push $DOCKER_ORG/home-assistant-config:$CIRCLE_BUILD_NUM
-            docker push $DOCKER_ORG/home-assistant-config:latest
+            docker push $DOCKER_ORG/home-assistant-config:unstable
 
 workflows:
   version: 2
