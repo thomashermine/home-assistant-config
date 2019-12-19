@@ -32,11 +32,13 @@ jobs:
       - run:
           name: Docker — Build
           command: |
-            docker build -t $DOCKER_ORG/home-assistant:$CIRCLE_BRANCH .
+            docker build -t $DOCKER_ORG/home-assistant:$CIRCLE_BUILD_NUM .
+            docker tag $DOCKER_ORG/home-assistant:$CIRCLE_BUILD_NUM $DOCKER_ORG/home-assistant:latest
       - run:
           name: Docker — Push
           command: |
-            docker push $DOCKER_ORG/home-assistant:$CIRCLE_BRANCH
+            docker push $DOCKER_ORG/home-assistant:$CIRCLE_BUILD_NUM
+            docker push $DOCKER_ORG/home-assistant:latest
 
 workflows:
   version: 2
