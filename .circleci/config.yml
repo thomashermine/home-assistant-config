@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Make Secrets
           command: |
-            sh /config/secrets_make_redacted.sh
+            sh ./secrets_make_redacted.sh
       - run:
           name: Check config
           command: |
