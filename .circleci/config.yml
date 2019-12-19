@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/python:3.6.4
     working_directory: ~/homeassistant
@@ -17,3 +17,33 @@ jobs:
             source bin/activate
             pip3 install --pre --upgrade homeassistant
             hass -c . --script check_config --info all
+  build:
+    machine: true
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run:
+          name: Fetch Secrets
+          command: |
+            sh secrets_fetch.sh
+      - run:
+          name: Docker Login
+          command: |
+            echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+      - run:
+          name: Docker — Build
+          command: |
+            docker build -t $DOCKER_ORG/home-assistant:$CIRCLE_BRANCH .
+      - run:
+          name: Docker — Push
+          command: |
+            docker push $DOCKER_ORG/home-assistant:$CIRCLE_BRANCH
+
+workflows:
+  version: 2
+  test-and-build:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
