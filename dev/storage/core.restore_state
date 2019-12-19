@@ -1,0 +1,27 @@
+{
+    "data": [
+        {
+            "last_seen": "2019-12-19T08:36:45.472695+00:00",
+            "state": {
+                "attributes": {
+                    "editable": true,
+                    "friendly_name": "Dev",
+                    "id": "99ef212e354c45ebacf6e77b8a07f645",
+                    "source": "person.dev",
+                    "user_id": "06f2b8ee0fe44f4093c7d4e8c59e1b2f"
+                },
+                "context": {
+                    "id": "e597208cf7dc4678ad426f3c201d31fa",
+                    "parent_id": null,
+                    "user_id": null
+                },
+                "entity_id": "person.dev",
+                "last_changed": "2019-12-19T08:36:39.978614+00:00",
+                "last_updated": "2019-12-19T08:36:39.978614+00:00",
+                "state": "unknown"
+            }
+        }
+    ],
+    "key": "core.restore_state",
+    "version": 1
+}
