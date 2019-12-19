@@ -1,0 +1,8 @@
+homeassistant:
+  container_name: homeassistant
+  image: thomashermine/home-assistant-config:unstable
+  volumes:
+    - .:/config
+    - ./dev/storage:/config/.storage
+  ports:
+    - 80:8123
