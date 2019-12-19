@@ -7,6 +7,10 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Make Secrets
+          command: |
+            sh /config/secrets_make_redacted.sh
+      - run:
           name: Check config
           command: |
             python3.6 -m venv .
