@@ -7,6 +7,7 @@
 # and create a placeholder file with them.
 #
 # Used by Dockerfile, at build time
+# Used by CircleCI, to test image
 # ==============================================================================
 
 find . -name '*.yaml' -exec grep -i '!secret' {} \; | sed 's/\:.*$/: 0/'  >> secrets.yaml
