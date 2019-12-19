@@ -2,4 +2,4 @@ FROM homeassistant/home-assistant:stable
 
 COPY . /config
 COPY ./dev/storage /config/.storage
-COPY ./secrets  /config
+COPY ./secrets_redacted.yaml /config/secrets.yaml
