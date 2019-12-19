@@ -9,3 +9,8 @@ homeassistant:
 
   unit_system: metric
   time_zone: Europe/Brussels
+
+device_tracker:
+  - platform: icloud
+    username: !secret icloud_username
+    password: !secret icloud_password
