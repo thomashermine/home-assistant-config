@@ -1,3 +1,18 @@
+# ==============================================================================
+# CircleCI Config
+# ==============================================================================
+#
+# The CI stack has the following responsabilities :
+#
+# Test :
+# - Clone the code
+# - Generate some fake secrets by parsing the repository
+# - Testing this again HA check_config repository
+# Build & Push :
+# - Publish a Docker image containing the config & placeholder secrets
+#
+# ==============================================================================
+
 version: 2
 jobs:
   test:
