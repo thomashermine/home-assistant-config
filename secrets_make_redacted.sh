@@ -10,4 +10,5 @@
 # Used by CircleCI, to test image
 # ==============================================================================
 
-find . -name '*.yaml' -exec grep -i '!secret' {} \; | sed 's/\:.*$/: 0/'  >> secrets.yaml
+# find . -name '*.yaml' -exec grep -i '!secret' {} \; | sed 's/\:.*$/: 0/'  > secrets.yaml
+find . -name '*.yaml' -exec grep -i '!secret' {} \; | sed -n -e 's/^\(.*\)\(\!secret \)\(.*\)$/\3: 0/p' > secrets.yaml
