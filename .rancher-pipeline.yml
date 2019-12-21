@@ -9,4 +9,4 @@ stages:
   - name: Deploy
     steps:
       - applyYamlConfig:
-          path: .deploy/manifest-production.yaml
+          path: .deploy/manifest-staging.yaml
