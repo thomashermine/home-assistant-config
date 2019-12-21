@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: home-assistant-production
+  labels:
+    app: home-assistant-production
+spec:
+  selector:
+    app: home-assistant-production
+  ports:
+    - protocol: TCP
+      port: 8123
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: home-assistant-production
+  name: home-assistant-production
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 0
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: home-assistant-production
+  template:
+    metadata:
+      labels:
+        app: home-assistant-production
+    spec:
+      imagePullSecrets:
+        - name: pipeline-docker-registry
+      containers:
+        - image: ${CICD_IMAGE}:${CICD_EXECUTION_SEQUENCE}
+          imagePullPolicy: Always
+          name: home-assistant-production
+          resources: {}
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8123
+              scheme: HTTP
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8123
+              scheme: HTTP
+      restartPolicy: Always
+
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: home-assistant-production
+spec:
+  rules:
+    - host: smarthome.thomashermine.be
+      http:
+        paths:
+          - backend:
+              serviceName: home-assistant-production
+              servicePort: 8123
