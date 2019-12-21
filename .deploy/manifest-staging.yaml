@@ -9,7 +9,7 @@ spec:
     app: home-assistant-staging
   ports:
     - protocol: TCP
-      port: 80
+      port: 8123
 
 ---
 apiVersion: apps/v1
@@ -43,12 +43,12 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: 80
+              port: 8123
               scheme: HTTP
           readinessProbe:
             httpGet:
               path: /
-              port: 80
+              port: 8123
               scheme: HTTP
       restartPolicy: Always
 
@@ -64,4 +64,4 @@ spec:
         paths:
           - backend:
               serviceName: home-assistant-staging
-              servicePort: 80
+              servicePort: 8123
