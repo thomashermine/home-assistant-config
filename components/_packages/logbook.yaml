@@ -1,0 +1,9 @@
+logbook:
+  include:
+    domains:
+      - light
+      - switch
+      - input_boolean
+      - input_select
+      - automation
+      - script
