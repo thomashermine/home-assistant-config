@@ -1,0 +1,8 @@
+homeassistant:
+  container_name: homeassistant
+  build: .
+  volumes:
+    - .:/config
+    - ./dev/storage:/config/.storage
+  ports:
+    - 80:8123

@@ -1,0 +1,16 @@
+stages:
+  - name: Build
+    steps:
+      - publishImageConfig:
+          dockerfilePath: ./Dockerfile
+          buildContext: .
+          tag: home-assisstant-config:${CICD_EXECUTION_SEQUENCE}
+          registry: 127.0.0.1:34608
+  - name: Deploy
+    steps:
+      - applyYamlConfig:
+          path: .deploy/manifest-production.yaml
+      - applyYamlConfig:
+          path: .deploy/manifest-staging.yaml
+      - applyYamlConfig:
+          path: .deploy/manifest-unstable.yaml

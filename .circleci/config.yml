@@ -1,10 +1,30 @@
+# ==============================================================================
+# CircleCI Config
+# ==============================================================================
+#
+# The CI stack has the following responsabilities :
+#
+# Test :
+# - Clone the code
+# - Generate some fake secrets by parsing the repository
+# - Testing this again HA check_config repository
+# Build & Push :
+# - Publish a Docker image containing the config & placeholder secrets
+#
+# ==============================================================================
+
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/python:3.6.4
+    working_directory: ~/homeassistant
     steps:
       - checkout
+      - run:
+          name: Make Secrets
+          command: |
+            sh ./secrets_make_redacted.sh
       - run:
           name: Check config
           command: |
@@ -12,3 +32,30 @@ jobs:
             source bin/activate
             pip3 install --pre --upgrade homeassistant
             hass -c . --script check_config --info all
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Docker Login
+          command: |
+            echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+      - run:
+          name: Docker — Build
+          command: |
+            docker build -t $DOCKER_ORG/home-assistant-config:$CIRCLE_BUILD_NUM .
+            docker tag $DOCKER_ORG/home-assistant-config:$CIRCLE_BUILD_NUM $DOCKER_ORG/home-assistant-config:unstable
+      - run:
+          name: Docker — Push
+          command: |
+            docker push $DOCKER_ORG/home-assistant-config:$CIRCLE_BUILD_NUM
+            docker push $DOCKER_ORG/home-assistant-config:unstable
+
+workflows:
+  version: 2
+  test-and-build:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test

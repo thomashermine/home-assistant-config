@@ -1,2 +1,11 @@
-# Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
+
+homeassistant:
+  name: !secret name
+
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+
+  unit_system: metric
+  time_zone: Europe/Brussels
