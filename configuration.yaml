@@ -9,3 +9,5 @@ homeassistant:
 
   unit_system: metric
   time_zone: Europe/Brussels
+
+  packages: !include_dir_named components/_packages
