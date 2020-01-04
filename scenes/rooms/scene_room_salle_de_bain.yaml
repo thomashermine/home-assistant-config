@@ -1,0 +1,65 @@
+- name: Salle de Bain | On
+  entities:
+    light.salle_de_bain:
+      state: on
+      brightness: 255
+      color_temp: 250
+
+- name: Salle de Bain | Early Morning
+  entities:
+    light.salle_de_bain:
+      state: on
+      brightness: 80
+      color_temp: 455
+
+- name: Salle de Bain | Waking Up
+  entities:
+    light.salle_de_bain:
+      state: on
+      brightness: 125
+      color_temp: 455
+
+- name: Salle de Bain | Morning
+  entities:
+    light.salle_de_bain:
+      state: on
+      brightness: 255
+      color_temp: 250
+
+- name: Salle de Bain | Afternoon
+  entities:
+    light.plan_de_travail:
+      state: on
+      brightness: 255
+    light.salle_de_bain:
+      state: on
+      brightness: 255
+      color_temp: 350
+
+- name: Salle de Bain | Evening
+  entities:
+    light.salle_de_bain:
+      state: on
+      brightness: 255
+      color_temp: 455
+
+- name: Salle de Bain | Late Evening
+  entities:
+    light.salle_de_bain:
+      state: on
+      brightness: 150
+      color_temp: 455
+
+- name: Salle de Bain | Falling Asleep
+  entities:
+    light.salle_de_bain:
+      state: on
+      brightness: 80
+      color_temp: 455
+
+- name: Salle de Bain | Sleeping
+  entities:
+    light.salle_de_bain:
+      state: on
+      brightness: 80
+      color_temp: 455
