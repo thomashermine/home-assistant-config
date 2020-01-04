@@ -10,7 +10,17 @@ stages:
     steps:
       - applyYamlConfig:
           path: .deploy/manifest-production.yaml
+        when:
+          branch:
+            include:
+              - master
+          event: {}
       - applyYamlConfig:
           path: .deploy/manifest-staging.yaml
+        when:
+          branch:
+            include:
+              - develop
+          event: {}
       - applyYamlConfig:
           path: .deploy/manifest-unstable.yaml
