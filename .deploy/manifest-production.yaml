@@ -40,16 +40,6 @@ spec:
           imagePullPolicy: Always
           name: home-assistant-production
           resources: {}
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 8123
-              scheme: HTTP
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 8123
-              scheme: HTTP
       restartPolicy: Always
 
 ---

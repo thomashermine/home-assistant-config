@@ -40,16 +40,6 @@ spec:
           imagePullPolicy: Always
           name: home-assistant-unstable
           resources: {}
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 80
-              scheme: HTTP
       restartPolicy: Always
 
 ---
