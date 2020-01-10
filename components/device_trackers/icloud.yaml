@@ -1,0 +1,15 @@
+---
+# iCloud
+#
+# https://www.home-assistant.io/integrations/icloud/
+#
+# track_new_devices: false
+# ...otherwise everytime I buy a new iPad and leave it at home,
+# lights won't turn off ;-)
+#
+
+platform: icloud
+username: !secret icloud_username
+password: !secret icloud_password
+new_device_defaults:
+  track_new_devices: false
