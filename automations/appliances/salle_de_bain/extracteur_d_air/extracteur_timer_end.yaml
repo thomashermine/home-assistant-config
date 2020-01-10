@@ -1,0 +1,9 @@
+alias: switch_timer_extracteur_d_air_end
+trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.extracteur_d_air
+action:
+  - service: switch.turn_off
+    entity_id: switch.extracteur_d_air
