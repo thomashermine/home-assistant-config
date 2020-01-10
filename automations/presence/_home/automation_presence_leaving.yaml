@@ -1,7 +1,7 @@
 alias: "presence_leaving"
 trigger:
   - platform: state
-    entity_id: input_select.presence_state
+    entity_id: input_select.presence
     to: "leaving"
 action:
   service: homeassistant.turn_off
