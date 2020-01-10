@@ -9,3 +9,4 @@ presence_leaving_off:
     - light.cuisine
     - light.salle_de_bain
     - light.hall
+    - light.plan_de_travail
