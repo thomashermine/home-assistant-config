@@ -1,0 +1,11 @@
+---
+# group_presence_leaving_off
+#
+# Any item in this group will be turned off
+# when presence is set to leaving
+
+presence_leaving_off:
+  entities:
+    - light.cuisine
+    - light.salle_de_bain
+    - light.hall
