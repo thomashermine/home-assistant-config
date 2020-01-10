@@ -1,0 +1,19 @@
+---
+# presence
+# — manage the state of the house depending of the presence :
+# Are we home? Did we just left?  Are we on a vacation ? ...?
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+presence:
+  name: Presence
+  options:
+    - on_trip
+    - back_from_trip
+    - approaching
+    - coming_home
+    - home
+    - leaving
+    - away
+  icon: mdi:account-location
