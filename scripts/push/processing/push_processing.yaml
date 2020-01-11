@@ -21,6 +21,7 @@ push_processing_critical:
         message: "{{ message }}"
         data:
           push:
-            category: "alarm"
-            critical: 1
-            volume: 1.0
+            sound:
+              name: default
+              critical: 1
+              volume: 1.0
