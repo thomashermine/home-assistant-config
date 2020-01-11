@@ -1,0 +1,12 @@
+---
+# push_on_trip
+#
+# Push notification used when presence is set to on_trip
+#
+
+push_back_from_trip:
+  sequence:
+    - service: script.push_processing
+      data:
+        title: "Welcome back! 🤩"
+        message: "Maison vient de passer en mode Back From Trip"
