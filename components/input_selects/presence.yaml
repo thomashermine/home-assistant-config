@@ -1,7 +1,10 @@
 ---
 # presence
-# — manage the state of the house depending of the presence :
-# Are we home? Did we just left?  Are we on a vacation ? ...?
+# Serve as a proxy between persons state (away/home) and home presence :
+# home, leaving, coming_home,...
+#
+# Allow for more cases than just home/away :
+# Did we just left?  Or came back? Are we on a vacation ? ...?
 #
 # https://www.home-assistant.io/integrations/input_select/
 #
