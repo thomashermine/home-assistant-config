@@ -1,0 +1,11 @@
+---
+# proximity.home
+# Fetch proximity to home of nearest person.
+# Use to set input_select.presence to on_trip
+#
+# https://www.home-assistant.io/integrations/proximity/
+#
+
+home:
+  devices:
+    - device_tracker.arnold
