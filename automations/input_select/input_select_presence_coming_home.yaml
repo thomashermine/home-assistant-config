@@ -1,0 +1,26 @@
+---
+# input_select_presence_home
+# Approaching and front door opens --> coming_home
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+alias: "input_select_presence_coming_home"
+trigger:
+  - platform: state
+    entity_id: input_boolean.frontdoor # TODO: Switch to front door binary sensor
+    to: "on"
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: group.persons
+      state: "home"
+    - condition: state
+      entity_id: input_boolean.guests
+      state: "on"
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.presence
+      option: "coming_home"
