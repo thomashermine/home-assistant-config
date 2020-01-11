@@ -1,0 +1,5 @@
+name: Thomas
+id: thomas
+user_id: !secret thomas_userid
+device_trackers:
+  - device_tracker.arnold
