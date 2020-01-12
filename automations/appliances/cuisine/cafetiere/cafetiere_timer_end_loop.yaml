@@ -1,5 +1,5 @@
-# cafetiere_timer_end
-# Timers ends --> Turn off cafetiere
+# cafetiere_timer_end_loop
+# Timers ends, but loop is on --> Wait a bit and switch on cafetiere again
 #
 # Cafetiere auto-shutdown (switch jumps to off) if left on for more than 30mn
 # (some bullshit EU regulations stuff, like I'd care about fires)
@@ -11,12 +11,23 @@
 #
 # https://www.home-assistant.io/integrations/input_boolean/
 #
-alias: cafetiere_timer_end
+
+alias: cafetiere_timer_end_loop
 trigger:
   - platform: event
     event_type: timer.finished
     event_data:
       entity_id: timer.cafetiere
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_boolean.cafetiere_loop
+      state: "on"
 action:
   - service: input_boolean.turn_off
+    entity_id: input_boolean.cafetiere
+  - delay:
+      seconds: 3 # Needs to be lower than value in cafetiere_timer_off_loop
+  - service: input_boolean.turn_on
     entity_id: input_boolean.cafetiere

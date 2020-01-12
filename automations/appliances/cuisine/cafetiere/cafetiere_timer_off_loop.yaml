@@ -1,5 +1,5 @@
 # cafetiere_timer_off
-# Turn on cafetiere --> Start timer
+# Turn off cafetiere not from automation --> Turn off loop
 #
 # Cafetiere auto-shutdown (switch jumps to off) if left on for more than 30mn
 # (some bullshit EU regulations stuff, like I'd care about fires)
@@ -11,11 +11,13 @@
 #
 # https://www.home-assistant.io/integrations/input_boolean/
 #
-alias: cafetiere_timer_off
+alias: cafetiere_timer_off_loop
 trigger:
   - platform: state
     entity_id: input_boolean.cafetiere
     to: "off"
+    for:
+      seconds: 10 # Needs to be higher than value in cafetiere_timer_end_loop
 action:
-  - service: timer.cancel
-    entity_id: timer.cafetiere
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.cafetiere_loop
