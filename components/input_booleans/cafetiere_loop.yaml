@@ -1,0 +1,11 @@
+---
+# cafetiere_loop
+#
+# If on, we won't let cafetiere be switched off. Ever.
+#
+# https://www.home-assistant.io/integrations/input_boolean/
+#
+
+cafetiere_loop:
+  name: Boucle Cafetière
+  icon: mdi:restore
