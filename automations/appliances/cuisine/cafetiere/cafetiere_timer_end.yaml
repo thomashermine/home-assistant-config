@@ -1,0 +1,9 @@
+alias: switch_timer_cafetiere_end
+trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.cafetiere
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.cafetiere
