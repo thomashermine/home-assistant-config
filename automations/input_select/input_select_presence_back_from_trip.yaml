@@ -1,0 +1,25 @@
+---
+# Was on trip, less than Xkm away --> back_from_trip
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+alias: "input_select_presence_back_from_trip"
+trigger:
+  - platform: numeric_state
+    entity_id: proximity.home
+    below: 80
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_select.presence
+      state: "on_trip"
+    - condition: state
+      entity_id: input_boolean.guests
+      state: "off"
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.presence
+      option: back_from_trip

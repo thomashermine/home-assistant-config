@@ -1,0 +1,22 @@
+---
+# Guest mode Off + Everybody away --> Leaving
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+alias: "input_select_presence_leaving_guests"
+trigger:
+  - platform: state
+    entity_id: input_boolean.guests
+    to: "off"
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: group.persons
+      state: "not_home"
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.presence
+      option: leaving

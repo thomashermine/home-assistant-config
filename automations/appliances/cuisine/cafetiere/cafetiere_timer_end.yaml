@@ -1,0 +1,22 @@
+# cafetiere_timer_end
+# Timers ends --> Turn off cafetiere
+#
+# Cafetiere auto-shutdown (switch jumps to off) if left on for more than 30mn
+# (some bullshit EU regulations stuff, like I'd care about fires)
+# In that case, we loose control of it : the power outlet can't do anything
+# we need to press the button on the appliance.
+# A timer allows us to avoid that case.
+# Cause we don't like pressing buttons.
+# We have big fingers
+#
+# https://www.home-assistant.io/integrations/input_boolean/
+#
+alias: cafetiere_timer_end
+trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.cafetiere
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.cafetiere
