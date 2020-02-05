@@ -1,0 +1,15 @@
+---
+# cafetiere_loop_on
+# Turn off cafetiere_loop --> Turn off cafetiere
+#
+# https://www.home-assistant.io/integrations/input_boolean/
+#
+
+alias: cafetiere_loop_off
+trigger:
+  - platform: state
+    entity_id: input_boolean.cafetiere_loop
+    to: "off"
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.cafetiere
