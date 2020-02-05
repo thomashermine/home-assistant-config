@@ -1,0 +1,27 @@
+---
+# push_processing
+#
+# Serve as a proxy for push shared-logic :
+# - Every automation that needs to notify us will call push_processing(_critical)
+# - push_processing will decide who should be notified on which device
+#
+
+push_processing:
+  sequence:
+    - service: notify.notify
+      data_template:
+        title: "{{ title }}"
+        message: "{{ message }}"
+
+push_processing_critical:
+  sequence:
+    - service: notify.notify
+      data_template:
+        title: "{{ title }}"
+        message: "{{ message }}"
+        data:
+          push:
+            sound:
+              name: default
+              critical: 1
+              volume: 1.0

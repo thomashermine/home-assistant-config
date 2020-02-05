@@ -1,3 +1,9 @@
+---
+# presence_leaving
+#
+# All actions triggered when presence --> leaving
+#
+
 alias: "presence_leaving"
 trigger:
   - platform: state

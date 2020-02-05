@@ -1,0 +1,13 @@
+---
+# presence_back_from_trip
+#
+# All actions triggered when presence --> back_from_trip
+#
+
+alias: "presence_back_from_trip"
+trigger:
+  - platform: state
+    entity_id: input_select.presence
+    to: "back_from_trip"
+action:
+  - service: script.push_back_from_trip
