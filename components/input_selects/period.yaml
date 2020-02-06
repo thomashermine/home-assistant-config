@@ -1,0 +1,23 @@
+---
+# period
+# Define the period of the day:
+# early morining, waking up, falling asleep,...
+#
+# All lights ambients will adapt to this, thanks to a scene corresponding
+# to every state
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+period:
+  name: Période
+  options:
+    - early_morning
+    - waking_up
+    - morning
+    - afternoon
+    - evening
+    - late_evening
+    - falling_asleep
+    - sleeping
+  icon: mdi:theme-light-dark
