@@ -10,6 +10,7 @@ activity:
   name: Activité
   options:
     - unknown
+    - eating
     - showering
     - working_in_bedroom
     - working_in_living
