@@ -14,7 +14,7 @@
 alias: cafetiere_timer_off
 trigger:
   - platform: state
-    entity_id: input_boolean.cafetiere
+    entity_id: switch.cafetiere
     to: "off"
 action:
   - service: timer.cancel

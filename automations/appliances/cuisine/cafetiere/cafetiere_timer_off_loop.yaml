@@ -14,7 +14,7 @@
 alias: cafetiere_timer_off_loop
 trigger:
   - platform: state
-    entity_id: input_boolean.cafetiere
+    entity_id: switch.cafetiere
     to: "off"
     for:
       seconds: 10 # Needs to be higher than value in cafetiere_timer_end_loop
