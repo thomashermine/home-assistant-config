@@ -8,5 +8,5 @@ push_toilets_on:
   sequence:
     - service: script.push_processing
       data:
-        title: "Hé, la planche 🚽 "
+        title: "Hé, la planche! 🚽 "
         message: "La planche des WC est soulevée."
