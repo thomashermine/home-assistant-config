@@ -25,9 +25,9 @@ condition:
       entity_id: input_boolean.cafetiere_loop
       state: "on"
 action:
-  - service: input_boolean.turn_off
+  - service: switch.turn_off
     entity_id: switch.cafetiere
   - delay:
       seconds: 3 # Needs to be lower than value in cafetiere_timer_off_loop
-  - service: input_boolean.turn_on
+  - service: switch.turn_on
     entity_id: switch.cafetiere

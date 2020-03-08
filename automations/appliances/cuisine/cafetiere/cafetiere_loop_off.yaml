@@ -11,5 +11,5 @@ trigger:
     entity_id: input_boolean.cafetiere_loop
     to: "off"
 action:
-  - service: input_boolean.turn_off
+  - service: switch.turn_off
     entity_id: switch.cafetiere
