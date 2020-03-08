@@ -1,0 +1,13 @@
+---
+# When toilets occupied for 2 hours
+# --> Push reminder to close it
+#
+alias: "toilets_on_push"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.bathroom_toilets
+    to: "on"
+    for:
+      hours: 1
+action:
+  - service: script.push_toilets_on
