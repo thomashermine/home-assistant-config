@@ -1,0 +1,9 @@
+---
+# group_presence_coming_home_on
+#
+# Any item in this group will be turned on
+# when presence is set to coming_home
+
+presence_coming_home_on:
+  entities:
+    - light.hall

@@ -1,0 +1,14 @@
+---
+# presence_coming_home
+#
+# All actions triggered when presence --> coming_home
+#
+
+alias: "presence_coming_home"
+trigger:
+  - platform: state
+    entity_id: input_select.presence
+    to: "coming_home"
+action:
+  service: homeassistant.turn_on
+  entity_id: group.presence_coming_home_on
