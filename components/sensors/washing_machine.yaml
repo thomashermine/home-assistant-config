@@ -4,3 +4,11 @@
       friendly_name: "Lave-linge (Vibrations)"
       unit_of_measurement: "degrees"
       value_template: "{{states.binary_sensor.washing_machine_vibration.attributes.vibrationstrength}}"
+    washing_machine_orientation:
+      friendly_name: "Lave-linge (Vibrations)"
+      unit_of_measurement: "degrees"
+      value_template: "{{states.binary_sensor.washing_machine_vibration.attributes.orientation}}"
+    washing_machine_tilt:
+      friendly_name: "Lave-linge (Vibrations)"
+      unit_of_measurement: "degrees"
+      value_template: "{{states.binary_sensor.washing_machine_vibration.attributes.tiltangle}}"
