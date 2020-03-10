@@ -1,0 +1,10 @@
+# Toggle Hall when pressing right in-wall switch in Living
+#
+alias: switch_living_hall_on
+trigger:
+  - platform: state
+    entity_id: switch.living_hall
+    to: "on"
+action:
+  - service: homeassistant.turn_on
+    entity_id: light.hall
