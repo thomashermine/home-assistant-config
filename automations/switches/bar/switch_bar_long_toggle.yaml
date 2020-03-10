@@ -1,15 +1,12 @@
-# Toggle plan_de_travail using bar switch
+# Toggle all lights using bar switch
 #
-alias: switch_bar_double_toggle
+alias: switch_bar_long_toggle
 trigger:
   - platform: event
     event_type: deconz_event
     event_data:
-      platform: event
-      event_type: deconz_event
-      event_data:
-        id: bar_switch
-        event: 1001
+      id: bar_switch
+      event: 1001
 action:
   - service: homeassistant.toggle
     entity_id: light.cuisine

@@ -5,11 +5,8 @@ trigger:
   - platform: event
     event_type: deconz_event
     event_data:
-      platform: event
-      event_type: deconz_event
-      event_data:
-        id: bar_switch
-        event: 1004
+      id: bar_switch
+      event: 1004
 action:
   - service: homeassistant.toggle
     entity_id: light.plan_de_travail

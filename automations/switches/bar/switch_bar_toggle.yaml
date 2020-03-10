@@ -5,11 +5,8 @@ trigger:
   - platform: event
     event_type: deconz_event
     event_data:
-      platform: event
-      event_type: deconz_event
-      event_data:
-        id: bar_switch
-        event: 1002
+      id: bar_switch
+      event: 1002
 action:
   - service: homeassistant.toggle
     entity_id: light.cuisine
