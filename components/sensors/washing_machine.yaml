@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    washing_machine:
+      friendly_name: "Lave-linge (Vibrations)"
+      unit_of_measurement: "degrees"
+      value_template: "{{states.binary_sensor.washing_machine_vibration.attributes.vibrationstrength}}"
