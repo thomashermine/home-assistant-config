@@ -8,7 +8,7 @@ trigger:
     entity_id: binary_sensor.kitchen_motion
     to: "off"
     for:
-      hours: 1
+      minutes: 10
 action:
   service: homeassistant.turn_off
   entity_id: light.plan_de_travail
