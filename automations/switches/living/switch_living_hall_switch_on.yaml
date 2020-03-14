@@ -1,0 +1,10 @@
+# Toggle Switch Living_hall when toggling the Light
+#
+alias: switch_living_hall_off
+trigger:
+  - platform: state
+    entity_id: light.hall
+    to: "on"
+action:
+  - service: homeassistant.turn_on
+    entity_id: switch.living_hall
