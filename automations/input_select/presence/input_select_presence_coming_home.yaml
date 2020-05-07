@@ -8,7 +8,7 @@
 alias: "input_select_presence_coming_home"
 trigger:
   - platform: state
-    entity_id: input_boolean.frontdoor # TODO: Switch to front door binary sensor
+    entity_id: binary_sensor.hall_door
     to: "on"
 condition:
   condition: or

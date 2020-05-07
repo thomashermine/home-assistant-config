@@ -1,0 +1,16 @@
+# Toggle all lights using bar switch
+#
+alias: switch_bar_long_toggle
+trigger:
+  - platform: event
+    event_type: deconz_event
+    event_data:
+      id: bar_switch
+      event: 1001
+action:
+  - service: homeassistant.toggle
+    entity_id: light.cuisine
+  - service: homeassistant.toggle
+    entity_id: light.plan_de_travail
+  - service: homeassistant.toggle
+    entity_id: switch.living_ceiling

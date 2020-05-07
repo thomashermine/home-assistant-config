@@ -1,0 +1,12 @@
+---
+# push_toilets_on
+#
+# Push notification used when toilets is open for a long time.
+#
+
+push_toilets_on:
+  sequence:
+    - service: script.push_processing
+      data:
+        title: "Hé, la planche! 🚽 "
+        message: "La planche des WC est soulevée."

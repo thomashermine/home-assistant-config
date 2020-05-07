@@ -1,0 +1,14 @@
+---
+# When toilets occupied for 2 minutes
+# --> Turn on extracteur
+#
+alias: "extracteur_toilets_on"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.bathroom_toilets
+    to: "on"
+    for:
+      minutes: 2
+action:
+  service: homeassistant.turn_on
+  entity_id: switch.extracteur_d_air

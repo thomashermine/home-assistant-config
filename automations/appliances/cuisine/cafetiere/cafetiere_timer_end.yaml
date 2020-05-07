@@ -18,5 +18,5 @@ trigger:
     event_data:
       entity_id: timer.cafetiere
 action:
-  - service: input_boolean.turn_off
+  - service: switch.turn_off
     entity_id: switch.cafetiere

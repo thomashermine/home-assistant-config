@@ -1,0 +1,7 @@
+platform: template
+sensors:
+  bathroom_toilets:
+    friendly_name: "Toilettes"
+    device_class: occupancy
+    value_template: >-
+      {{ is_state('binary_sensor.bathroom_toilets_contact', 'off') }}

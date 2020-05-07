@@ -10,3 +10,4 @@ presence_leaving_off:
     - light.salle_de_bain
     - light.hall
     - light.plan_de_travail
+    - light.lampadaire_de_la_chambre

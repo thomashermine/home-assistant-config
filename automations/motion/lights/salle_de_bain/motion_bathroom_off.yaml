@@ -9,6 +9,24 @@ trigger:
     to: "off"
     for:
       minutes: 2
+  - platform: state
+    entity_id: binary_sensor.bathroom_motion_floating
+    to: "off"
+    for:
+      minutes: 2
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: binary_sensor.bathroom_motion
+      state: "off"
+      for:
+        minutes: 2
+    - condition: state
+      entity_id: binary_sensor.bathroom_motion_floating
+      state: "off"
+      for:
+        minutes: 2
 action:
   service: homeassistant.turn_off
   entity_id: light.salle_de_bain

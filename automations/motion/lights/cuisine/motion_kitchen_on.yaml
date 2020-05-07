@@ -1,0 +1,12 @@
+---
+# When motion in kitchen
+# --> Turn on light
+#
+alias: "motion_kitchen_on"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_motion
+    to: "on"
+action:
+  service: homeassistant.turn_on
+  entity_id: light.plan_de_travail

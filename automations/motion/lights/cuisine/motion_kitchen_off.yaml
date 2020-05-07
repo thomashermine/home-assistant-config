@@ -1,0 +1,14 @@
+---
+# When no motion in kitchen for a while
+# --> Turn off lights
+#
+alias: "motion_kitchen_off"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.kitchen_motion
+    to: "off"
+    for:
+      minutes: 10
+action:
+  service: homeassistant.turn_off
+  entity_id: light.plan_de_travail
