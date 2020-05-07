@@ -1,0 +1,16 @@
+---
+# Sun rise in 45mn --> early_morning
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+alias: "input_select_period_earlymorning"
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: "-00:45:00"
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.period
+      option: "early_morning"

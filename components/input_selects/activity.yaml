@@ -1,0 +1,21 @@
+---
+# activity
+# Define the kind of activity we are currently in:
+# showering, working, watching a movie,...
+##
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+activity:
+  name: Activité
+  options:
+    - unknown
+    - eating
+    - showering
+    - working_in_bedroom
+    - working_in_living
+    - cooking
+    - cleaning
+    - entertain_in_bedroom
+    - entertain_in_living
+  icon: mdi:calendar-range

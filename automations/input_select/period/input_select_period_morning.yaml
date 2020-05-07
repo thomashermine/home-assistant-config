@@ -1,0 +1,18 @@
+---
+# Waking_up for 30 mins --> morning
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+alias: "input_select_period_morning"
+trigger:
+  - platform: state
+    entity_id: input_select.period
+    to: "waking_up"
+    for:
+      minutes: 30
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.period
+      option: "morning"

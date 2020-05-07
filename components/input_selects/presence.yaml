@@ -19,4 +19,4 @@ presence:
     - home
     - leaving
     - away
-  icon: mdi:account-location
+  icon: mdi:home-account
