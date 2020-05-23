@@ -3,19 +3,15 @@
     light.salle_de_bain_1:
       state: on
       brightness: 10
-      color_temp: 455
     light.salle_de_bain_2:
       state: on
       brightness: 10
-      color_temp: 455
     light.salle_de_bain_3:
       state: on
       brightness: 10
-      color_temp: 455
     light.salle_de_bain_4:
       state: on
       brightness: 255
-      color_temp: 250
 - name: Salle de Bain | On
   entities:
     light.salle_de_bain:
