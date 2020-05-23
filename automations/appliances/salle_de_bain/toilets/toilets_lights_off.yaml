@@ -1,0 +1,14 @@
+---
+# When toilets no longer occupied
+# --> Restore previous lights
+#
+alias: "toilets_lights_off"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.bathroom_toilets
+    to: "off"
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.bathroom_before
+      transition: 2
