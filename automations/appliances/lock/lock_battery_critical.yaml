@@ -1,0 +1,14 @@
+---
+# Nuki Battery Critical
+# --> Add Task in Todoist
+#
+alias: "lock_battery_critical"
+trigger:
+  - platform: template
+    value_template: "{{ states.lock.front_door.attributes.battery_critical }}"
+action:
+  - service: todoist.new_task
+    data:
+      content: Nuki — Change Battery
+      labels: Home
+      due_date_string: Today
