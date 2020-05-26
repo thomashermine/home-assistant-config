@@ -1,0 +1,7 @@
+---
+# Todoist Task Manager
+#
+# https://www.home-assistant.io/integrations/todoist/
+#
+platform: todoist
+token: !secret todoist_token
