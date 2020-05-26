@@ -13,7 +13,7 @@ tts_todoist_leaving:
           {{ [
           "Si vous partez, il y a des tâches prévues sur Tout Doux Iste",
           "Vous partez? Il y a des tâches prévues sur Tout Doux Iste",
-          "Il y a des tâches prévues sur Tout Doux Iste, si vous partez."
+          "Il y a des tâches prévues sur Tout Doux Iste, si vous partez.",
           "Si vous partez, il y a des tâches prévues.",
           "Vous partez? Il y a des tâches prévues.",
           "Il y a des tâches prévues, si vous partez."
