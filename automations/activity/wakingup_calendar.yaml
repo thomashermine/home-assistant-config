@@ -13,6 +13,6 @@ action:
     data_template:
       calendar_id: !secret calendar_activity_id
       summary: "#WokeUp"
-      description: "Left band and woke up at {{ now().strftime('%H:%M:%S') }}"
+      description: "Woke up at {{ now().strftime('%H:%M:%S') }}"
       start_date_time: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
       end_date_time: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
