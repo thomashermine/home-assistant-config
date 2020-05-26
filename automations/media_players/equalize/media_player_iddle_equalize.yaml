@@ -1,0 +1,9 @@
+alias: "media_player_equalize"
+trigger:
+  - platform: state
+    entity_id: media_player.l_appartement
+    to: "off"
+    for:
+      minutes: 15
+action:
+  - service: script.media_player_equalize_low
