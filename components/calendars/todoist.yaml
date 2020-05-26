@@ -5,3 +5,7 @@
 #
 platform: todoist
 token: !secret todoist_token
+custom_projects:
+  - name: "leaving_home"
+    labels:
+      - LeavingHome
