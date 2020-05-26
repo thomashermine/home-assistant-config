@@ -6,6 +6,9 @@
 platform: todoist
 token: !secret todoist_token
 custom_projects:
+  - name: "All Projects"
+  - name: "Due Today"
+    due_date_days: 0
   - name: "leaving_home"
     labels:
       - LeavingHome
