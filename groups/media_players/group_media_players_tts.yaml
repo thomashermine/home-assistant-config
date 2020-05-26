@@ -5,7 +5,6 @@
 
 media_players_tts:
   entities:
-    - media_player.bar
     - media_player.chambre
     - media_player.salle_de_bain
     - media_player.hub
