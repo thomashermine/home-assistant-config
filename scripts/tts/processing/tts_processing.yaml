@@ -1,0 +1,10 @@
+tts_processing:
+  sequence:
+    - service: media_player.volume_set
+      entity_id: group.media_players_tts
+      data:
+        volume_level: 0.5
+    - service: tts.watson_tts_say
+      data_template:
+        entity_id: group.media_players_tts
+        message: "{{ message }}"
