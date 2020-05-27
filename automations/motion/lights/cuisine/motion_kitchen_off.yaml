@@ -11,4 +11,6 @@ trigger:
       minutes: 10
 action:
   service: homeassistant.turn_off
-  entity_id: light.plan_de_travail
+  entity_id:
+    - light.plan_de_travail
+    - light.cuisine
