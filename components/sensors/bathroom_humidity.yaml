@@ -1,2 +1,9 @@
 - platform: statistics
+  name: bathroom_humidity_statistics
   entity_id: sensor.bathroom_humidity
+
+- platform: template
+  sensors:
+    bathroom_humidity_change_rate:
+      unit_of_measurement: "percent"
+      value_template: "{{ states.sensor.bathroom_humidity_statistics.attributes.change_rate }}"
