@@ -8,14 +8,6 @@ trigger:
     entity_id: binary_sensor.bathroom_toilets
     to: "on"
 action:
-  - service: scene.create
-    data:
-      scene_id: bathroom_before
-      snapshot_entities:
-        - light.salle_de_bain_1
-        - light.salle_de_bain_2
-        - light.salle_de_bain_3
-        - light.salle_de_bain_4
   - service: scene.turn_on
     data:
       entity_id: scene.salle_de_bain_focus_toilettes
