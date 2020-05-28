@@ -10,29 +10,29 @@ light_notify_attention_external:
       data:
         scene_id: all_before
         snapshot_entities:
-          - light.light_notify_all
+          - light.notify_all
     - service: light.turn_off
-      entity_id: light.light_notify_all
+      entity_id: light.notify_all
     - delay:
         milliseconds: 500
     - service: light.turn_on
-      entity_id: light.light_notify_all
+      entity_id: light.notify_all
     - delay:
         milliseconds: 500
     - service: light.turn_off
-      entity_id: light.light_notify_all
+      entity_id: light.notify_all
     - delay:
         milliseconds: 500
     - service: light.turn_on
-      entity_id: light.light_notify_all
+      entity_id: light.notify_all
     - delay:
         milliseconds: 500
     - service: light.turn_off
-      entity_id: light.light_notify_all
+      entity_id: light.notify_all
     - delay:
         milliseconds: 500
     - service: light.turn_on
-      entity_id: light.light_notify_all
+      entity_id: light.notify_all
     - delay:
         seconds: 1
     - service: scene.turn_on
