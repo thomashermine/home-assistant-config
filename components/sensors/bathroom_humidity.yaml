@@ -6,4 +6,4 @@
   sensors:
     bathroom_humidity_change_rate:
       unit_of_measurement: "percent"
-      value_template: "{{ states.sensor.bathroom_humidity_statistics.attributes.change_rate }}"
+      value_template: "{{ states.sensor.bathroom_floating_humidity.attributes.change_rate }}"
