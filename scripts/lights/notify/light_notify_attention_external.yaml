@@ -20,7 +20,6 @@ light_notify_attention_external:
       data:
         brightness: 255
         color_temp: 250
-        color_name: "red"
     - delay:
         milliseconds: 500
     - service: light.turn_off
