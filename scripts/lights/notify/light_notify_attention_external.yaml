@@ -36,6 +36,10 @@ light_notify_attention_external:
     - service: light.turn_on
       entity_id: light.notify_all
     - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id: light.notify_all
+    - delay:
         seconds: 1
     - service: scene.turn_on
       data:
