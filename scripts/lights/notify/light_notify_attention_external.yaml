@@ -19,7 +19,6 @@ light_notify_attention_external:
       entity_id: light.notify_all
       data:
         brightness: 255
-        color_temp: 250
     - delay:
         milliseconds: 500
     - service: light.turn_off
