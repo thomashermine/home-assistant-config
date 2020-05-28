@@ -12,3 +12,4 @@ action:
   entity_id:
     - script.tts_pokeme
     - script.light_notify_attention_external
+    - script.push_notify_pokeme

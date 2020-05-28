@@ -1,0 +1,12 @@
+---
+# push_notify_pokeme
+#
+# Critical Push notification used by automation "notify_pokeme"
+#
+
+push_notify_pokeme:
+  sequence:
+    - service: script.push_processing_critical
+      data:
+        title: "Quelqu'un veut vous contacter 🚨"
+        message: "Vérifiez les appels reçus."
