@@ -1,0 +1,8 @@
+platform: group
+name: notify_all
+entities:
+  - light.cuisine
+  - light.salle_de_bain
+  - light.hall
+  - light.lampadaire_de_la_chambre
+  - switch.living_ceiling
