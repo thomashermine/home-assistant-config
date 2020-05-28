@@ -3,7 +3,7 @@ tts_processing:
     - service: media_player.volume_set
       entity_id: group.media_players_tts
       data:
-        volume_level: 10
+        volume_level: 1
     - service: tts.watson_tts_say
       data_template:
         entity_id: group.media_players_tts
