@@ -1,6 +1,7 @@
 - platform: statistics
   name: bathroom_humidity_statistics
   entity_id: sensor.bathroom_humidity
+  sampling_size: 2
 
 - platform: template
   sensors:
