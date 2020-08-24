@@ -1,0 +1,17 @@
+---
+# cafetiere_remote_bed_off
+# Press on Bed Remote --> Turn off Cafetiere
+#
+# https://www.home-assistant.io/integrations/deconz/#remote-control-devices
+#
+
+alias: cafetiere_remote_bed_off
+trigger:
+  - platform: event
+    event_type: deconz_event
+    event_data:
+      id: bed_switch
+      event: 1001
+action:
+  - service: switch.turn_off
+    entity_id: switch.cafetiere

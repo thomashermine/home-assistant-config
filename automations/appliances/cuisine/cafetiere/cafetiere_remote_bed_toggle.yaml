@@ -1,0 +1,17 @@
+---
+# cafetiere_remote_bed_toggle
+# Press on Bed Remote --> Toggle Cafetiere Loop
+#
+# https://www.home-assistant.io/integrations/deconz/#remote-control-devices
+#
+
+alias: cafetiere_remote_bed_toggle
+trigger:
+  - platform: event
+    event_type: deconz_event
+    event_data:
+      id: bed_switch
+      event: 1002
+action:
+  - service: input_boolean.toggle
+    entity_id: input_boolean.cafetiere_loop
