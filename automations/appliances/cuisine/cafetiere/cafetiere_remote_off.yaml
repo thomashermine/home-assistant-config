@@ -1,0 +1,17 @@
+---
+# cafetiere_remote_off
+# Press on Cafetiere Remote --> Turn on cafetiere
+#
+# https://www.home-assistant.io/integrations/deconz/#remote-control-devices
+#
+
+alias: cafetiere_remote_off
+trigger:
+  - platform: event
+    event_type: deconz_event
+    event_data:
+      id: interrupteur_cafetiere
+      event: 2002
+action:
+  - service: switch.turn_off
+    entity_id: switch.cafetiere
