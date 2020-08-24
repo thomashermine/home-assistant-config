@@ -1,17 +1,17 @@
 ---
-# cafetiere_remote_off
-# Press off on Cafetiere Remote --> Turn off cafetiere
+# hotte_remote_off
+# Press off on hotte Remote --> Turn off hotte
 #
 # https://www.home-assistant.io/integrations/deconz/#remote-control-devices
 #
 
-alias: cafetiere_remote_off
+alias: hotte_remote_off
 trigger:
   - platform: event
     event_type: deconz_event
     event_data:
-      id: interrupteur_cafetiere
+      id: interrupteur_hotte
       event: 2002
 action:
   - service: switch.turn_off
-    entity_id: switch.cafetiere
+    entity_id: switch.hotte
