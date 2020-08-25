@@ -11,7 +11,7 @@ trigger:
 condition:
   - condition: numeric_state
     entity_id: sensor.bathroom_floating_humidity
-    above: 10
+    above: 10 # Muse be the same in extracteur_timer_end
 action:
   - service: switch.turn_on
     entity_id: switch.extracteur_d_air

@@ -2,12 +2,16 @@
 # When timer is ended
 # --> Switch off extracteur
 #
-alias: switch_timer_extracteur_d_air_end
+alias: extracteur_timer_end
 trigger:
   - platform: event
     event_type: timer.finished
     event_data:
       entity_id: timer.extracteur_d_air
+condition:
+  - condition: numeric_state
+    entity_id: sensor.bathroom_floating_humidity
+    below: 10 # Muse be the same in extracteur_end_restart
 action:
   - service: switch.turn_off
     entity_id: switch.extracteur_d_air
