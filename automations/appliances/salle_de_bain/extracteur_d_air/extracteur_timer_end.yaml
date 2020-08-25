@@ -1,3 +1,7 @@
+---
+# When timer is ended
+# --> Switch off extracteur
+#
 alias: switch_timer_extracteur_d_air_end
 trigger:
   - platform: event
