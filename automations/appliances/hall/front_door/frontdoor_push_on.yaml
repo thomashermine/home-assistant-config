@@ -2,7 +2,7 @@
 # When toilets occupied for 2 hours
 # --> Push reminder to close it
 #
-alias: "front_door_on_push"
+alias: "frontdoor_on_push"
 trigger:
   - platform: state
     entity_id: binary_sensor.front_door
