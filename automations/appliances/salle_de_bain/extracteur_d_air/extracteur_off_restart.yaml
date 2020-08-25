@@ -8,7 +8,7 @@ trigger:
     entity_id: switch.extracteur_d_air
     to: "off"
 condition:
-  - platform: numeric_state
+  - condition: numeric_state
     entity_id: sensor.bathroom_floating_humidity
     above: 10
 action:
