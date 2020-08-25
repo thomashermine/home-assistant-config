@@ -1,0 +1,12 @@
+---
+# When we have high humidity
+# --> Start extracteur_d_air
+#
+alias: extracteur_off_restart
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.bathroom_floating_humidity
+    above: 70
+action:
+  - service: switch.turn_on
+    entity_id: switch.extracteur_d_air
