@@ -1,12 +1,13 @@
 ---
-# When extracteur_d_air is turned off, but we still have high humidity
+# When extracteur_d_air timer ends, but we still have high humidity
 # --> Restart extracteur_d_air
 #
-alias: extracteur_off_restart
+alias: extracteur_end_restart
 trigger:
-  - platform: state
-    entity_id: switch.extracteur_d_air
-    to: "off"
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.extracteur_d_air
 condition:
   - condition: numeric_state
     entity_id: sensor.bathroom_floating_humidity
