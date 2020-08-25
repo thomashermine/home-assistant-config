@@ -2,7 +2,7 @@
 # When we have high humidity
 # --> Start extracteur_d_air
 #
-alias: extracteur_off_restart
+alias: extracteur_humidity_off
 trigger:
   - platform: numeric_state
     entity_id: sensor.bathroom_floating_humidity

@@ -1,6 +1,9 @@
 ---
 # When timer is ended
+# and we no longer have high humidity
 # --> Switch off extracteur
+# Otherwise
+# --> Let extracteur run, extracteur_humidity_off will turn it off
 #
 alias: extracteur_timer_end
 trigger:
@@ -11,7 +14,7 @@ trigger:
 condition:
   - condition: numeric_state
     entity_id: sensor.bathroom_floating_humidity
-    below: 10 # Muse be the same in extracteur_end_restart
+    below: 70 # Muse be the same in extracteur_humidity_off
 action:
   - service: switch.turn_off
     entity_id: switch.extracteur_d_air
