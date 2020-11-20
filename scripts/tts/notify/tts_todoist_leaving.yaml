@@ -1,0 +1,20 @@
+---
+# tts_todoist_leaving
+#
+# TTS message saying we have, in todoist, task scheduled for when leaving home.
+#
+# NOTE: Weird spelling for Todoist allows for a proper pronunciation in french
+#
+tts_todoist_leaving:
+  sequence:
+    - service: script.tts_say_interruption
+      data_template:
+        message: >
+          {{ [
+          "Si vous partez, il y a des tâches prévues sur Tout Doux Iste",
+          "Vous partez? Il y a des tâches prévues sur Tout Doux Iste",
+          "Il y a des tâches prévues sur Tout Doux Iste, si vous partez.",
+          "Si vous partez, il y a des tâches prévues.",
+          "Vous partez? Il y a des tâches prévues.",
+          "Il y a des tâches prévues, si vous partez."
+          ] |random }}

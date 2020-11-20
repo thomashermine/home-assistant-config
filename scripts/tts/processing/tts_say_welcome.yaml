@@ -1,0 +1,9 @@
+tts_say_welcome:
+  sequence:
+    - service: script.tts_welcome
+    - delay: "00:00:02"
+    - wait_template: "{{ is_state('group.media_players_tts', 'idle') }}"
+    - service: script.tts_processing
+      data_template:
+        entity_id: group.media_players_tts
+        message: "{{ message }}"

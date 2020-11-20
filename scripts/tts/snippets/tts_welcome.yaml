@@ -1,0 +1,17 @@
+tts_welcome:
+  sequence:
+    - service: script.tts_processing
+      data_template:
+        message: >
+          {% set hosts = "Thomas" %}
+          {%- macro sentence(hosts) -%}
+          {{ [
+          "Bon retour, " ~ hosts,
+          "Bienvenue à la maison, " ~ hosts,
+          "Bon retour chez vous, " ~ hosts,
+          hosts+ ", bon retour à la maison",
+          hosts+ ", bienvenue.",
+          hosts+ ", bon retour chez vous.",
+          ] | random }}
+          {%- endmacro -%}
+          "{{sentence(hosts)}}"

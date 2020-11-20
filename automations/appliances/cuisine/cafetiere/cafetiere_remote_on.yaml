@@ -1,0 +1,17 @@
+---
+# cafetiere_remote_on
+# Press on Cafetiere Remote --> Turn on cafetiere loop
+#
+# https://www.home-assistant.io/integrations/deconz/#remote-control-devices
+#
+
+alias: cafetiere_remote_on
+trigger:
+  - platform: event
+    event_type: deconz_event
+    event_data:
+      id: interrupteur_cafetiere
+      event: 1002
+action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.cafetiere_loop

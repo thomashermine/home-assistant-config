@@ -1,0 +1,4 @@
+platform: watson_tts
+watson_apikey: !secret watson_apikey
+watson_url: !secret watson_url
+voice: fr-FR_ReneeVoice

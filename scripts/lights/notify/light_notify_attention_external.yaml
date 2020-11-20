@@ -1,0 +1,47 @@
+---
+# light_notify_attention_external
+#
+# Flashing all lights 3 times in red
+# Used by automation "notify_pokeme"
+#
+light_notify_attention_external:
+  sequence:
+    - service: scene.create
+      data:
+        scene_id: all_before
+        snapshot_entities:
+          - light.notify_all
+    - service: light.turn_off
+      entity_id: light.notify_all
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id: light.notify_all
+      data:
+        brightness: 255
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id: light.notify_all
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id: light.notify_all
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id: light.notify_all
+    - delay:
+        milliseconds: 500
+    - service: light.turn_on
+      entity_id: light.notify_all
+    - delay:
+        milliseconds: 500
+    - service: light.turn_off
+      entity_id: light.notify_all
+    - delay:
+        seconds: 1
+    - service: scene.turn_on
+      data:
+        entity_id: scene.all_before
+        transition: 2

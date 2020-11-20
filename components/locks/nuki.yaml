@@ -1,0 +1,11 @@
+---
+# Nuki Lock
+#
+# https://www.home-assistant.io/components/nuki/
+#
+# To find out IP of the bridge :
+# https://www.home-assistant.io/components/nuki/
+#
+platform: nuki
+host: !secret nuki_host
+token: !secret nuki_token

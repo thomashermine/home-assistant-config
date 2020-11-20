@@ -1,0 +1,15 @@
+---
+# When "poke me" webhook is used
+# --> Turn on notify lights
+# --> Turn on tts notify
+#
+alias: "notify_pokeme"
+trigger:
+  - platform: webhook
+    webhook_id: pokeme
+action:
+  service: homeassistant.turn_on
+  entity_id:
+    - script.tts_pokeme
+    - script.light_notify_attention_external
+    - script.push_notify_pokeme

@@ -1,0 +1,22 @@
+tts_interruption:
+  sequence:
+    - service: script.tts_processing
+      data_template:
+        message: >
+          {% set hosts = "Thomas" %}
+          {%- macro sentence(hosts) -%}
+          {{ [
+          "Pardonnez-moi, " ~ hosts,
+          "Excusez-moi, " ~ hosts,
+          "Pardon, " ~ hosts,
+          "Oh, " ~ hosts+" ?",
+          hosts+ "? Pardon, mais...",
+          hosts+ "? Excusez-moi.",
+          hosts+ "? Pardon d'interrompre.",
+          hosts+ "? Pardon pour l'interruption.",
+          "Oh, pardonnez-moi, je dois vous interrompre...",
+          "Pardonnez-moi, je dois vous interrompre...",
+          "Excusez-moi, je dois vous interrompre.",
+          ] | random }}
+          {%- endmacro -%}
+          "{{sentence(hosts)}}"

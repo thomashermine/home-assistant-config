@@ -1,0 +1,26 @@
+---
+# When toilets occupied for first time since 15 seconds
+# --> Store lights for restoring
+#
+# The delay prevent storing the current state during a transition
+# (if you switch/bounce the sensor twice during transition)
+#
+alias: "toilets_lights_on_before"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.bathroom_toilets
+    to: "on"
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: "{{ as_timestamp(now()) - as_timestamp(states.automation.toilets_lights_on.attributes.last_triggered) >= 15 }}"
+action:
+  - service: scene.create
+    data:
+      scene_id: bathroom_before
+      snapshot_entities:
+        - light.salle_de_bain_1
+        - light.salle_de_bain_2
+        - light.salle_de_bain_3
+        - light.salle_de_bain_4

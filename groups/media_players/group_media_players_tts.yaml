@@ -1,0 +1,10 @@
+---
+# media_players_tts
+#
+# The media players used for TTS messages
+
+media_players_tts:
+  entities:
+    - media_player.chambre
+    - media_player.salle_de_bain
+    - media_player.hub

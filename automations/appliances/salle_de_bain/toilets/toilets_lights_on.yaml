@@ -1,0 +1,14 @@
+---
+# When toilets occupied
+# --> Use proper lights
+#
+alias: "toilets_lights_on"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.bathroom_toilets
+    to: "on"
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.salle_de_bain_focus_toilettes
+      transition: 2

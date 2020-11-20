@@ -1,3 +1,7 @@
+---
+# When extracteur_d_air is turned on
+# --> Start timer
+#
 alias: switch_timer_extracteur_d_air_on
 trigger:
   - platform: state

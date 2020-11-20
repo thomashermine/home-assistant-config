@@ -1,0 +1,12 @@
+---
+# push_frontdoor_on
+#
+# Push notification used when front door is opened
+#
+
+push_frontdoor_on:
+  sequence:
+    - service: script.push_processing
+      data:
+        title: "Porte d'entrée 🚪 "
+        message: "La porte d'entrée vient de s'ouvrir."

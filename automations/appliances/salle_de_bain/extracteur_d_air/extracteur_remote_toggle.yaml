@@ -1,0 +1,17 @@
+---
+# extracteur_remote_on
+# Press off on extracteur Remote --> Turn off extracteur
+#
+# https://www.home-assistant.io/integrations/deconz/#remote-control-devices
+#
+
+alias: extracteur_remote_on
+trigger:
+  - platform: event
+    event_type: deconz_event
+    event_data:
+      id: bathroom_switch
+      event: 1002
+action:
+  - service: switch.toggle
+    entity_id: switch.extracteur_d_air

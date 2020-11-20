@@ -1,0 +1,21 @@
+---
+# tts_pokeme
+#
+# TTS message saying some is trying to contact us.
+# Used by automation "notify_pokeme"
+#
+tts_pokeme:
+  sequence:
+    - service: script.tts_say_interruption
+      data_template:
+        message: >
+          {{ [
+          "Quelqu'un souhaite vous contacter, vérifiez votre téléphone.",
+          "Quelqu'un souhaite vous contacter, vérifiez votre iPhone.",
+          "Vérifiez votre téléphone, quelqu'un voudrait vous contacter.",
+          "Vérifiez votre iPhone, quelqu'un voudrait vous contacter.",
+          "On essaye de vous contacter, vérifiez votre téléphone.",
+          "On essaye de vous contacter, vérifiez votre iPhone.",
+          "Vérifiez votre téléphone, quelqu'un essaye vous contacter.",
+          "Vérifiez votre iPhone, quelqu'un essaye vous contacter.",
+          ] |random }}

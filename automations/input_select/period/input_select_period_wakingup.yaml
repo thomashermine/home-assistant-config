@@ -1,0 +1,21 @@
+---
+# Coffe maker turned on for 1st time of day --> Just woke up!
+#
+
+# TODO: Don't rely on wake_up_time anymore. Only do it if period is "sleeping"?
+
+alias: "waking_up"
+trigger:
+  - platform: state
+    entity_id: switch.cafetiere
+    to: "on"
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: "{{ states.input_datetime.wake_up_time.attributes.timestamp | timestamp_custom('%Y-%m-%d', True) != states.sensor.date.state }}"
+action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.period
+      option: "waking_up"

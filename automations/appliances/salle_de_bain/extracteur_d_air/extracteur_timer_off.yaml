@@ -1,3 +1,7 @@
+---
+# When extracteur_d_air is turned off
+# --> Cancel timer
+#
 alias: switch_timer_extracteur_d_air_off
 trigger:
   - platform: state

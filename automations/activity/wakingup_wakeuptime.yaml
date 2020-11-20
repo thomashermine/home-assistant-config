@@ -1,0 +1,15 @@
+---
+# Period set to "waking_up"
+#     —> Update waking_up sensor
+#
+
+alias: "waking_up"
+trigger:
+  - platform: state
+    entity_id: input_select.period
+    to: "waking_up"
+action:
+  - service: input_datetime.set_datetime
+    data_template:
+      entity_id: input_datetime.wake_up_time
+      datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"

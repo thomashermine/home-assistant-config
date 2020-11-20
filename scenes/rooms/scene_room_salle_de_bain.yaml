@@ -1,3 +1,17 @@
+- name: Salle de Bain | Focus Toilettes
+  entities:
+    light.salle_de_bain_1:
+      state: on
+      brightness: 10
+    light.salle_de_bain_2:
+      state: on
+      brightness: 10
+    light.salle_de_bain_3:
+      state: on
+      brightness: 10
+    light.salle_de_bain_4:
+      state: on
+      brightness: 255
 - name: Salle de Bain | On
   entities:
     light.salle_de_bain:
