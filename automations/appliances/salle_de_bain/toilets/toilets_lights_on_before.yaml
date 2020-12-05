@@ -1,5 +1,5 @@
 ---
-# When toilets occupied for first time since 15 seconds
+# When toilets occupied
 # --> Store lights for restoring
 #
 # The delay prevent storing the current state during a transition
@@ -19,3 +19,5 @@ action:
         - light.salle_de_bain_2
         - light.salle_de_bain_3
         - light.salle_de_bain_4
+  - delay:
+      seconds: 15
