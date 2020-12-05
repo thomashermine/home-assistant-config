@@ -19,7 +19,7 @@ action:
   - service: scene.create
     data:
       scene_id: bathroom_before
-      snapshot_entities:
+      entities:
         - light.salle_de_bain_1
         - light.salle_de_bain_2
         - light.salle_de_bain_3
