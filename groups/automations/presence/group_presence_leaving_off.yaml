@@ -11,6 +11,7 @@ presence_leaving_off:
     - light.hall
     - light.plan_de_travail
     - light.lampadaire_de_la_chambre
+    - light.applique_de_la_chambre
     - light.bar
     - light.boule_lumineuse
     - switch.cafetiere
