@@ -1,7 +1,7 @@
 ---
 # When we no longer have high humidity
 # and extracteur is not running because of timer
-# --> Switch off extracteur_d_air
+# --> Switch off extracteur_d_air_salle_de_bain
 #
 alias: extracteur_humidity_off
 trigger:
@@ -10,8 +10,8 @@ trigger:
     below: 70
 condition:
   - condition: state
-    entity_id: timer.extracteur_d_air
+    entity_id: timer.extracteur_d_air_salle_de_bain
     state: "idle"
 action:
   - service: switch.turn_off
-    entity_id: switch.extracteur_d_air
+    entity_id: switch.extracteur_d_air_salle_de_bain

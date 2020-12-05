@@ -1,12 +1,12 @@
 ---
-# When extracteur_d_air is turned on
+# When extracteur_d_air_salle_de_bain is turned on
 # --> Start timer
 #
-alias: switch_timer_extracteur_d_air_on
+alias: switch_timer_extracteur_d_air_salle_de_bain_on
 trigger:
   - platform: state
-    entity_id: switch.extracteur_d_air
+    entity_id: switch.extracteur_d_air_salle_de_bain
     to: "on"
 action:
   - service: timer.start
-    entity_id: timer.extracteur_d_air
+    entity_id: timer.extracteur_d_air_salle_de_bain

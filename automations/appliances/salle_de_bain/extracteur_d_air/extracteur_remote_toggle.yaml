@@ -14,4 +14,4 @@ trigger:
       event: 1002
 action:
   - service: switch.toggle
-    entity_id: switch.extracteur_d_air
+    entity_id: switch.extracteur_d_air_salle_de_bain

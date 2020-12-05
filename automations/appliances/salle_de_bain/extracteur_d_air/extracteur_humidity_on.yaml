@@ -1,6 +1,6 @@
 ---
 # When we have high humidity
-# --> Start extracteur_d_air
+# --> Start extracteur_d_air_salle_de_bain
 #
 alias: extracteur_humidity_off
 trigger:
@@ -9,4 +9,4 @@ trigger:
     above: 70
 action:
   - service: switch.turn_on
-    entity_id: switch.extracteur_d_air
+    entity_id: switch.extracteur_d_air_salle_de_bain
