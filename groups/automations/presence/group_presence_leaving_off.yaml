@@ -12,7 +12,9 @@ presence_leaving_off:
     - light.plan_de_travail
     - light.lampadaire_de_la_chambre
     - light.bar
+    - light.boule_lumineuse
     - switch.cafetiere
+    - switch.hotte
     - media_player.bar
     - media_player.chambre
     - media_player.hub
