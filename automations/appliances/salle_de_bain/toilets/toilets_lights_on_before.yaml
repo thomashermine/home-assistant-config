@@ -10,6 +10,7 @@ trigger:
   - platform: state
     entity_id: binary_sensor.bathroom_toilets
     to: "on"
+max_exceeded: silent # Delay is intented, single run is what we want
 action:
   - service: scene.create
     data:
