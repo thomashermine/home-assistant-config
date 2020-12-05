@@ -11,3 +11,10 @@ presence_leaving_off:
     - light.hall
     - light.plan_de_travail
     - light.lampadaire_de_la_chambre
+    - light.bar
+    - switch.cafetiere
+    - media_player.bar
+    - media_player.chambre
+    - media_player.hub
+    - media_player.salle_de_bain
+    - media_player.l_appartement
