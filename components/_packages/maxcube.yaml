@@ -1,0 +1,3 @@
+maxcube:
+  gateways:
+    - host: !secret maxcube_host
