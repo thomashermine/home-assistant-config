@@ -11,3 +11,4 @@ trigger:
     to: "back_from_trip"
 action:
   - service: script.push_back_from_trip
+  - service: script.climate_home

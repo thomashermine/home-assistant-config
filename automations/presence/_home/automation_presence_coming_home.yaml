@@ -12,4 +12,3 @@ trigger:
 action:
   - service: homeassistant.turn_on
     entity_id: group.presence_coming_home_on
-  - service: script.climate_home

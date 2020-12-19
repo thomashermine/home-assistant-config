@@ -1,0 +1,13 @@
+---
+# presence_approaching
+#
+# All actions triggered when presence --> approaching
+#
+
+alias: "presence_approaching"
+trigger:
+  - platform: state
+    entity_id: input_select.presence
+    to: "approaching"
+action:
+  - service: script.climate_home
