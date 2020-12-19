@@ -9,7 +9,7 @@ climate_home:
       data_template:
         entity_id: climate.bureau, climate.living, climate.chambre
         temperature: "{{ states.input_number.climate_home_temperature.state }}"
-    - service: climate.set_preset_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.bureau, climate.living, climate.chambre
-        preset_mode: "home"
+        hvac_mode: "auto"

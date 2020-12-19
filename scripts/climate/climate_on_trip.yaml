@@ -9,7 +9,7 @@ climate_on_trip:
       data_template:
         entity_id: climate.bureau, climate.living, climate.chambre, climate.salle_de_bain
         temperature: "{{ states.input_number.climate_on_trip_temperature.state }}"
-    - service: climate.set_preset_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.bureau, climate.living, climate.chambre
-        preset_mode: "away"
+        hvac_mode: "off"
