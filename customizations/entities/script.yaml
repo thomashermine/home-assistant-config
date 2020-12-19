@@ -1,0 +1,9 @@
+script.climate_home:
+  friendly_name: À la Maison
+  icon: mdi:thermometer-high
+script.climate_away:
+  friendly_name: Absents
+  icon: mdi:thermometer
+script.climate_on_trip:
+  friendly_name: En Voyage
+  icon: mdi:thermometer-low
