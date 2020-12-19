@@ -1,0 +1,20 @@
+---
+# Actions performed when any window is opened
+# and we are home or coming_home
+#
+alias: "windows_open"
+trigger:
+  - platform: state
+    entity_id: group.windows
+    to: "off"
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: input_select.presence
+      state: "home"
+    - condition: state
+      entity_id: input_select.presence
+      state: "coming_home"
+action:
+  - service: script.climate_home

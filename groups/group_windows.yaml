@@ -1,0 +1,9 @@
+---
+# group windows
+#
+# All the windows we should track in various automations
+
+windows:
+  entities:
+    - binary_sensor.terrace_door
+    - binary_sensor.hall_door

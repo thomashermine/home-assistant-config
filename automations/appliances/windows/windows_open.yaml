@@ -1,0 +1,10 @@
+---
+# Actions performed when any window is opened
+#
+alias: "windows_open"
+trigger:
+  - platform: state
+    entity_id: group.windows
+    to: "on"
+action:
+  - service: script.climate_away
