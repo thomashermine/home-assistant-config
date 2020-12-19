@@ -12,4 +12,4 @@ climate_home:
     - service: climate.set_hvac_mode
       data:
         entity_id: climate.bureau, climate.living, climate.chambre
-        hvac_mode: "auto"
+        hvac_mode: "heat"
