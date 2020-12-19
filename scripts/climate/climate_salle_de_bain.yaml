@@ -11,4 +11,4 @@ climate_salle_de_bain:
       data_template:
         entity_id: climate.salle_de_bain
         temperature: "{{ states.input_number.climate_towel_warmer_temperature.state }}"
-        time_period: "{{states.input_text.climate_tower_warmer_duration.state}}"
+        time_period: "{{ states.input_text.climate_tower_warmer_duration.state }}"
