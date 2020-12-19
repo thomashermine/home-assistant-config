@@ -1,0 +1,12 @@
+---
+# Actions when period is set to "late_evening"
+#
+
+alias: "late_evening"
+trigger:
+  - platform: state
+    entity_id: input_select.period
+    to: "late_evening"
+action:
+  # Turn off heating
+  - service: script.climate_away
