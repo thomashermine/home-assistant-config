@@ -9,7 +9,7 @@
 activity:
   name: Activité
   options:
-    - unknown
+    - undetermined
     - eating
     - showering
     - working_in_bedroom
