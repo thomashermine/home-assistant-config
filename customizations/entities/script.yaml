@@ -7,3 +7,5 @@ script.climate_away:
 script.climate_on_trip:
   friendly_name: En Voyage
   icon: mdi:thermometer-low
+script.climate_salle_de_bain:
+  icon: mdi:thermometer-lines

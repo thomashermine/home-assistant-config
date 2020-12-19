@@ -1,0 +1,14 @@
+---
+# climate_salle_de_bain_on
+#
+# Turn on salle de bain for 2 hours
+#
+# https://www.home-assistant.io/integrations/tado/#service-tadoset_climate_timer
+#
+climate_salle_de_bain:
+  sequence:
+    - service: tado.set_climate_timer
+      data_template:
+        entity_id: climate.salle_de_bain
+        temperature: "{{ states.input_number.climate_towel_warmer_temperature.state }}"
+        time_period: "{{states.input_text.climate_tower_warmer_duration.state}}"
