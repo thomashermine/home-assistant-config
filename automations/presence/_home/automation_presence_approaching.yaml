@@ -11,3 +11,5 @@ trigger:
     to: "approaching"
 action:
   - service: script.climate_home
+  - service: vacuum.return_to_base
+    entity_id: vacuum.hygie
