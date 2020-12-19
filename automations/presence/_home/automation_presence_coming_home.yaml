@@ -10,5 +10,6 @@ trigger:
     entity_id: input_select.presence
     to: "coming_home"
 action:
-  service: homeassistant.turn_on
-  entity_id: group.presence_coming_home_on
+  - service: homeassistant.turn_on
+    entity_id: group.presence_coming_home_on
+  - service: script.climate_home

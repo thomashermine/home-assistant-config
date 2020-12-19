@@ -1,0 +1,11 @@
+---
+# climate_on_trip
+#
+# Turn on climate devices to desired temperature when on trip
+#
+climate_on_trip:
+  sequence:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.bureau, climate.living, climate.chambre, climate.salle_de_bain
+        temperature: "{{ states.input_number.climate_away_temperature.state }}"

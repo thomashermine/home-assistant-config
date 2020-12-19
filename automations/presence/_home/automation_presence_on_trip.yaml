@@ -11,3 +11,4 @@ trigger:
     to: "on_trip"
 action:
   - service: script.push_on_trip
+  - service: script.climate_on_trip
