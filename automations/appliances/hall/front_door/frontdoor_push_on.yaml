@@ -1,11 +1,19 @@
 ---
-# When toilets occupied for 2 hours
-# --> Push reminder to close it
+# When door opens
+#    and no one is home
+#    and guest mode is disabled
+# --> Push notify
 #
 alias: "frontdoor_on_push"
 trigger:
   - platform: state
     entity_id: binary_sensor.front_door
     to: "on"
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: input_select.presence
+      state: "away"
 action:
   - service: script.push_frontdoor_on
