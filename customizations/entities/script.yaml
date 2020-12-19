@@ -9,3 +9,7 @@ script.climate_on_trip:
   icon: mdi:thermometer-low
 script.climate_salle_de_bain:
   icon: mdi:thermometer-lines
+
+script.shortcut_will_shower:
+  friendly_name: "Je vais prendre une douche"
+  icon: mdi:shower
