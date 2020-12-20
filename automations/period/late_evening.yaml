@@ -1,12 +1,21 @@
 ---
 # Actions when period is set to "late_evening"
-#
+#    and we are home
 
 alias: "late_evening"
 trigger:
   - platform: state
     entity_id: input_select.period
     to: "late_evening"
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: input_select.presence
+      state: "home"
+    - condition: state
+      entity_id: input_boolean.guests
+      state: "on"
 action:
   # Turn off heating
   - service: script.climate_away
