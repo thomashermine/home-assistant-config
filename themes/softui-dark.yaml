@@ -17,7 +17,7 @@ softui-dark:
   secondary-background-color: var(--primary-background-color)
   # Text
   primary-text-color: "#F7F8FA"
-  secondary-text-color: var(--primary-text-color)
+  secondary-text-color: "#B58E32"
   codemirror-meta: var(--primary-text-color)
   material-secondary-text-color: var(--secondary-text-color)
   text-primary-color: "#FFFFFF"
