@@ -135,6 +135,20 @@ softui-dark:
         --soft-ui-shadow: var(--ha-card-box-shadow) !important;
         --soft-ui-pressed: var(--ha-card-box-shadow-inset) !important;
       }
+
+      ha-card {
+          background-color: var(--primary-background-color);
+          border-radius: 15px;
+          margin: 10px;
+          box-shadow:
+            {% if is_state('sun.sun', 'above_horizon') %}
+              -4px -4px 8px rgba(255, 255, 255, .5), 5px 5px 8px rgba(0, 0, 0, .03);
+            {% elif is_state('sun.sun', 'below_horizon') %}
+              -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08);
+            {% endif %}
+       }
+
+
       ha-card.type-markdown {
         box-shadow: none;
       }
