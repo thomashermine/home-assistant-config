@@ -3,9 +3,9 @@
 # - Changed fonts
 softui-dark:
   # Color
-  primary-color: "#609ceb"
+  primary-color: "#fff"
   light-primary-color: var(--primary-color)
-  accent-color: "#60bfeb"
+  accent-color: "#B58E32"
   mdc-theme-secondary: var(--accent-color)
   # More colors
   success-color: "#77EB60"
@@ -13,7 +13,7 @@ softui-dark:
   warning-color: "#EBEB60"
   error-color: "#D18941"
   # Background
-  primary-background-color: "#313438"
+  primary-background-color: "#222222" # MODIFIED
   secondary-background-color: var(--primary-background-color)
   # Text
   primary-text-color: "#F7F8FA"
@@ -23,14 +23,14 @@ softui-dark:
   text-primary-color: "#FFFFFF"
   disabled-text-color: "#616387"
   # Fonts
-  paper-font-headline_-_font-family: system-ui
+  paper-font-headline_-_font-family: system-ui # MODIFIED
   paper-font-headline_-_font-weight: "600"
-  paper-font-subhead_-_font-family: system-ui
+  paper-font-subhead_-_font-family: system-ui # MODIFIED
   paper-font-subhead_-_font-weight: "550"
   paper-font-subhead_-_line-height: 2.2em
   ha-card-header-font-family: system-ui
   ha-card-header-font-weight: "600"
-  code-font-family: system-ui
+  code-font-family: system-ui # MODIFIED
   paper-font-common-code_-_font-family: var(--code-font-family)
   # Sidebar
   sidebar-icon-color: var(--primary-text-color)
