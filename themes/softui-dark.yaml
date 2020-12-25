@@ -145,16 +145,16 @@ softui-dark:
         box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
       }
 
-      ha-markdown-element {
+      ha-card.type-markdown {
         letter-spacing: 0;
       }
-      ha-markdown-element h1 {
+      ha-card.type-markdown h1 {
         font-size: 24px !important;
       }
-      ha-markdown-element h2 {
+      ha-card.type-markdown h2 {
         font-size: 16px !important;
       }
-      ha-markdown-element strong {
+      ha-card.type-markdown strong {
         color: var(--accent-color)
       }
 
