@@ -17,6 +17,10 @@ softui-dark:
   # Background
   primary-background-color: "#222222"
   secondary-background-color: var(--primary-background-color)
+
+  # Helpers
+  softui-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08)
+
   # Text
   primary-text-color: "#F7F8FA"
   secondary-text-color: "#B58E32"
@@ -65,7 +69,6 @@ softui-dark:
   label-badge-gray: "#666F80"
   # Cards
   ha-card-border-radius: "13.75px"
-  ha-card-box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08)
   ha-card-border-color: var(--primary-color)
   ha-card-border-width: 3px
   card-background-color: var(--primary-background-color)
@@ -136,21 +139,6 @@ softui-dark:
         --soft-ui-pressed: var(--ha-card-box-shadow-inset) !important;
       }
 
-      ha-card.type-markdown {
-        --ha-card-background: none !important;
-        box-shadow: none!important;
-      }
-      ha-card.type-markdown > ha-markdown {
-        padding: 8px;
-      }
-      ha-card:not(.type-markdown) {
-        background-color: var(--primary-background-color);
-        border-radius: var(--ha-card-border-radius);
-      }
-      ha-card:not(.type-markdown):not(.type-custom-button-card):not(.type-entities):not(.type-custom-mod-card):not(.type-custom-bar-card):not(.type-history-graph):not(.type-iframe):not(.type-glance) {
-        margin: 20px 6px;
-        box-shadow: var(--ha-card-box-shadow);
-      }
       ha-card.type-custom-vacuum-card > .preview {
         --primary-color: var(--primary-background-color);
       }
