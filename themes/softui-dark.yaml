@@ -137,11 +137,12 @@ softui-dark:
       }
 
       ha-card {
-        box-shadow:none
+        --ha-card-background: none !important;
+        box-shadow: none !important;
       }
 
       ha-card.type-button {
-        box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08)
+        box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
         border-radius: "13.75px"
         border-color: var(--primary-color)
         border-width: 3px
