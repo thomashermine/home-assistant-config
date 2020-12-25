@@ -68,9 +68,7 @@ softui-dark:
   label-badge-yellow: "#EBC860"
   label-badge-gray: "#666F80"
   # Cards
-  ha-card-border-radius: "13.75px"
-  ha-card-border-color: var(--primary-color)
-  ha-card-border-width: 3px
+  ha-card-border-width: 0px
   card-background-color: var(--primary-background-color)
   paper-card-background-color: var(--primary-background-color)
   paper-listbox-background-color: var(--primary-background-color)
@@ -139,6 +137,13 @@ softui-dark:
         --soft-ui-pressed: var(--ha-card-box-shadow-inset) !important;
       }
 
+      ha-card.type-entity {
+        box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08)
+        border-radius: "13.75px"
+        border-color: var(--primary-color)
+        border-width: 3px
+      }
+
       ha-card.type-custom-vacuum-card > .preview {
         --primary-color: var(--primary-background-color);
       }
@@ -160,13 +165,7 @@ softui-dark:
         margin: 10px;
         border-radius: 15px;
       }
-      ha-card.type-entities, ha-card.type-custom-bar-card, ha-card.type-entity,
-      ha-card.type-history-graph, ha-card.type-map, ha-card.type-iframe,
-      ha-card.type-glance, ha-card.type-custom-button-text-card,
-      ha-card.type-custom-select-list-card {
-        box-shadow: none !important;
-        margin: 25px 6px;
-      }
+
       ha-card > #states > div > * {
         padding-top: 8px;
         padding-bottom: 8px;
@@ -180,28 +179,11 @@ softui-dark:
         background-color: var(--primary-background-color) !important;
         color: var(--secondary-text-color) !important;
       }
-      ha-card > #states,
-      ha-card > .header-footer,
-      ha-card > hui-graph-header-footer,
-      ha-card.type-glance > .entities,
-      ha-card:not(.type-humidifier):not(.type-light):not(.type-weather-forecast) > .content,
-      ha-card.type-map > #root > #map,
-      ha-card.type-iframe > #root,
-      ha-card.type-custom-select-list-card > #list {
-        box-shadow: var(--ha-card-box-shadow);
-        border-radius: var(--ha-card-border-radius);
-        margin: 12px;
-        padding: 10px;
-      }
+
       ha-card.type-iframe > #root > iframe {
         border-radius: var(--ha-card-border-radius);
       }
-      ha-card.type-entity > .info {
-        padding: 16px;
-        box-shadow: var(--ha-card-box-shadow);
-        border-radius: var(--ha-card-border-radius);
-        margin: 12px;
-      }
+
       ha-card > .header-footer {
         margin: 25px 12px;
       }
