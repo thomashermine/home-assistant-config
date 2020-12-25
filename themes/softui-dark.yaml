@@ -3,7 +3,7 @@
 # - Changed fonts
 softui-dark:
   # Color
-  primary-color: "#fff"
+  primary-color: "red"
   light-primary-color: var(--primary-color)
   accent-color: "#B58E32"
   mdc-theme-secondary: var(--accent-color)
