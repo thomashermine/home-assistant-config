@@ -155,7 +155,7 @@ softui-dark:
         font-size: 16px !important;
       }
       ha-card.type-markdown strong {
-        color: var(--accent-color)
+        color: var(--accent-color);
       }
 
       ha-card.type-custom-vacuum-card > .preview {
