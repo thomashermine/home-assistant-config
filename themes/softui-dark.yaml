@@ -143,7 +143,8 @@ softui-dark:
         height: 60px;
         width: 60px;
 
-        box-shadow: var(--ha-card-box-shadow);
+        box-shadow: {% if is_state(config.entity, 'on') %} -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
+        {% else %} inset -5.5px -5.5px 5.5px 0 rgba(60, 60, 60, .5), inset 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, .5)!important; {% endif %}
       }
 
       ha-card.type-custom-vacuum-card > .preview {
