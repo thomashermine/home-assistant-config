@@ -148,13 +148,13 @@ softui-dark:
       ha-markdown-element {
         letter-spacing: 0;
       }
-      ha-markdown h1 {
+      ha-markdown-element h1 {
         font-size: 24px !important;
       }
-      ha-markdown h2 {
+      ha-markdown-element h2 {
         font-size: 16px !important;
       }
-      ha-markdown strong {
+      ha-markdown-element strong {
         color: var(--accent-color)
       }
 
