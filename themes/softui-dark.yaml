@@ -5,9 +5,9 @@
 # - Changed a few variables here and there too
 softui-dark:
   # Color
-  primary-color: "#B58E32" # Actually kinda used as accent color
+  primary-color: "#B58000" # Actually kinda used as accent color
   light-primary-color: var(--primary-color)
-  accent-color: "#B58E32"
+  accent-color: "#B58000"
   mdc-theme-secondary: var(--accent-color)
   # More colors
   success-color: "#77EB60"
@@ -74,12 +74,12 @@ softui-dark:
   # Switches
   switch-checked-button-color: var(--primary-color)
   switch-checked-track-color: var(--primary-color)
-  switch-unchecked-button-color: var(--disabled-text-color)
-  switch-unchecked-track-color: var(--disabled-text-color)
+  switch-unchecked-button-color: "#FFFFFF"
+  switch-unchecked-track-color: "#FFFFFF"
   paper-toggle-button-checked-button-color: var(--primary-color)
   paper-toggle-button-checked-bar-color: var(--primary-color)
-  paper-toggle-button-unchecked-button-color: var(--disabled-text-color)
-  paper-toggle-button-unchecked-bar-color: var(--disabled-text-color)
+  paper-toggle-button-unchecked-button-color: "#FFFFFF"
+  paper-toggle-button-unchecked-bar-color: "#FFFFFF"
   # Tables
   table-row-background-color: var(--primary-background-color)
   table-row-alternative-background-color: var(--primary-background-color)
