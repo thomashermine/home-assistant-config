@@ -141,10 +141,7 @@ softui-dark:
         border-width: 3px ;
         margin: 10px;
         height: 60px;
-
-        width: {% if is_state(config.entity, 'on') %} 120px
-          {% else %} 60px {% endif %}
-
+        width: 60px;
         box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
       }
 
