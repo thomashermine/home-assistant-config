@@ -137,8 +137,8 @@ softui-dark:
       }
 
       ha-card {
-        --ha-card-background: none !important;
-        box-shadow: none !important;
+        background-color: red;
+        box-shadow: none;
       }
 
       ha-card.type-button {
