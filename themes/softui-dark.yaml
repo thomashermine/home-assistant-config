@@ -73,6 +73,7 @@ softui-dark:
   card-background-color: var(--primary-background-color)
   paper-card-background-color: var(--primary-background-color)
   paper-listbox-background-color: var(--primary-background-color)
+  paper-item-icon-active-color: var(--accent-color)
   # Switches
   switch-checked-button-color: var(--primary-color)
   switch-checked-track-color: var(--primary-color)
@@ -142,8 +143,7 @@ softui-dark:
         height: 60px;
         width: 60px;
 
-        box-shadow: {% if is_state(config.entity, 'on') %} var(--ha-card-box-shadow--inset);
-        {% else %} var(--ha-card-box-shadow); {% endif %}
+        box-shadow: var(--ha-card-box-shadow);
       }
 
       ha-card.type-custom-vacuum-card > .preview {
