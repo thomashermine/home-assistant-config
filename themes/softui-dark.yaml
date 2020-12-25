@@ -148,13 +148,13 @@ softui-dark:
       ha-card.type-markdown {
         letter-spacing: 0;
       }
-      h1 {
+      ha-markdown-element h1 {
         font-size: 24px !important;
       }
-      h2 {
+      ha-markdown-element h2 {
         font-size: 16px !important;
       }
-      strong {
+      ha-markdown-element strong {
         color: var(--accent-color);
       }
 
