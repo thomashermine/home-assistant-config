@@ -1,9 +1,11 @@
 # Source : https://github.com/KTibow/lovelace-light-soft-ui-theme/edit/main/themes/light-soft-ui.yaml
 # Copied on 20201225 (yes)
 # - Changed fonts
+# - Customised colors
+# - Changed a few variables here and there too
 softui-dark:
   # Color
-  primary-color: "red"
+  primary-color: "#B58E32" # Actually kinda used as accent color
   light-primary-color: var(--primary-color)
   accent-color: "#B58E32"
   mdc-theme-secondary: var(--accent-color)
@@ -13,7 +15,7 @@ softui-dark:
   warning-color: "#EBEB60"
   error-color: "#D18941"
   # Background
-  primary-background-color: "#222222" # MODIFIED
+  primary-background-color: "#222222"
   secondary-background-color: var(--primary-background-color)
   # Text
   primary-text-color: "#F7F8FA"
@@ -23,14 +25,14 @@ softui-dark:
   text-primary-color: "#FFFFFF"
   disabled-text-color: "#616387"
   # Fonts
-  paper-font-headline_-_font-family: system-ui # MODIFIED
+  paper-font-headline_-_font-family: system-ui
   paper-font-headline_-_font-weight: "600"
-  paper-font-subhead_-_font-family: system-ui # MODIFIED
+  paper-font-subhead_-_font-family: system-ui
   paper-font-subhead_-_font-weight: "550"
   paper-font-subhead_-_line-height: 2.2em
   ha-card-header-font-family: system-ui
   ha-card-header-font-weight: "600"
-  code-font-family: system-ui # MODIFIED
+  code-font-family: system-ui
   paper-font-common-code_-_font-family: var(--code-font-family)
   # Sidebar
   sidebar-icon-color: var(--primary-text-color)
@@ -45,13 +47,13 @@ softui-dark:
   app-header-text-color: var(--primary-text-color)
   # Icons
   state-icon-color: var(--primary-text-color)
-  state-icon-active-color: var(--primary-color)
+  state-icon-active-color: var(--accent-color)
   state-icon-unavailable-color: var(--disabled-text-color)
   # Sliders
   paper-slider-knob-color: var(--primary-color)
   paper-slider-knob-start-color: var(--primary-color)
   paper-slider-pin-color: var(--primary-color)
-  paper-slider-active-color: var(--primary-color)
+  paper-slider-active-color: var(--accent-color)
   paper-slider-secondary-color: var(--light-primary-color)
   # Labels
   label-badge-background-color: var(--primary-background-color)
