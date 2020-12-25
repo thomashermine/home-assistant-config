@@ -23,15 +23,15 @@ softui-light:
   text-primary-color: "#FFFFFF"
   disabled-text-color: "#717171"
   # Fonts
-  primary-font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; # ADDED
-  paper-font-headline_-_font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; #MODIFIED
+  primary-font-family: system-ui; # ADDED
+  paper-font-headline_-_font-family: system-ui; #MODIFIED
   paper-font-headline_-_font-weight: "600"
-  paper-font-subhead_-_font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; #MODIFIED
+  paper-font-subhead_-_font-family: system-ui; #MODIFIED
   paper-font-subhead_-_font-weight: "550"
   paper-font-subhead_-_line-height: 2.2em
-  ha-card-header-font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; #MODIFIED
+  ha-card-header-font-family: system-ui; #MODIFIED
   ha-card-header-font-weight: "600"
-  code-font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; #MODIFIED
+  code-font-family: system-ui; #MODIFIED
   paper-font-common-code_-_font-family: var(--code-font-family)
   # Sidebar
   sidebar-icon-color: var(--primary-text-color)
