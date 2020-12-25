@@ -23,14 +23,15 @@ softui-light:
   text-primary-color: "#FFFFFF"
   disabled-text-color: "#717171"
   # Fonts
-  paper-font-headline_-_font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif;
+  primary-font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; # ADDED
+  paper-font-headline_-_font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; #MODIFIED
   paper-font-headline_-_font-weight: "600"
-  paper-font-subhead_-_font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif;
+  paper-font-subhead_-_font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; #MODIFIED
   paper-font-subhead_-_font-weight: "550"
   paper-font-subhead_-_line-height: 2.2em
-  ha-card-header-font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif;
+  ha-card-header-font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; #MODIFIED
   ha-card-header-font-weight: "600"
-  code-font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif;
+  code-font-family: SF Pro Display,SF Pro Icons, Helvetica Neue ,Helvetica , Arial, sans-serif; #MODIFIED
   paper-font-common-code_-_font-family: var(--code-font-family)
   # Sidebar
   sidebar-icon-color: var(--primary-text-color)
