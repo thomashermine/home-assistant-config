@@ -68,7 +68,6 @@ softui-dark:
   label-badge-yellow: "#EBC860"
   label-badge-gray: "#666F80"
   # Cards
-  ha-card-border-width: 0px
   card-background-color: var(--primary-background-color)
   paper-card-background-color: var(--primary-background-color)
   paper-listbox-background-color: var(--primary-background-color)
@@ -137,7 +136,11 @@ softui-dark:
         --soft-ui-pressed: var(--ha-card-box-shadow-inset) !important;
       }
 
-      ha-card.type-entity {
+      ha-card {
+        box-shadow:none
+      }
+
+      ha-card.type-button {
         box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08)
         border-radius: "13.75px"
         border-color: var(--primary-color)
