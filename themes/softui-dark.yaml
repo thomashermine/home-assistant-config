@@ -138,11 +138,14 @@ softui-dark:
       }
 
 
-      ha-card.type-button, ha-card.type-custom-button-card {
+      ha-card.type-glance .entity {
         box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
-        border-radius: "13.75px"
-        border-color: var(--primary-color)
-        border-width: 3px
+        border-radius: 13.75px;
+        border-color: var(--primary-color);
+        border-width: 3px ;
+        margin: 10px;
+        height: 60px;
+        width: 60px;
       }
 
       ha-card.type-custom-vacuum-card > .preview {
