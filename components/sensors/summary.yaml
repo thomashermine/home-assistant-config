@@ -1,0 +1,88 @@
+- platform: template
+  sensors:
+    # Helper — Room Temperature
+    # ==========================================================================
+    #  Climate On :
+    #   Il fait 18°, bientôt 20.
+    #  Climate Off :
+    #   Il fait 20°.
+
+    summary_room_temperature_chambre:
+      value_template: >-
+        Il fait {{states.sensor.chambre_temperature.state}}°
+        {% if states.sensor.chambre_heating.state | int > 0 %}
+        , bientôt {{states.climate.chambre.attributes.temperature | int }}°.
+        {% else %}
+        .
+        {% endif %}
+
+    summary_room_temperature_living:
+      value_template: >-
+        Il fait {{states.sensor.living_temperature.state}}°
+        {% if states.sensor.living_heating.state | int > 0 %}
+        , bientôt {{states.climate.living.attributes.temperature | int }}°.
+        {% else %}
+        .
+        {% endif %}
+    # Helper — Greeting
+    # ==========================================================================
+    #  coming_home
+    #   Bon retour à la maison!
+    #  early_morning, waking_up
+    #   Bon réveil.
+    #  afternoon
+    #   Bonne après-midi.
+    #  evening, late_evening
+    #   Belle soirée.
+    #  falling_asleep, asleep
+    #   Bonne nuit.
+    #  else
+    #   Bonne journée.
+    # Summary - Home
+    #  <summary_temperature_home> <major_conditions> <single_condition> <greeting>
+    # ==========================================================================
+    #
+    #  Il fait 20° à la maison, 10° dehors. L'alarme est active. La porte d'entrée est ouverte.
+    #
+    #  Il fait 20° à la maison, 10° dehors. Quelqu'un prend une douche. Bonne journée!
+    #  Il fait 20° à la maison, 10° dehors. La hotte fonctionne.  Bonne journée!
+    #  Il fait 20° à la maison, 10° dehors. L'aspirateur fonctionne.  Bonne journée!
+    #  Il fait 20° à la maison, 10° dehors. L'aspirateur à fonctionné à 18h00. Bonne journée!
+    #  Il fait 20° à la maison, 10° dehors. Vous regardez Breaking Bad. Bonne journée!
+    #  Il fait 20° à la maison, 10° dehors. Vous écoutez La Danse des Etoiles de Fakear. Bonne journée!
+    #  Il fait 20° à la maison, 10° dehors. La chaudière fonctionne.  Bonne journée!
+    # Summary - Living
+    #  <summary_temperature_room> <condition>
+    # ==========================================================================
+    #
+    #  Il fait 20°, bientôt 22°. Le balcon est ouvert. Vous regardez Breaking Bad.
+    #
+    #  Il fait 20°, bientôt 22°. Vous regardez Breaking Bad.
+    #  Il fait 20°, bientôt 22°. Les lampes sont allumées.
+    # Summary - Cuisine
+    #  <summary_temperature_room> <condition>
+    # ==========================================================================
+    #
+    #  Il fait 20°. La hotte fonctionne
+    #  Il fait 20°. Le robinet coule
+    #  Il fait 20°. Le lave-vaiselle doit être vidé.
+    #  Il fait 20°. Le lave-vaiselle fonctionne.
+    #  Il fait 20°. Les lampes sont allumées.
+    # Summary - Salle de Bain
+    #  <summary_temperature_room> <condition> <major_condition>
+    # ==========================================================================
+    #
+    #  Il fait 20°. Vous écoutez Fakear dans la salle de bain.
+    #  Il fait 20°. La salle de bain est occupée.
+    #  Il fait 20°. La salle de bain est occupée, l'extracteur d'air fonctionne.
+    # Summary - Chambre
+    #  <summary_temperature_room> <major_conditions>
+    # ==========================================================================
+    #
+    #  Il fait 20°. La terasse est ouverte. Le ventilateur fonctionne. Les lampes sont allumées.
+    # Summary - Hall & Buanderie
+    #  <summary_temperature_room> <major_conditions>
+    # ==========================================================================
+    #
+    #  Il fait 20°. La porte d'entrée est ouverte. La macine à lessiver fonctionne. L'extracteur d'air de la buanderie fonctionne.
+    #
