@@ -128,7 +128,7 @@ softui-dark:
   # Card-mod
   ha-label-badge-title-font-size: 1em
   # Cards
-  card-mod-card: |
+  card-mod-card-yaml: |
     $: |
       ha-markdown-element {
         letter-spacing: 0;
@@ -139,97 +139,97 @@ softui-dark:
       h2 {
         font-size: 15px !important;
       }
-  card-mod-card-yaml: |
-    .: |
-      * {
-        --soft-ui-shadow: var(--ha-card-box-shadow) !important;
-        --soft-ui-pressed: var(--ha-card-box-shadow-inset) !important;
-      }
+  # card-mod-card-yaml: |
+  #   .: |
+  #     * {
+  #       --soft-ui-shadow: var(--ha-card-box-shadow) !important;
+  #       --soft-ui-pressed: var(--ha-card-box-shadow-inset) !important;
+  #     }
 
-      ha-card.type-glance .entity {
-        border-radius: 13.75px;
-        border-color: var(--primary-color);
-        border-width: 3px ;
-        margin: 10px;
-        height: 60px;
-        width: 60px;
-        box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
-      }
+  #     ha-card.type-glance .entity {
+  #       border-radius: 13.75px;
+  #       border-color: var(--primary-color);
+  #       border-width: 3px ;
+  #       margin: 10px;
+  #       height: 60px;
+  #       width: 60px;
+  #       box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
+  #     }
 
-      ha-card.type-custom-vacuum-card > .preview {
-        --primary-color: var(--primary-background-color);
-      }
-      ha-card.type-custom-vacuum-card > .preview > * {
-        color: var(--primary-text-color);
-      }
-      ha-card.type-custom-vacuum-card > .preview > .header > .battery > ha-icon {
-        color: var(--primary-text-color);
-      }
-      ha-card.type-custom-vacuum-card > .preview > .metadata > .vacuum-name {
-        color: var(--primary-text-color);
-      }
-      ha-card.type-picture-entity,
-      ha-card.type-picture-glance {
-        padding: 10px;
-      }
-      ha-card.type-picture-entity > .footer,
-      ha-card.type-picture-glance > .box {
-        margin: 10px;
-        border-radius: 15px;
-      }
+  #     ha-card.type-custom-vacuum-card > .preview {
+  #       --primary-color: var(--primary-background-color);
+  #     }
+  #     ha-card.type-custom-vacuum-card > .preview > * {
+  #       color: var(--primary-text-color);
+  #     }
+  #     ha-card.type-custom-vacuum-card > .preview > .header > .battery > ha-icon {
+  #       color: var(--primary-text-color);
+  #     }
+  #     ha-card.type-custom-vacuum-card > .preview > .metadata > .vacuum-name {
+  #       color: var(--primary-text-color);
+  #     }
+  #     ha-card.type-picture-entity,
+  #     ha-card.type-picture-glance {
+  #       padding: 10px;
+  #     }
+  #     ha-card.type-picture-entity > .footer,
+  #     ha-card.type-picture-glance > .box {
+  #       margin: 10px;
+  #       border-radius: 15px;
+  #     }
 
-      ha-card > #states > div > * {
-        padding-top: 8px;
-        padding-bottom: 8px;
-        width: 95%;
-        margin: 0 auto 0 5px;
-      }
-      ha-card > #states > div > *:not(hui-button-row):not(hui-input-select-entity-row):not(hui-input-number-entity-row):not(hui-input-text-entity-row):not(hui-cast-row) {
-        display: block;
-      }
-      ha-card.type-media-control, ha-card.type-media-control > * {
-        background-color: var(--primary-background-color) !important;
-        color: var(--secondary-text-color) !important;
-      }
+  #     ha-card > #states > div > * {
+  #       padding-top: 8px;
+  #       padding-bottom: 8px;
+  #       width: 95%;
+  #       margin: 0 auto 0 5px;
+  #     }
+  #     ha-card > #states > div > *:not(hui-button-row):not(hui-input-select-entity-row):not(hui-input-number-entity-row):not(hui-input-text-entity-row):not(hui-cast-row) {
+  #       display: block;
+  #     }
+  #     ha-card.type-media-control, ha-card.type-media-control > * {
+  #       background-color: var(--primary-background-color) !important;
+  #       color: var(--secondary-text-color) !important;
+  #     }
 
-      ha-card.type-iframe > #root > iframe {
-        border-radius: var(--ha-card-border-radius);
-      }
+  #     ha-card.type-iframe > #root > iframe {
+  #       border-radius: var(--ha-card-border-radius);
+  #     }
 
-      ha-card > .header-footer {
-        margin: 25px 12px;
-      }
-      ha-card > .card-header {
-        box-shadow: none;
-      }
-      ha-card > .card-header > .name {
-        text-align: center;
-        width: 100%;
-      }
-      ha-card > .card-header > hui-entities-toggle {
-        margin: 0 25px 0 -25px;
-      }
-      ha-card.type-custom-bar-card > .card-header,
-      ha-card.type-history-graph > .card-header,
-      ha-card.type-map > .card-header,
-      ha-card.type-iframe > .card-header,
-      ha-card.type-shopping-list > .card-header,
-      ha-card.type-glance > .card-header {
-        text-align: center;
-        width: 70%;
-        margin: 0 auto;
-      }
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(359deg);
-        }
-      }
-      ha-icon[data-domain="fan"][data-state="on"] {
-        animation: spin 4s infinite linear;
-      }
+  #     ha-card > .header-footer {
+  #       margin: 25px 12px;
+  #     }
+  #     ha-card > .card-header {
+  #       box-shadow: none;
+  #     }
+  #     ha-card > .card-header > .name {
+  #       text-align: center;
+  #       width: 100%;
+  #     }
+  #     ha-card > .card-header > hui-entities-toggle {
+  #       margin: 0 25px 0 -25px;
+  #     }
+  #     ha-card.type-custom-bar-card > .card-header,
+  #     ha-card.type-history-graph > .card-header,
+  #     ha-card.type-map > .card-header,
+  #     ha-card.type-iframe > .card-header,
+  #     ha-card.type-shopping-list > .card-header,
+  #     ha-card.type-glance > .card-header {
+  #       text-align: center;
+  #       width: 70%;
+  #       margin: 0 auto;
+  #     }
+  #     @keyframes spin {
+  #       0% {
+  #         transform: rotate(0deg);
+  #       }
+  #       100% {
+  #         transform: rotate(359deg);
+  #       }
+  #     }
+  #     ha-icon[data-domain="fan"][data-state="on"] {
+  #       animation: spin 4s infinite linear;
+  #     }
   # Header
   header-height: 48px # Change this to 0px for header on the bottom. You're 1/3 there.
   card-mod-root-yaml: |
