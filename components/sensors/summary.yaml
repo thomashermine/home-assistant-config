@@ -7,35 +7,26 @@
     #  Climate Off :
     #   Il fait 20°.
 
-    summary_room_temperature_chambre:
+    summary_temperature_room_chambre:
       value_template: >-
-        Il fait {{states.sensor.chambre_temperature.state| int}}°
-        {% if states.sensor.chambre_heating.state | int > 0 %}
-        , bientôt {{states.climate.chambre.attributes.temperature | int }}°
-        {% endif %}.
-    summary_room_temperature_living:
+        Il fait {{states.sensor.chambre_temperature.state| int}}{% if states.sensor.chambre_heating.state | int > 0 %}, bientôt {{states.climate.chambre.attributes.temperature | int }}°{% endif %}.
+    summary_temperature_room_living:
       value_template: >-
-        Il fait {{states.sensor.living_temperature.state| int}}°
-        {% if states.sensor.living_heating.state | int > 0 %}
-        , bientôt {{states.climate.living.attributes.temperature | int }}°
-        {% endif %}.
+        Il fait {{states.sensor.living_temperature.state| int}}{% if states.sensor.living_heating.state | int > 0 %}, bientôt {{states.climate.living.attributes.temperature | int }}°{% endif %}.
 
-    summary_room_temperature_cuisine: # TODO: Add temperature for cuisine, climate for cuisine
+    summary_temperature_room_cuisine: # TODO: Add temperature for cuisine, climate for cuisine
       value_template: >-
-        Il fait {{states.sensor.living_temperature.state| int}}°
-        {% if states.sensor.living_heating.state | int > 0 %}
-        , bientôt {{states.climate.living.attributes.temperature | int }}°
-        {% endif %}.
+        Il fait {{states.sensor.living_temperature.state| int}}{% if states.sensor.living_heating.state | int > 0 %}, bientôt {{states.climate.living.attributes.temperature | int }}°{% endif %}.
 
-    summary_room_temperature_salle_de_bain:
+    summary_temperature_room_salle_de_bain:
       value_template: >-
-        Il fait {{states.sensor.salle_de_bain_temperature.state| int}}°
-        {% if states.sensor.salle_de_bain_heating.state | int > 0 %}
-        , bientôt {{states.climate.salle_de_bain.attributes.temperature | int }}°
-        {% endif %}.
+        Il fait {{states.sensor.salle_de_bain_temperature.state| int}}{% if states.sensor.salle_de_bain_heating.state | int > 0 %}, bientôt {{states.climate.salle_de_bain.attributes.temperature | int }}°{% endif %}.
 
+    summary_temperature_home:
+      value_template: >-
+        Il fait {{states.sensor.living_temperature.state| int}}° à la maison, {{states.weather.andenne_81.attributes.temperature}}° dehors.
 
-        # Helper — Greeting
+    # Helper — Greeting
     # ==========================================================================
     #  coming_home
     #   Bon retour à la maison!
@@ -62,6 +53,13 @@
     #  Il fait 20° à la maison, 10° dehors. Vous regardez Breaking Bad. Bonne journée!
     #  Il fait 20° à la maison, 10° dehors. Vous écoutez La Danse des Etoiles de Fakear. Bonne journée!
     #  Il fait 20° à la maison, 10° dehors. La chaudière fonctionne.  Bonne journée!
+    summary_home:
+      value_template: >-
+        {{states.sensor.summary_temperature_home.state}}
+
+        {% if states.sensor.salle_de_bain_heating.state | int > 0 %}
+        , bientôt {{states.climate.salle_de_bain.attributes.temperature | int }}°
+        {% endif %}.
     # Summary - Living
     #  <summary_temperature_room> <condition>
     # ==========================================================================
