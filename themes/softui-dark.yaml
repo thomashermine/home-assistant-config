@@ -128,7 +128,7 @@ softui-dark:
   # Card-mod
   ha-label-badge-title-font-size: 1em
   # Cards
-  card-mod-markdown: |
+  card-mod-card: |
     $: |
       ha-markdown-element {
         letter-spacing: 0;
