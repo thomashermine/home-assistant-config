@@ -80,7 +80,7 @@
         La hotte fonctionne.
         {% elif is_state("vacuum.hygie", "cleaning") %}
         L'aspirateur fonctionne.
-        {% if is_state("switch.chaudiere", "on") %}
+        {% elif is_state("switch.chaudiere", "on") %}
         La chaudière fonctionne
         {% endif %}
 
@@ -148,3 +148,11 @@
     #
     #  Il fait 20°. La porte d'entrée est ouverte. La macine à lessiver fonctionne. L'extracteur d'air de la buanderie fonctionne.
     #
+
+    summary_hall:
+      value_template: >-
+        {{states.sensor.summary_temperature_room_living.state}}
+
+        {% if is_state("switch.extracteur_d_air_buanderie", "on") %}
+        L'aération de la buanderie fonctionne.
+        {% endif %}
