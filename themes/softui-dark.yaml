@@ -125,10 +125,10 @@ softui-dark:
   pink: "#eb60eb"
   pink-red: "#eb60bc"
   red-pink: "#eb608e"
-  # Card-mod
+
   ha-label-badge-title-font-size: 1em
   # Cards
-  card-mod-markdown: |
+  card-mod-card-yaml: |
     ha-markdown:
       $: |
         ha-markdown-element {
@@ -141,8 +141,8 @@ softui-dark:
 
         h2 {
           font-size: 15px !important;
+          color: blue!important;
         }
-  card-mod-card-yaml: |
 
     .: |
       * {
