@@ -134,9 +134,11 @@ softui-dark:
         ha-markdown-element {
           letter-spacing: 0;
         }
+        
         h1 {
           font-size: 20px !important;
         }
+
         h2 {
           font-size: 15px !important;
         }
