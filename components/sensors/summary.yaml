@@ -1,5 +1,27 @@
 - platform: template
   sensors:
+    # Helper — Greetings
+    # ==========================================================================
+    greetings:
+      value_template: >-
+        {% if is_state("input_select.presence", "coming_home") -%}
+        Bon retour à la maison.
+        {% elif is_state("input_select.period", "early_morning") %}
+        Bon réveil.
+        {% elif is_state("input_select.period", "waking_up") %}
+        Bon réveil.
+        {% elif is_state("input_select.period", "afternoon") %}
+        Bonne aprés-midi.
+        {% elif is_state("input_select.period", "evening") %}
+        Bonne soirée.
+        {% elif is_state("input_select.period", "late_evening") %}
+        Bonne soirée.
+        {% elif is_state("input_select.period", "fallig_asleep") %}
+        Bonne nuit.
+        {% else %}
+        Bonne journée.
+        {%- endif %}
+
     # Helper — Room Temperature
     # ==========================================================================
     #  Climate On :
@@ -26,20 +48,6 @@
       value_template: >-
         Il fait {{states.sensor.living_temperature.state| int}}° à la maison, {{states.weather.andenne_81.attributes.temperature}}° dehors.
 
-    # Helper — Greeting
-    # ==========================================================================
-    #  coming_home
-    #   Bon retour à la maison!
-    #  early_morning, waking_up
-    #   Bon réveil.
-    #  afternoon
-    #   Bonne après-midi.
-    #  evening, late_evening
-    #   Belle soirée.
-    #  falling_asleep, asleep
-    #   Bonne nuit.
-    #  else
-    #   Bonne journée.
     # Summary - Home
     #  <summary_temperature_home> <major_conditions> <single_condition> <greeting>
     # ==========================================================================
@@ -49,17 +57,34 @@
     #  Il fait 20° à la maison, 10° dehors. Quelqu'un prend une douche. Bonne journée!
     #  Il fait 20° à la maison, 10° dehors. La hotte fonctionne.  Bonne journée!
     #  Il fait 20° à la maison, 10° dehors. L'aspirateur fonctionne.  Bonne journée!
+    #
+    # TODO: Add following cases:
+    #
     #  Il fait 20° à la maison, 10° dehors. L'aspirateur à fonctionné à 18h00. Bonne journée!
     #  Il fait 20° à la maison, 10° dehors. Vous regardez Breaking Bad. Bonne journée!
     #  Il fait 20° à la maison, 10° dehors. Vous écoutez La Danse des Etoiles de Fakear. Bonne journée!
+    #
+    #
     #  Il fait 20° à la maison, 10° dehors. La chaudière fonctionne.  Bonne journée!
+
+    # TODO: Check hygie state when cleaning
     summary_home:
       value_template: >-
         {{states.sensor.summary_temperature_home.state}}
 
-        {% if states.sensor.salle_de_bain_heating.state | int > 0 %}
-        , bientôt {{states.climate.salle_de_bain.attributes.temperature | int }}°
-        {% endif %}.
+        {% if is_state("binary_sensor.hall_door", "on") -%}
+        La porte d'entrée est ouverte.
+        {%- endif %}
+
+        {% if is_state("switch.hotte", "on") -%}
+        La hotte fonctionne.
+        {% elif is_state("vacuum.hygie", "cleaning") %}
+        L'aspirateur fonctionne.
+        {% if is_state("switch.chaudiere", "on") -%}
+        La chaudière fonctionne
+        {%- endif %}
+
+        {{states.sensor.greetings.state}}
     # Summary - Living
     #  <summary_temperature_room> <condition>
     # ==========================================================================
