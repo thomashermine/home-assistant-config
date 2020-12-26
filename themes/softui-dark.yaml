@@ -128,6 +128,17 @@ softui-dark:
   # Card-mod
   ha-label-badge-title-font-size: 1em
   # Cards
+  card-mod-markdown: |
+    $: |
+      ha-markdown-element {
+        letter-spacing: 0;
+      }
+      h1 {
+        font-size: 20px !important;
+      }
+      h2 {
+        font-size: 15px !important;
+      }
   card-mod-card-yaml: |
     .: |
       * {
@@ -144,18 +155,6 @@ softui-dark:
         width: 60px;
         box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
       }
-
-      ha-markdown:
-        $: |
-          ha-markdown-element {
-            letter-spacing: 0;
-          }
-          h1 {
-            font-size: 20px !important;
-          }
-          h2 {
-            font-size: 15px !important;
-          }
 
       ha-card.type-custom-vacuum-card > .preview {
         --primary-color: var(--primary-background-color);
