@@ -139,7 +139,7 @@
       value_template: >-
         {{states.sensor.summary_temperature_room_chambre.state}}
 
-        {% if is_state("binary_sensor.terrace_door, "on") %}
+        {% if is_state("binary_sensor.terrace_door", "on") %}
         La porte de la terrasse est ouverte.
         {% endif %}
     # Summary - Hall & Buanderie
