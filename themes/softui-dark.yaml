@@ -204,24 +204,16 @@ softui-dark:
       }
       ha-card > .card-header {
         box-shadow: none;
+        letter-spacing: 0;
       }
       ha-card > .card-header > .name {
-        text-align: center;
-        width: 100%;
+        font-size: 20px !important;
       }
+
       ha-card > .card-header > hui-entities-toggle {
         margin: 0 25px 0 -25px;
       }
-      ha-card.type-custom-bar-card > .card-header,
-      ha-card.type-history-graph > .card-header,
-      ha-card.type-map > .card-header,
-      ha-card.type-iframe > .card-header,
-      ha-card.type-shopping-list > .card-header,
-      ha-card.type-glance > .card-header {
-        text-align: center;
-        width: 70%;
-        margin: 0 auto;
-      }
+
       @keyframes spin {
         0% {
           transform: rotate(0deg);
