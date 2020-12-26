@@ -141,7 +141,6 @@ softui-dark:
 
         h2 {
           font-size: 15px !important;
-          color: blue!important;
         }
 
     .: |
