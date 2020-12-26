@@ -9,22 +9,33 @@
 
     summary_room_temperature_chambre:
       value_template: >-
-        Il fait {{states.sensor.chambre_temperature.state}}°
+        Il fait {{states.sensor.chambre_temperature.state| int}}°
         {% if states.sensor.chambre_heating.state | int > 0 %}
-        , bientôt {{states.climate.chambre.attributes.temperature | int }}°.
-        {% else %}
-        .
-        {% endif %}
-
+        , bientôt {{states.climate.chambre.attributes.temperature | int }}°
+        {% endif %}.
     summary_room_temperature_living:
       value_template: >-
-        Il fait {{states.sensor.living_temperature.state}}°
+        Il fait {{states.sensor.living_temperature.state| int}}°
         {% if states.sensor.living_heating.state | int > 0 %}
-        , bientôt {{states.climate.living.attributes.temperature | int }}°.
-        {% else %}
-        .
-        {% endif %}
-    # Helper — Greeting
+        , bientôt {{states.climate.living.attributes.temperature | int }}°
+        {% endif %}.
+
+    summary_room_temperature_cuisine: # TODO: Add temperature for cuisine, climate for cuisine
+      value_template: >-
+        Il fait {{states.sensor.living_temperature.state| int}}°
+        {% if states.sensor.living_heating.state | int > 0 %}
+        , bientôt {{states.climate.living.attributes.temperature | int }}°
+        {% endif %}.
+
+    summary_room_temperature_salle_de_bain:
+      value_template: >-
+        Il fait {{states.sensor.salle_de_bain_temperature.state| int}}°
+        {% if states.sensor.salle_de_bain_heating.state | int > 0 %}
+        , bientôt {{states.climate.salle_de_bain.attributes.temperature | int }}°
+        {% endif %}.
+
+
+        # Helper — Greeting
     # ==========================================================================
     #  coming_home
     #   Bon retour à la maison!
