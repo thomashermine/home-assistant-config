@@ -205,9 +205,8 @@ softui-dark:
       ha-card > .card-header {
         box-shadow: none;
         letter-spacing: 0;
-      }
-      ha-card > .card-header > .name {
         font-size: 20px !important;
+        font-weight: 700;
       }
 
       ha-card > .card-header > hui-entities-toggle {
