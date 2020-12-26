@@ -20,7 +20,7 @@
         Bonne nuit.
         {% else %}
         Bonne journée.
-        {%- endif %}
+        {% endif %}
 
     # Helper — Room Temperature
     # ==========================================================================
@@ -72,17 +72,17 @@
       value_template: >-
         {{states.sensor.summary_temperature_home.state}}
 
-        {% if is_state("binary_sensor.hall_door", "on") -%}
+        {% if is_state("binary_sensor.hall_door", "on") %}
         La porte d'entrée est ouverte.
-        {%- endif %}
+        {% endif %}
 
-        {% if is_state("switch.hotte", "on") -%}
+        {% if is_state("switch.hotte", "on") %}
         La hotte fonctionne.
         {% elif is_state("vacuum.hygie", "cleaning") %}
         L'aspirateur fonctionne.
-        {% if is_state("switch.chaudiere", "on") -%}
+        {% if is_state("switch.chaudiere", "on") %}
         La chaudière fonctionne
-        {%- endif %}
+        {% endif %}
 
         {{states.sensor.greetings.state}}
     # Summary - Living
@@ -93,6 +93,11 @@
     #
     #  Il fait 20°, bientôt 22°. Vous regardez Breaking Bad.
     #  Il fait 20°, bientôt 22°. Les lampes sont allumées.
+
+    summary_living:
+      value_template: >-
+        {{states.sensor.summary_temperature_room_living.state}}
+
     # Summary - Cuisine
     #  <summary_temperature_room> <condition>
     # ==========================================================================
@@ -102,18 +107,41 @@
     #  Il fait 20°. Le lave-vaiselle doit être vidé.
     #  Il fait 20°. Le lave-vaiselle fonctionne.
     #  Il fait 20°. Les lampes sont allumées.
+
+    summary_cuisine:
+      value_template: >-
+        {{states.sensor.summary_temperature_room_cuisine.state}}
+
     # Summary - Salle de Bain
     #  <summary_temperature_room> <condition> <major_condition>
     # ==========================================================================
     #
     #  Il fait 20°. Vous écoutez Fakear dans la salle de bain.
     #  Il fait 20°. La salle de bain est occupée.
-    #  Il fait 20°. La salle de bain est occupée, l'extracteur d'air fonctionne.
+    #
+    #  Il fait 20°. La salle de bain est occupée. L'aération fonctionne.
+
+    summary_salle_de_bain:
+      value_template: >-
+        {{states.sensor.summary_temperature_room_salle_de_bain.state}}
+        {% if is_state("switch.extracteur_d_air_salle_de_bain", "on") %}
+        L'aération fonctionne.
+        {% endif %}
+
     # Summary - Chambre
     #  <summary_temperature_room> <major_conditions>
     # ==========================================================================
     #
     #  Il fait 20°. La terasse est ouverte. Le ventilateur fonctionne. Les lampes sont allumées.
+    # Summary - Hall & Buanderie
+
+    summary_chambre:
+      value_template: >-
+        {{states.sensor.summary_temperature_room_chambre.state}}
+
+        {% if is_state("binary_sensor.terrace_door, "on") %}
+        La porte de la terrasse est ouverte.
+        {% endif %}
     # Summary - Hall & Buanderie
     #  <summary_temperature_room> <major_conditions>
     # ==========================================================================
