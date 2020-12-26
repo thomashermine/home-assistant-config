@@ -145,18 +145,17 @@ softui-dark:
         box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
       }
 
-      ha-card.type-markdown {
-        letter-spacing: 0;
-      }
-      ha-markdown-element h1 {
-        font-size: 24px !important;
-      }
-      ha-markdown-element h2 {
-        font-size: 16px !important;
-      }
-      ha-markdown-element strong {
-        color: var(--accent-color);
-      }
+      ha-markdown:
+        $: |
+          ha-markdown-element {
+            letter-spacing: 0;
+          }
+          h1 {
+            font-size: 20px !important;
+          }
+          h2 {
+            font-size: 15px !important;
+          }
 
       ha-card.type-custom-vacuum-card > .preview {
         --primary-color: var(--primary-background-color);
