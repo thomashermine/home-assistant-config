@@ -166,7 +166,7 @@ towercontrol:
         margin: 10px;
         height: 60px;
         width: 60px;
-        box-shadow: var(--box-shadow-main)
+        box-shadow: var(--box-shadow-main);
       }
 
       ha-card.type-button {
@@ -174,7 +174,8 @@ towercontrol:
         width: 96px!important;
         height: 96px!important;
         padding: 16px!important;
-        box-shadow: var(--box-shadow-main)
+        box-shadow: var(--box-shadow-main);
+        overflow: hidden;
       }  
       ha-card.type-button ha-icon {
        margin-bottom: 8px;
@@ -184,13 +185,18 @@ towercontrol:
         font-family: system-ui!important;
         text-align: left!important;
       }
+      ha-card.type-button span:not(.state) {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
       ha-card.type-button span.state {
         font-weight: 700;
         text-transform: lowercase;
       }
 
       ha-card.type-weather-forecast,  ha-card.type-map, ha-card.type-picture-entity, ha-card.type-media-control {
-        box-shadow: var(--box-shadow-soft)
+        box-shadow: var(--box-shadow-soft);
       }
 
       ha-card.type-thermostat #slider {
