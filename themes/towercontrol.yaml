@@ -146,12 +146,6 @@ towercontrol:
         ha-card.type-thermostat #info {
           display: none!important;
         }  
-
-    hui-horizontal-stack-card:
-      $: |
-        #root > * {
-          flex: inherit!important;
-        }
           
     .: |
       ha-card > .card-header {
@@ -216,6 +210,10 @@ towercontrol:
 
       ha-card.type-media-control .off.background {
         filter: none;
+      }
+
+      hui-button-card {
+        flex: inherit!important;
       }
 
   card-mod-root-yaml: |
