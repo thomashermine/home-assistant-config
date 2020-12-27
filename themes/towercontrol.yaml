@@ -124,9 +124,9 @@ towercontrol:
   card-mod-card-yaml: |
     hui-button-card: 
       $: |
-      hui-button-card {
-        flex: inherit!important;
-      }
+        hui-button-card {
+          flex: inherit!important;
+        }
     ha-markdown:
       $: |
         ha-markdown-element {
