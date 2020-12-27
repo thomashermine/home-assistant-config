@@ -71,11 +71,9 @@
     summary_home:
       value_template: >-
         {{states.sensor.summary_temperature_home.state}}
-
         {% if is_state("binary_sensor.hall_door", "on") %}
         La porte d'entrée est ouverte.
         {% endif %}
-
         {% if is_state("switch.hotte", "on") %}
         La hotte fonctionne.
         {% elif is_state("vacuum.hygie", "cleaning") %}
@@ -83,7 +81,6 @@
         {% elif is_state("switch.chaudiere", "on") %}
         La chaudière fonctionne
         {% endif %}
-
         {{states.sensor.greetings.state}}
     # Summary - Living
     #  <summary_temperature_room> <condition>
@@ -138,7 +135,6 @@
     summary_chambre:
       value_template: >-
         {{states.sensor.summary_temperature_room_chambre.state}}
-
         {% if is_state("binary_sensor.terrace_door", "on") %}
         La porte de la terrasse est ouverte.
         {% endif %}
@@ -152,7 +148,6 @@
     summary_hall:
       value_template: >-
         {{states.sensor.summary_temperature_room_living.state}}
-
         {% if is_state("switch.extracteur_d_air_buanderie", "on") %}
         L'aération de la buanderie fonctionne.
         {% endif %}
