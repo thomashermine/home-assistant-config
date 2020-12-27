@@ -5,21 +5,21 @@
     greetings:
       value_template: >-
         {% if is_state("input_select.presence", "coming_home") -%}
-        Bon retour à la maison.
+        Bon retour à la maison
         {% elif is_state("input_select.period", "early_morning") %}
-        Bon réveil.
+        Bon réveil
         {% elif is_state("input_select.period", "waking_up") %}
-        Bon réveil.
+        Bon réveil
         {% elif is_state("input_select.period", "afternoon") %}
-        Bonne aprés-midi.
+        Bonne aprés-midi
         {% elif is_state("input_select.period", "evening") %}
-        Bonne soirée.
+        Bonne soirée
         {% elif is_state("input_select.period", "late_evening") %}
-        Bonne soirée.
+        Bonne soirée
         {% elif is_state("input_select.period", "fallig_asleep") %}
-        Bonne nuit.
+        Bonne nuit
         {% else %}
-        Bonne journée.
+        Bonne journée
         {% endif %}
 
     # Helper — Room Temperature
@@ -79,7 +79,7 @@
         {% elif is_state("vacuum.hygie", "cleaning") %}
         **L'aspirateur** fonctionne.
         {% elif is_state("switch.chaudiere", "on") %}
-        La **chaudière** fonctionne
+        La **chaudière** fonctionne.
         {% endif %}
     # Summary - Living
     #  <summary_temperature_room> <condition>
@@ -107,6 +107,9 @@
     summary_cuisine:
       value_template: >-
         {{states.sensor.summary_temperature_room_cuisine.state}}
+        {% if is_state("switch.hotte", "on") %}
+        La **hotte** fonctionne.
+        {% endif %}
 
     # Summary - Salle de Bain
     #  <summary_temperature_room> <condition> <major_condition>
@@ -135,7 +138,7 @@
       value_template: >-
         {{states.sensor.summary_temperature_room_chambre.state}}
         {% if is_state("binary_sensor.terrace_door", "on") %}
-        La porte de la terrasse est ouverte.
+        La **porte de la terrasse** est ouverte.
         {% endif %}
     # Summary - Hall & Buanderie
     #  <summary_temperature_room> <major_conditions>
@@ -148,5 +151,5 @@
       value_template: >-
         {{states.sensor.summary_temperature_room_living.state}}
         {% if is_state("switch.extracteur_d_air_buanderie", "on") %}
-        L'aération de la buanderie fonctionne.
+        **L'aération de la buanderie** fonctionne.
         {% endif %}
