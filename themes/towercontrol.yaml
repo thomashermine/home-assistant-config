@@ -140,6 +140,10 @@ towercontrol:
           font-size: 15px !important;
         }
 
+        strong {
+          color: var(--accent-color);
+        }
+
         ha-card.type-thermostat #temperature {
           top: 55%!important;
         }    
