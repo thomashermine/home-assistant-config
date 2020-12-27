@@ -136,10 +136,6 @@ towercontrol:
           font-size: 15px !important;
         }
 
-        #root > * {
-          flex: auto!important;
-        }
-
         ha-card.type-thermostat #temperature {
           top: 55%!important;
         }    
@@ -151,7 +147,12 @@ towercontrol:
           display: none!important;
         }  
 
-
+    hui-horizontal-stack-card:
+      $: |
+      #root > * {
+        flex: inherit!important;
+      }
+          
     .: |
       ha-card > .card-header {
         letter-spacing: 0;
