@@ -85,6 +85,7 @@ towercontrol:
 
   # Cards
   ha-card-box-shadow: 0
+  mdc-icon-size: 64px
   card-background-color: var(--primary-background-color)
   paper-card-background-color: var(--primary-background-color)
   paper-listbox-background-color: var(--primary-background-color)
@@ -163,18 +164,21 @@ towercontrol:
         border-radius: 13.75px;
         border-color: var(--primary-color);
         border-width: 3px ;
-        margin: 10px;
-        height: 60px;
-        width: 60px;
+        margin: 8px;
+        width: 96px;
+        height: 96px;
         box-shadow: var(--box-shadow-main);
       }
 
       ha-card.type-button {
         border-radius: 16px;
-        align-items: flex-start!important;
-        width: 96px!important;
-        height: 96px!important;
-        padding: 16px!important;
+        border-color: var(--primary-color);
+        border-width: 3px ;
+        align-items: flex-start;
+        width: 96px;
+        height: 96px;
+        padding: 16px;
+        margin: 8px;
         box-shadow: var(--box-shadow-main);
         overflow: hidden;
       }  
