@@ -149,9 +149,9 @@ towercontrol:
 
     hui-horizontal-stack-card:
       $: |
-      #root > * {
-        flex: inherit!important;
-      }
+        #root > * {
+          flex: inherit!important;
+        }
           
     .: |
       ha-card > .card-header {
@@ -212,6 +212,10 @@ towercontrol:
         box-shadow: var(--box-shadow-soft);
         border-radius: 150px;
         padding: 4px;
+      }
+
+      ha-card.type-media-control .off.background {
+        filter: none;
       }
 
   card-mod-root-yaml: |
