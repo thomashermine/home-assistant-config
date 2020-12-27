@@ -122,11 +122,10 @@ towercontrol:
   ha-label-badge-title-font-size: 1em
   # Cards
   card-mod-card-yaml: |
-    hui-button-card: 
-      $: |
-        :host {
+    $: |
+      #root > * {
           flex: inherit!important;
-        }
+      }
     ha-markdown:
       $: |
         ha-markdown-element {
