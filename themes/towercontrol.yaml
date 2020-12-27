@@ -134,9 +134,21 @@ towercontrol:
           font-size: 15px !important;
         }
 
-        hui-horizontal-stack-card #root > * {
+        #root > * {
           flex: auto!important;
         }
+
+        ha-card.type-thermostat #temperature {
+          top: 55%!important;
+        }    
+      
+        ha-card.type-thermostat #set-values {
+          display: none;
+        }    
+        ha-card.type-thermostat #info {
+          display: none;
+        }  
+
 
     .: |
       ha-card > .card-header {
@@ -157,6 +169,12 @@ towercontrol:
 
       ha-card.type-weather-forecast {
         box-shadow:-5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08) !important
+      }
+
+      ha-card.type-thermostat #slider {
+        box-shadow:-5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08) !important;
+        border-radius: 150px;
+        padding: 4px;
       }
 
   card-mod-root-yaml: |
