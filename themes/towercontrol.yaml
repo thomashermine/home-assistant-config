@@ -122,6 +122,11 @@ towercontrol:
   ha-label-badge-title-font-size: 1em
   # Cards
   card-mod-card-yaml: |
+    hui-button-card: 
+      $: |
+      hui-button-card {
+        flex: inherit!important;
+      }
     ha-markdown:
       $: |
         ha-markdown-element {
@@ -177,6 +182,7 @@ towercontrol:
         border-color: var(--primary-color);
         border-width: 3px ;
         align-items: flex-start;
+        justify-content: flex-start; 
         width: 96px;
         height: 96px;
         padding: 16px;
@@ -210,10 +216,6 @@ towercontrol:
 
       ha-card.type-media-control .off.background {
         filter: none;
-      }
-
-      hui-button-card {
-        flex: inherit!important;
       }
 
   card-mod-root-yaml: |
