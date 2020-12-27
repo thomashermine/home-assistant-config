@@ -1,7 +1,7 @@
 # TowerControl Theme (202012)
 # ==============================================================================
 # A SoftUI infused theme.
-# Inspirations :
+# Heavily inspired by :
 # - https://github.com/KTibow/lovelace-dark-soft-ui-theme/
 # - https://github.com/KTibow/lovelace-light-soft-ui-theme/edit/main/themes/light-soft-ui.yaml
 # - https://github.com/N-l1/lovelace-soft-ui
@@ -43,6 +43,7 @@ towercontrol:
   paper-font-subhead_-_font-family: system-ui
   paper-font-subhead_-_font-weight: "550"
   paper-font-subhead_-_line-height: 2.2em
+  paper-font-body1_-_font-family: system-ui
   ha-card-header-font-family: system-ui
   ha-card-header-font-weight: "600"
   code-font-family: monospace
@@ -116,10 +117,6 @@ towercontrol:
   primary-yellow: "#FAD46B"
   dark-primary-yellow: "#DAB44B"
   tertiary-background-color: "#323545"
-  ha-card-box-shadow-inset: inset -5.5px -5.5px 5.5px 0 rgba(60, 60, 60, .5), inset 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, .5)
-  soft-ui-pressed: var(--ha-card-box-shadow-inset)
-  soft-ui-shadow: var(--ha-card-box-shadow)
-
   ha-label-badge-title-font-size: 1em
   # Cards
   card-mod-card-yaml: |
@@ -137,10 +134,15 @@ towercontrol:
           font-size: 15px !important;
         }
 
+        hui-horizontal-stack-card #root > * {
+          flex: auto!important;
+        }
+
     .: |
-      * {
-        --soft-ui-shadow: var(--ha-card-box-shadow) !important;
-        --soft-ui-pressed: var(--ha-card-box-shadow-inset) !important;
+      ha-card > .card-header {
+        letter-spacing: 0;
+        font-size: 20px !important;
+        font-weight: 700;
       }
 
       ha-card.type-glance .entity,  ha-card.type-button {
@@ -152,6 +154,11 @@ towercontrol:
         width: 60px;
         box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
       }
+
+      ha-card.type-weather-forecast {
+        box-shadow:-5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08) !important
+      }
+
   card-mod-root-yaml: |
     .: |
       /* This moves the header up. */
@@ -236,30 +243,3 @@ towercontrol:
         display: -webkit-box;
         -webkit-box-orient: vertical;
       }
-  # Style more info
-  card-mod-more-info-yaml: |
-    $: |
-      .mdc-dialog {
-        backdrop-filter: blur(2px);
-        background-color: #313438cc !important;
-      }
-      .mdc-dialog__scrim {
-        background-color: #313438cc !important;
-      }
-      .mdc-dialog .mdc-dialog__container .mdc-dialog__surface {
-        background: var(--primary-background-color);
-        border-radius: var(--ha-card-border-radius);
-        box-shadow: var(--ha-card-box-shadow);
-        transform: scale(0.9);
-        overflow: hidden;
-      }
-      .mdc-dialog__content {
-        padding: 36px !important;
-        padding-bottom: 36px !important;
-        transform: scale(1.11);
-      }
-    ha-header-bar:
-      $: |
-        .mdc-top-app-bar {
-          background: none !important;
-        }
