@@ -111,8 +111,8 @@ towercontrol:
   mdc-theme-surface: var(--primary-background-color)
 
   # Convenience
-  box-shadow-main: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
-  box-shadow-soft: -5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08) !important;
+  box-shadow-main: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08)
+  box-shadow-soft: -5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08)
   primary-name-text-color: grey
   primary-state-text-color: grey
   primary-icon-color: grey
@@ -186,8 +186,6 @@ towercontrol:
         text-align: left!important;
       }
       ha-card.type-button span:not(.state) {
-        white-space: nowrap;
-        text-overflow: ellipsis;
         max-width: 100%;
       }
       ha-card.type-button span.state {
