@@ -3,7 +3,7 @@
 # A SoftUI infused theme.
 # Heavily inspired by :
 # - https://github.com/KTibow/lovelace-dark-soft-ui-theme/
-# - https://github.com/KTibow/lovelace-light-soft-ui-theme/edit/main/themes/light-soft-ui.yaml
+# - https://github.com/KTibow/lovelace-light-soft-ui-theme/
 # - https://github.com/N-l1/lovelace-soft-ui
 #
 # Rely on :
@@ -111,6 +111,8 @@ towercontrol:
   mdc-theme-surface: var(--primary-background-color)
 
   # Convenience
+  box-shadow-main: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
+  box-shadow-soft: -5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08) !important;
   primary-name-text-color: grey
   primary-state-text-color: grey
   primary-icon-color: grey
@@ -143,10 +145,10 @@ towercontrol:
         }    
       
         ha-card.type-thermostat #set-values {
-          display: none;
+          display: none!important;
         }    
         ha-card.type-thermostat #info {
-          display: none;
+          display: none!important;
         }  
 
 
@@ -157,22 +159,42 @@ towercontrol:
         font-weight: 700;
       }
 
-      ha-card.type-glance .entity,  ha-card.type-button {
+      ha-card.type-glance .entity {
         border-radius: 13.75px;
         border-color: var(--primary-color);
         border-width: 3px ;
         margin: 10px;
         height: 60px;
         width: 60px;
-        box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
+        box-shadow: var(--box-shadow-main)
       }
 
-      ha-card.type-weather-forecast {
-        box-shadow:-5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08) !important
+      ha-card.type-button {
+        align-items: flex-start!important;
+        width: 96px!important;
+        height: 96px!important;
+        padding: 16px!important;
+        box-shadow: var(--box-shadow-main)
+      }  
+      ha-card.type-button ha-icon {
+       margin-bottom: 8px;
+      }
+      ha-card.type-button span, ha-card.type-button span.state {
+        font-size: 15px!important;
+        font-family: system-ui!important;
+        text-align: left!important;
+      }
+      ha-card.type-button span.state {
+        font-weight: 700;
+        text-transform: lowercase;
+      }
+
+      ha-card.type-weather-forecast,  ha-card.type-map, ha-card.type-picture-entity, ha-card.type-media-control {
+        box-shadow: var(--box-shadow-soft)
       }
 
       ha-card.type-thermostat #slider {
-        box-shadow:-5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08) !important;
+        box-shadow: var(--box-shadow-soft);
         border-radius: 150px;
         padding: 4px;
       }
