@@ -85,7 +85,6 @@ towercontrol:
 
   # Cards
   ha-card-box-shadow: 0
-  mdc-icon-size: 64px
   card-background-color: var(--primary-background-color)
   paper-card-background-color: var(--primary-background-color)
   paper-listbox-background-color: var(--primary-background-color)
