@@ -170,6 +170,7 @@ towercontrol:
       }
 
       ha-card.type-button {
+        border-radius: 16px;
         align-items: flex-start!important;
         width: 96px!important;
         height: 96px!important;
@@ -187,6 +188,8 @@ towercontrol:
       }
       ha-card.type-button span:not(.state) {
         max-width: 100%;
+        line-height: 1.8em;
+        overflow: hidden;
       }
       ha-card.type-button span.state {
         font-weight: 700;
