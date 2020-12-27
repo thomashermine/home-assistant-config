@@ -1,26 +1,33 @@
-# Source : https://github.com/KTibow/lovelace-light-soft-ui-theme/edit/main/themes/light-soft-ui.yaml
-# Copied on 20201225 (yes)
-# - Changed fonts
-# - Customised colors
-# - Changed a few variables here and there too
-softui-dark:
-  card-mod-theme: "softui-dark" # Must be the name of the theme!
-  # Color
+# TowerControl Theme (202012)
+# ==============================================================================
+# A SoftUI infused theme.
+# Inspirations :
+# - https://github.com/KTibow/lovelace-dark-soft-ui-theme/
+# - https://github.com/KTibow/lovelace-light-soft-ui-theme/edit/main/themes/light-soft-ui.yaml
+# - https://github.com/N-l1/lovelace-soft-ui
+#
+# Rely on :
+# - https://github.com/thomasloven/lovelace-card-mod
+#
+# Forked from dark-soft-ui-theme, then...
+# - Customized fonts & colors to my own liking
+# - Bring back a lot of custom style from N-l1 directly there, so custom style in every card is not needed
+# - Removed code for entities I don't use
+towercontrol:
+  card-mod-theme: "towercontrol" # Must be the name of the theme!
+  # Colors
   primary-color: "#B58000" # Actually kinda used as accent color
   light-primary-color: var(--primary-color)
   accent-color: "#B58000"
   mdc-theme-secondary: var(--accent-color)
-  # More colors
   success-color: "#77EB60"
   info-color: var(--primary-color)
   warning-color: "#EBEB60"
   error-color: "#D18941"
+
   # Background
   primary-background-color: "#222222"
   secondary-background-color: var(--primary-background-color)
-
-  # Helpers
-  softui-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08)
 
   # Text
   primary-text-color: "#F7F8FA"
@@ -29,6 +36,7 @@ softui-dark:
   material-secondary-text-color: var(--secondary-text-color)
   text-primary-color: "#FFFFFF"
   disabled-text-color: "#616387"
+
   # Fonts
   paper-font-headline_-_font-family: system-ui
   paper-font-headline_-_font-weight: "600"
@@ -37,8 +45,9 @@ softui-dark:
   paper-font-subhead_-_line-height: 2.2em
   ha-card-header-font-family: system-ui
   ha-card-header-font-weight: "600"
-  code-font-family: system-ui
+  code-font-family: monospace
   paper-font-common-code_-_font-family: var(--code-font-family)
+
   # Sidebar
   sidebar-icon-color: var(--primary-text-color)
   sidebar-text-color: var(--primary-text-color)
@@ -47,19 +56,23 @@ softui-dark:
   sidebar-background-color: var(--primary-background-color)
   sidebar-selected-background-color: var(--primary-background-color)
   divider-color: var(--primary-background-color)
+
   # Header
   app-header-background-color: var(--primary-background-color)
   app-header-text-color: var(--primary-text-color)
+
   # Icons
   state-icon-color: var(--primary-text-color)
   state-icon-active-color: var(--accent-color)
   state-icon-unavailable-color: var(--disabled-text-color)
+
   # Sliders
   paper-slider-knob-color: var(--primary-color)
   paper-slider-knob-start-color: var(--primary-color)
   paper-slider-pin-color: var(--primary-color)
   paper-slider-active-color: var(--accent-color)
   paper-slider-secondary-color: var(--light-primary-color)
+
   # Labels
   label-badge-background-color: var(--primary-background-color)
   label-badge-text-color: var(--primary-text-color)
@@ -68,12 +81,14 @@ softui-dark:
   label-badge-blue: "#60B1EB"
   label-badge-yellow: "#EBC860"
   label-badge-gray: "#666F80"
+
   # Cards
   ha-card-box-shadow: 0
   card-background-color: var(--primary-background-color)
   paper-card-background-color: var(--primary-background-color)
   paper-listbox-background-color: var(--primary-background-color)
   paper-item-icon-active-color: var(--accent-color)
+
   # Switches
   switch-checked-button-color: var(--primary-color)
   switch-checked-track-color: var(--primary-color)
@@ -83,14 +98,17 @@ softui-dark:
   paper-toggle-button-checked-bar-color: var(--primary-color)
   paper-toggle-button-unchecked-button-color: "#FFFFFF"
   paper-toggle-button-unchecked-bar-color: "#FFFFFF"
+
   # Tables
   table-row-background-color: var(--primary-background-color)
   table-row-alternative-background-color: var(--primary-background-color)
   data-table-background-color: var(--primary-background-color)
+
   # Dropdowns
   material-background-color: var(--primary-background-color)
   material-secondary-background-color: rgba(255, 255, 255, 0.1)
   mdc-theme-surface: var(--primary-background-color)
+
   # Convenience
   primary-name-text-color: grey
   primary-state-text-color: grey
@@ -101,30 +119,6 @@ softui-dark:
   ha-card-box-shadow-inset: inset -5.5px -5.5px 5.5px 0 rgba(60, 60, 60, .5), inset 5.5px 5.5px 5.5px 0 rgba(0, 0, 0, .5)
   soft-ui-pressed: var(--ha-card-box-shadow-inset)
   soft-ui-shadow: var(--ha-card-box-shadow)
-  red: "#eb6060"
-  red-orange: "#eb8e60"
-  orange-red: "#eb9a60"
-  orange: "#eba560"
-  orange-yellow: "#ebc860"
-  yellow-orange: "#ebd460"
-  yellow: "#ebdf60"
-  yellow-green: "#c8eb60"
-  green-yellow: "#b1eb60"
-  green: "#60eb60"
-  green-cyan: "#60eba5"
-  cyan-green: "#60ebc8"
-  cyan: "#60ebeb"
-  cyan-blue: "#60bceb"
-  blue-cyan: "#608eeb"
-  blue: "#6060eb"
-  blue-purple: "#7760eb"
-  purple-blue: "#8e60eb"
-  purple: "#a560eb"
-  purple-pink: "#bc60eb"
-  pink-purple: "#d460eb"
-  pink: "#eb60eb"
-  pink-red: "#eb60bc"
-  red-pink: "#eb608e"
 
   ha-label-badge-title-font-size: 1em
   # Cards
@@ -149,7 +143,7 @@ softui-dark:
         --soft-ui-pressed: var(--ha-card-box-shadow-inset) !important;
       }
 
-      ha-card.type-glance .entity {
+      ha-card.type-glance .entity,  ha-card.type-button {
         border-radius: 13.75px;
         border-color: var(--primary-color);
         border-width: 3px ;
@@ -158,81 +152,7 @@ softui-dark:
         width: 60px;
         box-shadow: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08) !important;
       }
-
-      ha-card.type-custom-vacuum-card > .preview {
-        --primary-color: var(--primary-background-color);
-      }
-      ha-card.type-custom-vacuum-card > .preview > * {
-        color: var(--primary-text-color);
-      }
-      ha-card.type-custom-vacuum-card > .preview > .header > .battery > ha-icon {
-        color: var(--primary-text-color);
-      }
-      ha-card.type-custom-vacuum-card > .preview > .metadata > .vacuum-name {
-        color: var(--primary-text-color);
-      }
-      ha-card.type-picture-entity,
-      ha-card.type-picture-glance {
-        padding: 10px;
-      }
-      ha-card.type-picture-entity > .footer,
-      ha-card.type-picture-glance > .box {
-        margin: 10px;
-        border-radius: 15px;
-      }
-
-      ha-card > #states > div > * {
-        padding-top: 8px;
-        padding-bottom: 8px;
-        width: 95%;
-        margin: 0 auto 0 5px;
-      }
-      ha-card > #states > div > *:not(hui-button-row):not(hui-input-select-entity-row):not(hui-input-number-entity-row):not(hui-input-text-entity-row):not(hui-cast-row) {
-        display: block;
-      }
-      ha-card.type-media-control, ha-card.type-media-control > * {
-        background-color: var(--primary-background-color) !important;
-        color: var(--secondary-text-color) !important;
-      }
-
-      ha-card.type-iframe > #root > iframe {
-        border-radius: var(--ha-card-border-radius);
-      }
-
-      ha-card > .header-footer {
-        margin: 25px 12px;
-      }
-      ha-card > .card-header {
-        box-shadow: none;
-        letter-spacing: 0;
-        font-size: 20px !important;
-        font-weight: 700;
-      }
-
-      ha-card > .card-header > hui-entities-toggle {
-        margin: 0 25px 0 -25px;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(359deg);
-        }
-      }
-      ha-icon[data-domain="fan"][data-state="on"] {
-        animation: spin 4s infinite linear;
-      }
-  # Header
-  header-height: 48px # Change this to 0px for header on the bottom. You're 1/3 there.
   card-mod-root-yaml: |
-    paper-tabs$: |
-      /* Uncomment this for header on the bottom. You're 2/3 there.
-      #selectionBar {
-        bottom: unset !important;
-      }
-      */
     .: |
       /* This moves the header up. */
       app-header {
@@ -288,13 +208,6 @@ softui-dark:
       app-header.edit-mode > div {
         padding-left: 5px;
       }
-      /* Uncomment this for header on the bottom. You're 3/3 there.
-      app-header {
-        top: calc(100vh - 60px) !important;
-        bottom: 0 !important;
-        transform: unset !important;
-      }
-      */
   # Badges
   card-mod-badge-yaml: |
     .: |
@@ -349,21 +262,4 @@ softui-dark:
       $: |
         .mdc-top-app-bar {
           background: none !important;
-        }
-  # Spin fans
-  card-mod-row-yaml: |
-    "*:first-child":
-      $: |
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(359deg);
-          }
-        }
-        state-badge {
-          {% if config.entity.startswith('fan.') and is_state(config.entity, 'on') %}
-          animation: spin 4s infinite linear;
-          {% endif %}
         }
