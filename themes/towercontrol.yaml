@@ -159,6 +159,13 @@ towercontrol:
         font-weight: 700;
       }
 
+      ha-card.type-glance {
+        --mdc-icon-size: 40px;  
+      }
+
+      ha-card.type-glance .entities {
+        padding: 0;
+      }
       ha-card.type-glance .entity {
         border-radius: 13.75px;
         border-color: var(--primary-color);
@@ -166,6 +173,7 @@ towercontrol:
         margin: 8px;
         width: 96px;
         height: 96px;
+        padding-top: 20px;
         box-shadow: var(--box-shadow-main);
       }
 
@@ -181,9 +189,6 @@ towercontrol:
         box-shadow: var(--box-shadow-main);
         overflow: hidden;
       }  
-      ha-card.type-button ha-icon {
-       margin-bottom: 8px;
-      }
       ha-card.type-button span, ha-card.type-button span.state {
         font-size: 15px!important;
         font-family: system-ui!important;
