@@ -196,7 +196,6 @@ towercontrol:
       }
       ha-card.type-button span:not(.state) {
         max-width: 100%;
-        line-height: 1.8em;
         overflow: hidden;
       }
       ha-card.type-button span.state {
