@@ -5,7 +5,7 @@
 #
 # https://www.home-assistant.io/integrations/tado/#service-tadoset_climate_timer
 #
-climate_salle_de_bain:
+climate_home_boost:
   sequence:
     - service: tado.set_climate_timer
       data_template:
