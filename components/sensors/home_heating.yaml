@@ -1,0 +1,10 @@
+---
+# home_heating
+#
+# Cumulative value of all % of need for heating in every room
+
+- platform: template
+  sensors:
+    home_heating:
+      unit_of_measurement: "percent"
+      value_template: "{{  states.sensor.living_heating.state | int + states.sensor.bureau_heating.state | int + states.sensor.chambre_heating.state | int + states.sensor.salle_de_bain_heating.state | int }}"
