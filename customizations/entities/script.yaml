@@ -1,6 +1,9 @@
 script.climate_home:
   friendly_name: À la Maison
   icon: mdi:thermometer-high
+  script.climate_home_boost:
+    friendly_name: À la Maison
+    icon: mdi:thermometer-high
 script.climate_away:
   friendly_name: Absents
   icon: mdi:thermometer
