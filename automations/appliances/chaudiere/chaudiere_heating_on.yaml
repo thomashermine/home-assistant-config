@@ -1,0 +1,17 @@
+---
+# chaudiere_heating_on
+# home_heating above 0 for 2 minutes --> Turn on chaudiere
+#
+# https://www.home-assistant.io/docs/automation/trigger/#numeric-state-trigger
+#
+
+alias: chaudiere_heating_on
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.home_heating
+    above: 0
+    for:
+      minutes: 2
+action:
+  - service: switch.turn_on
+    entity_id: switch.chaudiere
