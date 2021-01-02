@@ -6,4 +6,4 @@
 - platform: statistics
   entity_id: binary_sensor.kitchen_motion
   max_age:
-    minutes: 30
+    minutes: 5
