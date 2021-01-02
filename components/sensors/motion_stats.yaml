@@ -4,6 +4,7 @@
 # https://www.home-assistant.io/integrations/statistics/
 
 - platform: statistics
+  name: kitchen_motion_stats
   entity_id: binary_sensor.kitchen_motion
   max_age:
     minutes: 5
