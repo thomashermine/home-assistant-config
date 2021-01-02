@@ -6,6 +6,6 @@
 - platform: statistics
   name: kitchen_motion_stats
   entity_id: binary_sensor.kitchen_motion
-  sampling_size: 60
+  sampling_size: 180
   max_age:
-    seconds: 60
+    seconds: 180
