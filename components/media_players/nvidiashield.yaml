@@ -1,0 +1,8 @@
+---
+# NVIDIA Shield Android TV
+#
+# https://www.home-assistant.io/integrations/androidtv/
+#
+platform: androidtv
+name: NVIDIA Shield
+host: !secret nvidiashield_host
