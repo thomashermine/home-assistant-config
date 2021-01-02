@@ -1,0 +1,9 @@
+---
+# Stats for Motion Sensors
+#
+# https://www.home-assistant.io/integrations/statistics/
+
+- platform: statistics
+  entity_id: binary_sensor.kitchen_motion
+  max_age:
+    minutes: 30
