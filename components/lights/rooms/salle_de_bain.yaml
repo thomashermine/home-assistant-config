@@ -1,0 +1,8 @@
+- platform: mqtt
+  schema: json
+  name: Cuisine
+  command_topic: "zigbee2mqtt/cuisine/set"
+  state_topic: "zigbee2mqtt/cuisine"
+  color_temp: true
+  brightness: true
+  rgb: false
