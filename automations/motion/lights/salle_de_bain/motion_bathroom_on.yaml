@@ -5,7 +5,7 @@
 alias: "motion_bathroom_on"
 trigger:
   - platform: state
-    entity_id: binary_sensor.salle_de_bain_motion_door
+    entity_id: binary_sensor.salle_de_bain_motion_door_occupancy
     to: "on"
 action:
   service: homeassistant.turn_on
