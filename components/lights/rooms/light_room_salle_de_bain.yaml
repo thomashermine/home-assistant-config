@@ -1,7 +1,0 @@
-platform: group
-name: Salle de Bain
-entities:
-  - light.salle_de_bain_1
-  - light.salle_de_bain_2
-  - light.salle_de_bain_3
-  - light.salle_de_bain_4
