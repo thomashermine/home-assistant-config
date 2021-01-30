@@ -7,4 +7,4 @@ trigger:
     to: "single_left"
 action:
   - service: homeassistant.toggle
-    entity_id: light.bar
+    entity_id: light.cuisine_1
