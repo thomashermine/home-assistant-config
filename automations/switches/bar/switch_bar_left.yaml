@@ -3,8 +3,8 @@
 alias: switch_bar_double_toggle
 trigger:
   - platform: state
-    entity_id: sensor.bar_switch_action
-    attribute: state_left
+    entity_id: sensor.bar_switch_click
+    to: "single_left"
 action:
   - service: homeassistant.toggle
     entity_id: light.bar
