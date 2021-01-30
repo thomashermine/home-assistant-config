@@ -31,7 +31,7 @@
 
     summary_temperature_room_chambre:
       value_template: >-
-        Il fait **{{states.sensor.chambre_temperature.state| int}}°**{% if states.sensor.chambre_heating.state | int > 0 %}, bientôt **{{states.climate.chambre.attributes.temperature | int }}°**{% endif %}.
+        Il fait **{{states.sensor.chambre_temperature_temperature.state| int}}°**{% if states.sensor.chambre_heating.state | int > 0 %}, bientôt **{{states.climate.chambre.attributes.temperature | int }}°**{% endif %}.
     summary_temperature_room_living:
       value_template: >-
         Il fait **{{states.sensor.living_temperature.state| int}}°**{% if states.sensor.living_heating.state | int > 0 %}, bientôt **{{states.climate.living.attributes.temperature | int }}°**{% endif %}.
@@ -137,7 +137,7 @@
     summary_chambre:
       value_template: >-
         {{states.sensor.summary_temperature_room_chambre.state}}
-        {% if is_state("binary_sensor.terrace_door", "on") %}
+        {% if is_state("binary_sensor.terrasse_door", "on") %}
         La **porte de la terrasse** est ouverte.
         {% endif %}
     # Summary - Hall & Buanderie

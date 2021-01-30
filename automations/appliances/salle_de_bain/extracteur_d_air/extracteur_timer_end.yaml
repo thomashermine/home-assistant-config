@@ -13,7 +13,7 @@ trigger:
       entity_id: timer.extracteur_d_air_salle_de_bain
 condition:
   - condition: numeric_state
-    entity_id: sensor.bathroom_floating_humidity
+    entity_id: sensor.douche_temperature_humidity
     below: 70 # Muse be the same in extracteur_humidity_off
 action:
   - service: switch.turn_off

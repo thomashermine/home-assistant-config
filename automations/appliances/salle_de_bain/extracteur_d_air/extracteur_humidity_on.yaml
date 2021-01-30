@@ -5,7 +5,7 @@
 alias: extracteur_humidity_off
 trigger:
   - platform: numeric_state
-    entity_id: sensor.bathroom_floating_humidity
+    entity_id: sensor.douche_temperature_humidity
     above: 70
 action:
   - service: switch.turn_on

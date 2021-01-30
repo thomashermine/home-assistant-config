@@ -6,7 +6,7 @@
 alias: extracteur_humidity_off
 trigger:
   - platform: numeric_state
-    entity_id: sensor.bathroom_floating_humidity
+    entity_id: sensor.douche_temperature_humidity
     below: 70
 condition:
   - condition: state

@@ -5,7 +5,7 @@
 alias: "motion_bathroom_off"
 trigger:
   - platform: state
-    entity_id: binary_sensor.salle_de_bain_motion_door_occupancy
+    entity_id: binary_sensor.salle_de_bain_door_occupancy
     to: "off"
     for:
       minutes: 2
@@ -13,7 +13,7 @@ condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: binary_sensor.salle_de_bain_motion_door_occupancy
+      entity_id: binary_sensor.salle_de_bain_door_occupancy
       state: "off"
       for:
         minutes: 2
