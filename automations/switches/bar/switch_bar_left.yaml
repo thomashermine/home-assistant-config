@@ -4,7 +4,7 @@ alias: switch_bar_double_toggle
 trigger:
   - platform: state
     entity_id: sensor.bar_switch_click
-    to: "single_left"
+    to: "left_single"
 action:
   - service: homeassistant.toggle
     entity_id: light.cuisine_1
