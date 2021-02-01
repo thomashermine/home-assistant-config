@@ -1,6 +1,6 @@
 # Toggle plan_de_travail using bar switch
 #
-alias: switch_bar_double_toggle
+alias: switch_bar_left
 trigger:
   - platform: state
     entity_id: sensor.bar_switch_click
