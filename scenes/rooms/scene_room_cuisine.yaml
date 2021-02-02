@@ -1,85 +1,17 @@
-- name: Cuisine | On
+- name: Cuisine | Focus
   entities:
     light.plan_de_travail:
-      state: on
+      state: "on"
       brightness: 255
     light.cuisine:
-      state: on
+      state: "on"
       brightness: 255
       color_temp: 250
 
-- name: Cuisine | Early Morning
+- name: Cuisine | Focus
   entities:
     light.plan_de_travail:
-      state: on
-      brightness: 80
-
-- name: Cuisine | Waking Up
-  entities:
-    light.plan_de_travail:
-      state: on
+      state: "on"
       brightness: 255
     light.cuisine:
-      state: on
-      brightness: 125
-      color_temp: 455
-
-- name: Cuisine | Morning
-  entities:
-    light.plan_de_travail:
-      state: on
-      brightness: 255
-    light.cuisine:
-      state: on
-      brightness: 255
-      color_temp: 250
-
-- name: Cuisine | Afternoon
-  entities:
-    light.plan_de_travail:
-      state: on
-      brightness: 255
-    light.cuisine:
-      state: on
-      brightness: 255
-      color_temp: 350
-
-- name: Cuisine | Evening
-  entities:
-    light.plan_de_travail:
-      state: on
-      brightness: 255
-    light.cuisine:
-      state: on
-      brightness: 255
-      color_temp: 350
-
-- name: Cuisine | Late Evening
-  entities:
-    light.plan_de_travail:
-      state: on
-      brightness: 255
-    light.cuisine:
-      state: on
-      brightness: 255
-      color_temp: 350
-
-- name: Cuisine | Falling Asleep
-  entities:
-    light.plan_de_travail:
-      state: on
-      brightness: 255
-    light.cuisine:
-      state: on
-      brightness: 125
-      color_temp: 455
-
-- name: Cuisine | Sleeping
-  entities:
-    light.plan_de_travail:
-      state: on
-      brightness: 255
-    light.cuisine:
-      state: on
-      brightness: 125
-      color_temp: 455
+      state: "off"
