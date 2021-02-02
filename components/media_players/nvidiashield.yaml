@@ -1,0 +1,11 @@
+---
+# NVIDIA Shield Android TV
+#
+# https://www.home-assistant.io/integrations/androidtv/
+#
+platform: androidtv
+name: Shield
+host: !secret nvidiashield_host
+exclude_unnamed_apps: true
+apps:
+  com.nvidia.tegrazone3: "GeForce Now"
