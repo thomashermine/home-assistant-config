@@ -1,0 +1,28 @@
+blueprint:
+  name: TRÅDFRI Switch
+  description: |
+    Allow control of an IKEA TRÅDFRI Switch
+  domain: automation
+  input:
+    switch:
+      name: Action for Switch
+      description: Action sensor of the  IKEA TRÅDFRI Switch
+      selector:
+        entity:
+          domain: sensor
+          integration: mqtt
+    device:
+      name: Device
+      description: Device that will be toggled by this Switch
+      default: []
+      selector:
+        entity:
+mode: restart
+max_exceeded: silent
+trigger:
+  - platform: state
+    entity_id: !input "switch"
+    attribute: action
+action:
+  service: homeassistant.toggle
+  target: !input device
