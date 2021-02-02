@@ -4,9 +4,9 @@ blueprint:
     Allow control of an IKEA TRÅDFRI Switch
   domain: automation
   input:
-    switch:
-      name: Action for Switch
-      description: Action sensor of the  IKEA TRÅDFRI Switch
+    remote:
+      name: Action for Remote
+      description: Action of the  IKEA TRÅDFRI Remote
       selector:
         entity:
           domain: sensor
@@ -21,7 +21,19 @@ mode: restart
 max_exceeded: silent
 trigger:
   - platform: state
-    entity_id: !input switch
+    entity_id: !input remote
+    attribute: action
 action:
-  service: homeassistant.toggle
-  entity_id: !input entity
+  - variables:
+      command: "{{ trigger.to_state.state }}"
+  - choose:
+      - conditions:
+          - "{{ command == 'On' }}"
+        sequence:
+          - service: home_assistant.turn_on
+            target: !input entity
+      - conditions:
+          - "{{ command == 'Off' }}"
+        sequence:
+          - service: home_assistant.turn_off
+            target: !input entity
