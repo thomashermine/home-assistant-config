@@ -4,16 +4,9 @@ blueprint:
     Allow control of an Aqara Double-Gang Switch
   domain: automation
   input:
-    left_switch:
-      name: Left Switch
-      description: Action sensor for the left switch of Aqara Wireless Switch to use
-      selector:
-        entity:
-          domain: sensor
-          integration: mqtt
-    right_switch:
-      name: Left Action
-      description: Action sensor for the right switch of Aqara Wireless Switch to use
+    switch:
+      name: Action for Switch
+      description: Action sensor of the  Aqara Wireless Switch to use
       selector:
         entity:
           domain: sensor
@@ -46,10 +39,7 @@ mode: restart
 max_exceeded: silent
 trigger:
   - platform: state
-    entity_id: !input "left_switch"
-    attribute: action
-  - platform: state
-    entity_id: !input "right_switch"
+    entity_id: !input "switch"
     attribute: action
 action:
   - variables:
