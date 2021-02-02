@@ -46,7 +46,10 @@ mode: restart
 max_exceeded: silent
 trigger:
   - platform: state
-    entity_id: !input "switch"
+    entity_id: !input "left_switch"
+    attribute: action
+  - platform: state
+    entity_id: !input "right_switch"
     attribute: action
 action:
   - variables:
