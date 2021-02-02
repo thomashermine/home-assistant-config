@@ -29,7 +29,6 @@ blueprint:
       default: []
       selector:
         action: {}
-  source_url: https://gist.github.com/rhl2401/871cdc129c2d61f894407bef4b44f07d
 mode: restart
 max_exceeded: silent
 trigger:
