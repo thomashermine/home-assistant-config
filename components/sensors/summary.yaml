@@ -94,7 +94,7 @@
       value_template: >-
         {{states.sensor.summary_temperature_room_living.state}}
         {% if is_state("media_player.nvidia_shield", "playing") %}
-        {{ states.media_player.nvidia_shield_cast.attributes.media_title }}
+        Vous regardez **{{ states.media_player.nvidia_shield_cast.attributes.media_title }}**
         {% endif %}
 
     # Summary - Cuisine
