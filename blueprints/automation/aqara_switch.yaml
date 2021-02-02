@@ -12,26 +12,26 @@ blueprint:
           domain: sensor
           integration: mqtt
     press_left_single:
-      name: Single Left button press
-      description: Action to run on single left button press
+      name: Left Button (Press)
+      description: Action to run on single press, for Left Button
       default: []
       selector:
         action: {}
     press_right_single:
-      name: Single Right button press
-      description: Action to run on single right button press
+      name: Right Button (Press)
+      description: Action to run on single press, for Right Button
       default: []
       selector:
         action: {}
     press_left_hold:
-      name: Left Button hold
-      description: Action to run on hold
+      name: Left Button (Hold)
+      description: Action to run on hold, for Right Button
       default: []
       selector:
         action: {}
     press_right_hold:
-      name: Right Button hold
-      description: Action to run on hold
+      name: Right Button (Hold)
+      description: Action to run on hold, for Right Button
       default: []
       selector:
         action: {}
@@ -46,14 +46,14 @@ action:
       command: "{{ trigger.to_state.state }}"
   - choose:
       - conditions:
-          - "{{ command == 'left_single' }}"
+          - "{{ command == 'single_left' }}"
         sequence: !input "press_left_single"
       - conditions:
-          - "{{ command == 'right_single' }}"
+          - "{{ command == 'single_right' }}"
         sequence: !input "press_right_single"
       - conditions:
-          - "{{ command == 'left_hold' }}"
+          - "{{ command == 'hold_left' }}"
         sequence: !input "press_left_hold"
       - conditions:
-          - "{{ command == 'right_hold' }}"
+          - "{{ command == 'hold_right' }}"
         sequence: !input "press_right_hold"
