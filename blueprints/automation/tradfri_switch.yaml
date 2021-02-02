@@ -29,12 +29,12 @@ action:
       command: "{{ trigger.to_state.state }}"
   - choose:
       - conditions:
-          - "{{ command == 'On' }}"
+          - "{{ command == 'on' }}"
         sequence:
           - service: home_assistant.turn_on
             target: !input my_entity
       - conditions:
-          - "{{ command == 'Off' }}"
+          - "{{ command == 'off' }}"
         sequence:
           - service: home_assistant.turn_off
             target: !input my_entity
