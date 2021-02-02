@@ -4,7 +4,7 @@
 # https://www.home-assistant.io/integrations/androidtv/
 #
 platform: androidtv
-name: Shield
+name: NVIDIA Shield
 host: !secret nvidiashield_host
 exclude_unnamed_apps: true
 apps:
