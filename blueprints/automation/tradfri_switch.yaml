@@ -11,7 +11,7 @@ blueprint:
         entity:
           domain: sensor
           integration: mqtt
-    entity:
+    my_entity:
       name: Entity
       description: Entity that will be toggled by this Switch
       selector:
@@ -30,9 +30,9 @@ action:
           - "{{ command == 'On' }}"
         sequence:
           - service: home_assistant.turn_on
-            target: !input entity
+            target: !input my_entity
       - conditions:
           - "{{ command == 'Off' }}"
         sequence:
           - service: home_assistant.turn_off
-            target: !input entity
+            target: !input my_entity
