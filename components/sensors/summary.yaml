@@ -93,7 +93,7 @@
     summary_living:
       value_template: >-
         {{states.sensor.summary_temperature_room_living.state}}
-        {% if is_state("media_player.nvidia_shield", "playing") %}
+        {% if is_state("media_player.nvidia_shield_cast", "playing") %}
         Vous regardez **{{ states.media_player.nvidia_shield_cast.attributes.media_title }}**
         {% endif %}
 
