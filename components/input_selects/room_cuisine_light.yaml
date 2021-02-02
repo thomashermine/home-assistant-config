@@ -5,7 +5,7 @@
 #
 
 room_cuisine_light:
-  name: Presence
+  name: Cuisine — (Scenes)
   options:
     - chill
     - focus
