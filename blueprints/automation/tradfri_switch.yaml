@@ -5,8 +5,8 @@ blueprint:
   domain: automation
   input:
     remote:
-      name: Action for Remote
-      description: Action of the  IKEA TRÅDFRI Remote
+      name: Click for Remote
+      description: Click of the  IKEA TRÅDFRI Remote
       selector:
         entity:
           domain: sensor
@@ -22,7 +22,7 @@ max_exceeded: silent
 trigger:
   - platform: state
     entity_id: !input remote
-    attribute: action
+    attribute: click
 
 action:
   - variables:
