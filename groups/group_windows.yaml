@@ -6,4 +6,4 @@
 windows:
   entities:
     - binary_sensor.terrasse_door
-    - binary_sensor.hall_door
+    - binary_sensor.hall_door_contact

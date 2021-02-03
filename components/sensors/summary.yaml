@@ -71,7 +71,7 @@
     summary_home:
       value_template: >-
         {{states.sensor.summary_temperature_home.state}}
-        {% if is_state("binary_sensor.hall_door", "on") %}
+        {% if is_state("binary_sensor.hall_door_contact", "on") %}
         La **porte d'entrée** est ouverte.
         {% endif %}
         {% if is_state("switch.hotte", "on") %}

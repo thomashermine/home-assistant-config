@@ -8,7 +8,7 @@
 alias: "input_select_presence_coming_home"
 trigger:
   - platform: state
-    entity_id: binary_sensor.hall_door
+    entity_id: binary_sensor.hall_door_contact
     to: "on"
 condition:
   condition: or

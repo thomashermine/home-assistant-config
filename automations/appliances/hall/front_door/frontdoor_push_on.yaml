@@ -7,7 +7,7 @@
 alias: "frontdoor_on_push"
 trigger:
   - platform: state
-    entity_id: binary_sensor.front_door
+    entity_id: binary_sensor.hall_door_contact_contact
     to: "on"
 condition:
   condition: or
