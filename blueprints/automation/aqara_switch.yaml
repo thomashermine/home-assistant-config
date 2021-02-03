@@ -23,18 +23,6 @@ blueprint:
       default: []
       selector:
         action: {}
-    press_left_hold:
-      name: Left Button (Hold)
-      description: Action to run on hold, for Right Button
-      default: []
-      selector:
-        action: {}
-    press_right_hold:
-      name: Right Button (Hold)
-      description: Action to run on hold, for Right Button
-      default: []
-      selector:
-        action: {}
 mode: restart
 max_exceeded: silent
 trigger:
@@ -51,9 +39,3 @@ action:
       - conditions:
           - "{{ command == 'single_right' }}"
         sequence: !input "press_right_single"
-      - conditions:
-          - "{{ command == 'hold_left' }}"
-        sequence: !input "press_left_hold"
-      - conditions:
-          - "{{ command == 'hold_right' }}"
-        sequence: !input "press_right_hold"
