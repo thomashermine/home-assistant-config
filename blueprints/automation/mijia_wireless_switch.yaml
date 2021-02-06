@@ -1,7 +1,8 @@
 blueprint:
-  name: Aqara Wireless Switch (single, double, triple, quadruple)
-  description: "Control anything using Aqara Wireless Switch"
-  domain: automation
+  name: Mijia Wireless Switch
+  description: |
+    Allow control a Mijia Wireless Switch.
+    NOTE: On the Wireless Wall Switch, only SIMPLE, DOUBLE and HOLD are supported.  domain: automation
   input:
     switch:
       name: Switch
