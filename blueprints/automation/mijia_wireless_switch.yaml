@@ -48,6 +48,7 @@ max_exceeded: silent
 trigger:
   - platform: state
     entity_id: !input "remote"
+    attribute: click
 
 action:
   - variables:
