@@ -1,71 +1,68 @@
 blueprint:
-  name: Mijia Wireless Switch
-  description: |
-    Allow control a Mijia Wireless Switch.
-    NOTE: On the Wireless Wall Switch, only SIMPLE, DOUBLE and HOLD are supported.
+  name: Aqara Wireless Switch (single, double, triple, quadruple)
+  description: "Control anything using Aqara Wireless Switch"
   domain: automation
   input:
-    remote:
-      name: Action Sensor
-      description: Action sensor of the  Mijia Wireless Switch
+    switch:
+      name: Switch
+      description: Action sensor of Aqara Wireless Switch to use
       selector:
         entity:
           domain: sensor
           integration: mqtt
-    simple_action:
-      name: "Simple"
-      description: Action to run when a simple press occurs
+
+    press_single:
+      name: Single button press
+      description: Action to run on single button press
       default: []
       selector:
         action: {}
-    double_action:
-      name: "Double"
-      description: Action to run when a double press occurs
+
+    press_double:
+      name: Double button press
+      description: Action to run on double button press
       default: []
       selector:
         action: {}
-    triple_action:
-      name: "Triple"
-      description: Action to run when a triple press occurs
+
+    press_triple:
+      name: Triple button press
+      description: Action to run on double triple press
       default: []
       selector:
         action: {}
-    quadruple_action:
-      name: "Quadruple"
-      description: Action to run when a quadruple press occurs
+
+    press_quadruple:
+      name: Quadruple button press
+      description: Action to run on double quadruple press
       default: []
       selector:
         action: {}
-    hold_action:
-      name: "Hold"
-      description: Action to run when holding
-      default: []
-      selector:
-        action: {}
+
 mode: restart
 max_exceeded: silent
-
 trigger:
   - platform: state
-    entity_id: !input "remote"
+    entity_id: !input switch
     attribute: click
 
 action:
   - variables:
       command: "{{ trigger.to_state.state }}"
+
   - choose:
       - conditions:
-          - "{{ command == 'simple' }}"
-        sequence: !input "simple_action"
+          - "{{ command == 'single' }}"
+        sequence: !input press_single
+
       - conditions:
           - "{{ command == 'double' }}"
-        sequence: !input "double_action"
+        sequence: !input press_double
+
       - conditions:
           - "{{ command == 'triple' }}"
-        sequence: !input "triple_action"
+        sequence: !input press_triple
+
       - conditions:
           - "{{ command == 'quadruple' }}"
-        sequence: !input "quadruple_action"
-      - conditions:
-          - "{{ command == 'hold' }}"
-        sequence: !input "hold_action"
+        sequence: !input press_quadruple
