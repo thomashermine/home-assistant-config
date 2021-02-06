@@ -11,18 +11,25 @@ blueprint:
         entity:
           domain: sensor
           integration: mqtt
-    my_entity:
-      name: Entity
-      description: Entity that will be toggled by this Switch
+    on_action:
+      name: "ON"
+      description: Action to run when pressing ON
+      default: []
       selector:
-        target:
+        action: {}
+    off_action:
+      name: "OFF"
+      description: Action to run when pressing OFF
+      default: []
+      selector:
+        action: {}
 mode: restart
 max_exceeded: silent
 
 trigger:
   - platform: state
-    entity_id: !input remote
-    attribute: click
+    entity_id: !input "remote"
+    attribute: action
 
 action:
   - variables:
@@ -30,11 +37,7 @@ action:
   - choose:
       - conditions:
           - "{{ command == 'on' }}"
-        sequence:
-          - service: home_assistant.turn_on
-            target: !input my_entity
+        sequence: !input "on_action"
       - conditions:
-          - "{{ command == 'off' }}"
-        sequence:
-          - service: home_assistant.turn_off
-            target: !input my_entity
+          - "{{ command == 'single_right' }}"
+        sequence: !input "off_action"
