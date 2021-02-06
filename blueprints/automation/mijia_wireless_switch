@@ -1,0 +1,70 @@
+blueprint:
+  name: Mijia Wireless Switch
+  description: |
+    Allow control a Mijia Wireless Switch
+  domain: automation
+  input:
+    remote:
+      name: Action Sensor
+      description: Action sensor of the  Mijia Wireless Switch
+      selector:
+        entity:
+          domain: sensor
+          integration: mqtt
+    simple_action:
+      name: "Simple"
+      description: Action to run when a simple press occurs
+      default: []
+      selector:
+        action: {}
+    double_action:
+      name: "Double"
+      description: Action to run when a double press occurs
+      default: []
+      selector:
+        action: {}
+    triple_action:
+      name: "Triple"
+      description: Action to run when a triple press occurs
+      default: []
+      selector:
+        action: {}
+    quadruple_action:
+      name: "Quadruple"
+      description: Action to run when a quadruple press occurs
+      default: []
+      selector:
+        action: {}
+    hold_action:
+      name: "Hold"
+      description: Action to run when holding
+      default: []
+      selector:
+        action: {}
+mode: restart
+max_exceeded: silent
+
+trigger:
+  - platform: state
+    entity_id: !input "remote"
+    attribute: action
+
+action:
+  - variables:
+      command: "{{ trigger.to_state.state }}"
+  - choose:
+      - conditions:
+          - "{{ command == 'simple' }}"
+        sequence: !input "simple_action"
+      - conditions:
+          - "{{ command == 'double' }}"
+        sequence: !input "double_action"
+      - conditions:
+          - "{{ command == 'triple' }}"
+        sequence: !input "triple_action"
+      - conditions:
+          - "{{ command == 'quadruple' }}"
+        sequence: !input "quadruple_action"
+      - conditions:
+          - "{{ command == 'hold' }}"
+        sequence: !input "hold_action"
