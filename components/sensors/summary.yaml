@@ -11,7 +11,7 @@
         {% elif is_state("input_select.period", "waking_up") %}
         Bon réveil
         {% elif is_state("input_select.period", "afternoon") %}
-        Bonne aprés-midi
+        Bonne après-midi
         {% elif is_state("input_select.period", "evening") %}
         Bonne soirée
         {% elif is_state("input_select.period", "late_evening") %}
