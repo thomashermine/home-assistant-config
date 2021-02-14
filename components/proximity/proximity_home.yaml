@@ -8,4 +8,5 @@
 
 home:
   devices:
-    - device_tracker.arnold
+    - person.caroline
+    - person.thomas
