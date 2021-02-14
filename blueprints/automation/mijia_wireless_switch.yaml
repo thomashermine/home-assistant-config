@@ -1,5 +1,6 @@
 blueprint:
   name: Mijia Wireless Switch
+  domain: automation
   description: |
     Allow control a Mijia Wireless Switch.
     NOTE: On the Wireless Wall Switch, only SIMPLE, DOUBLE and HOLD are supported.  domain: automation
