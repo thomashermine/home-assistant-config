@@ -20,6 +20,13 @@ blueprint:
       selector:
         action: {}
 
+    hold:
+      name: Hold button
+      description: Action to run on holding button
+      default: []
+      selector:
+        action: {}
+
     press_double:
       name: Double button press
       description: Action to run on double button press
@@ -56,6 +63,10 @@ action:
       - conditions:
           - "{{ command == 'single' }}"
         sequence: !input press_single
+
+      - conditions:
+          - "{{ command == 'hold' }}"
+        sequence: !input hold
 
       - conditions:
           - "{{ command == 'double' }}"
