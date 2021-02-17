@@ -10,7 +10,7 @@ cafetiere_toggle_tts:
         - conditions:
             - condition: state
               entity_id: switch.cafetiere
-              state: off
+              state: "off"
           sequence:
             - service: input_boolean.turn_on
               entity_id: input_boolean.cafetiere_loop
@@ -30,7 +30,7 @@ cafetiere_toggle_tts:
         - conditions:
             - condition: state
               entity_id: switch.cafetiere
-              state: on
+              state: "on"
           sequence:
             - service: input_boolean.turn_on
               entity_id: input_boolean.cafetiere_loop
