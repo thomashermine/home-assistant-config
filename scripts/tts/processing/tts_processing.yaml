@@ -12,10 +12,9 @@ tts_processing:
       example: "1"
   sequence:
     - service: media_player.volume_set
-      entity_id: group.media_players_tts
       data_template:
         entity_id: "{{ media_player|default('media_player.bar') }}"
-        volume_level: "{{ media_player|default(1) }}"
+        volume_level: "{{ volume|default(1) }}"
     - service: tts.cloud_say
       data_template:
         entity_id: "{{ media_player|default('media_player.bar') }}"

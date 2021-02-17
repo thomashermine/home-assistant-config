@@ -14,7 +14,7 @@ cafetiere_toggle_tts:
           sequence:
             - service: input_boolean.turn_on
               entity_id: input_boolean.cafetiere_loop
-            - service: script.tts_say_interruption
+            - service: script.tts_processing
               data_template:
                 media_player: media_player.chambre
                 volume: 0.5
@@ -34,7 +34,7 @@ cafetiere_toggle_tts:
           sequence:
             - service: input_boolean.turn_on
               entity_id: input_boolean.cafetiere_loop
-            - service: script.tts_say_interruption
+            - service: script.tts_processing
               data_template:
                 media_player: media_player.chambre
                 volume: 0.5
