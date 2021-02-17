@@ -1,0 +1,8 @@
+platform: mqtt
+schema: json
+name: Bar
+command_topic: "zigbee2mqtt/bar/set"
+state_topic: "zigbee2mqtt/bar"
+color_temp: false
+brightness: true
+rgb: false
