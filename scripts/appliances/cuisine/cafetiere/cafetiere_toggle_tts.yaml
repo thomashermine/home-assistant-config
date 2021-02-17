@@ -20,10 +20,10 @@ cafetiere_toggle_tts:
                 volume: 0.5
                 message: >
                   {{ [
-                  "La cafetière est allumée",
-                  "La cafetière est maintenant allumée",
-                  "La cafetière vient d'être allumée",
-                  "Je viens d'allumer la cafetière",
+                  "Bonjour! La cafetière est allumée",
+                  "Psst, La cafetière est maintenant allumée",
+                  "Hello! La cafetière vient d'être allumée",
+                  "Bonjour! Je viens d'allumer la cafetière",
                   ] |random }}
 
         # Cafetiere On --> Off
@@ -32,7 +32,7 @@ cafetiere_toggle_tts:
               entity_id: switch.cafetiere
               state: "on"
           sequence:
-            - service: input_boolean.turn_on
+            - service: input_boolean.turn_off
               entity_id: input_boolean.cafetiere_loop
             - service: script.tts_processing
               data_template:
