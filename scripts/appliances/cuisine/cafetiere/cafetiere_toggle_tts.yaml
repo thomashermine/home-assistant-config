@@ -17,7 +17,7 @@ cafetiere_toggle_tts:
             - service: script.tts_processing
               data_template:
                 media_player: media_player.chambre
-                volume: 0.5
+                volume: 0.3
                 message: >
                   {{ [
                   "Bonjour! La cafetière est allumée",
