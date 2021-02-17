@@ -53,7 +53,7 @@ max_exceeded: silent
 trigger:
   - platform: state
     entity_id: !input switch
-    attribute: click
+    attribute: action
 
 action:
   - variables:
