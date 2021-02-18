@@ -23,5 +23,4 @@ action:
     target:
       # Turn off whichever entity triggered the automation.
       entity_id: "{{ trigger.entity_id }}"
-    data:
       temperature: 24
