@@ -9,7 +9,10 @@
 alias: climate_hack_22
 trigger:
   - platform: numeric_state
-    entity_id: climate.bureau, climate.chambre, climate.living
+    entity_id:
+      - climate.bureau
+      - climate.chambre
+      - climate.living
     attribute: temperature
     above: 21.9
     below: 22.1
