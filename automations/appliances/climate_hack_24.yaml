@@ -17,7 +17,7 @@ trigger:
     above: 23.9
     below: 24.1
     for:
-      seconds: 30
+      minutes: 45
 action:
   - service: climate.set_temperature
     data_template:
