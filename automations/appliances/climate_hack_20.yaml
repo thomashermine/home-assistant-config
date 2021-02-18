@@ -6,7 +6,7 @@
 # https://www.home-assistant.io/docs/automation/trigger/#numeric-state-trigger
 #
 
-alias: climate_hack_24
+alias: climate_hack_20
 trigger:
   - platform: numeric_state
     entity_id:
@@ -14,10 +14,10 @@ trigger:
       - climate.chambre
       - climate.living
     attribute: temperature
-    above: 23.9
-    below: 24.1
+    above: 19.9
+    below: 21.1
     for:
-      minutes: 45
+      minutes: 30
 action:
   - service: climate.set_temperature
     data_template:
