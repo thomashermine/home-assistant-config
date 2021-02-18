@@ -17,8 +17,8 @@ trigger:
       seconds: 30
 action:
   - service: climate.set_temperature
-    data:
-      temperature: 24
     target:
       # Turn off whichever entity triggered the automation.
       entity_id: "{{ trigger.entity_id }}"
+    data:
+      temperature: 24
