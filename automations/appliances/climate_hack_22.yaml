@@ -1,0 +1,24 @@
+---
+# climate_hack_22
+# Hack while waiting for the plumber... avoid "knock-knock" noise when
+# valve is at oscilation position
+#
+# https://www.home-assistant.io/docs/automation/trigger/#numeric-state-trigger
+#
+
+alias: climate_hack_22
+trigger:
+  - platform: numeric_state
+    entity_id: climate.bureau, climate.chambre, climate.living
+    attribute: temperature
+    above: 21.9
+    below: 22.1
+    for:
+      seconds: 30
+action:
+  - service: climate.set_temperature
+    data:
+      temperature: 24
+    target:
+      # Turn off whichever entity triggered the automation.
+      entity_id: "{{ trigger.entity_id }}"
