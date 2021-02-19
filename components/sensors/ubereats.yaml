@@ -1,0 +1,81 @@
+---
+# Sensors for UberEats orders
+
+# https://gist.github.com/donkawechico/30399f34fa88f0c560f9eb0c756d2efa
+
+- platform: rest
+  name: Uber Eats Orders Count
+  resource: https://www.ubereats.com/api/getActiveOrdersV1
+  method: POST
+  headers:
+    Content-Type: application/json
+    X-CSRF-Token: x
+    Cookie: "sid=QA.CAESEHjXd_iQnk7qnyXNY8tU_g0YlJ_eggYiATEqJGJhZjJmODRmLTc2MzgtNDk0My1hMTZiLTc3MzZkZmNlZjEzZDJA9eHhz18548SJ6OXoBBE5Whn_iUyr0bExNxjCQ3vdRn6bPY3M0B9Az06_SfY9_SO7Wtjus4lyNJpWYMDu2RVOcDoBMUINLnViZXJlYXRzLmNvbQ.2JcTyXe4wicxzbsxv7r3ncWH8COY8kmtwHg-9P9ok8w"
+  payload: '{"timezone":"America/Los_Angeles"}'
+  force_update: true
+  value_template: >
+    {{ value_json.data.orders | count | int }}
+  unit_of_measurement: "orders"
+  scan_interval: 60
+- platform: rest
+  name: Uber Eats Orders JSON
+  json_attributes:
+    - uuid
+    - feedCards
+    - activeOrderOverview
+    - contacts
+  json_attributes_path: "$.data.orders[0]"
+  resource: https://www.ubereats.com/api/getActiveOrdersV1
+  method: POST
+  headers:
+    Content-Type: application/json
+    X-CSRF-Token: x
+    Cookie: "sid=QA.CAESEHjXd_iQnk7qnyXNY8tU_g0YlJ_eggYiATEqJGJhZjJmODRmLTc2MzgtNDk0My1hMTZiLTc3MzZkZmNlZjEzZDJA9eHhz18548SJ6OXoBBE5Whn_iUyr0bExNxjCQ3vdRn6bPY3M0B9Az06_SfY9_SO7Wtjus4lyNJpWYMDu2RVOcDoBMUINLnViZXJlYXRzLmNvbQ.2JcTyXe4wicxzbsxv7r3ncWH8COY8kmtwHg-9P9ok8w"
+  payload: '{"timezone":"America/Los_Angeles"}'
+  force_update: true
+  value_template: "{{ value_json.data.orders[0].feedCards[0].status.currentProgress }}"
+  scan_interval: 86400
+- platform: template
+  sensors:
+    uber_eats_order:
+      value_template: >-
+        {{ states("sensor.uber_eats_orders_json") }}
+      attribute_templates:
+        order_id: >-
+          {{ state_attr("sensor.uber_eats_orders_json", "uuid") if not is_state("sensor.uber_eats_orders_json", "unknown") else "N/A" }}
+        eta: >-
+          {{ state_attr("sensor.uber_eats_orders_json", "feedCards")[0].status.title  if not is_state("sensor.uber_eats_orders_json", "unknown") else "N/A" }}
+        order_status_description: >-
+          {{ state_attr("sensor.uber_eats_orders_json", "feedCards")[0].status.timelineSummary if not is_state("sensor.uber_eats_orders_json", "unknown") else "N/A" }}
+        order_status: >-
+          {{ state_attr("sensor.uber_eats_orders_json", "feedCards")[0].status.currentProgress if not is_state("sensor.uber_eats_orders_json", "unknown") else "N/A" }}
+        restaurant_name: >-
+          {{ state_attr("sensor.uber_eats_orders_json", "activeOrderOverview").title if not is_state("sensor.uber_eats_orders_json", "unknown") else "N/A" }}
+        courier_name: >-
+          {{ state_attr("sensor.uber_eats_orders_json", "contacts")[0].title if not is_state("sensor.uber_eats_orders_json", "unknown") else "N/A" }}
+        courier_description: >-
+          {{ state_attr("sensor.uber_eats_orders_json", "feedCards")[1].courier[0].description if not is_state("sensor.uber_eats_orders_json", "unknown") else "N/A" }}
+    uber_eats_eta:
+      friendly_name: "Uber Eats Order ETA"
+      # The Uber Eats backend returns eta as "3:07" instead of "3:07 pm"
+      # All this work is to take "3:07" and generate a full timestamp for
+      # use in automations
+      value_template: >
+        {% set eta = state_attr("sensor.uber_eats_order","eta") %}
+        {% set current_date = states('sensor.date') %}
+        {% set hour_offset = 12 if now().hour >= 12 else 0 %}
+        {% set uber_date_time = strptime(current_date + ' ' + eta + ':00', '%H:%M:%S') %}
+        {% set uber_timestamp = as_timestamp(uber_date_time) + (hour_offset*60*60) %}
+        {{ uber_timestamp | timestamp_local }}
+    uber_eats_minutes_eta:
+      value_template: >
+        {% set curTime = states('sensor.date_time_iso')  %}
+        {% set orderEta = states("sensor.uber_eats_eta") %}
+        {{ ((as_timestamp(orderEta) - as_timestamp(curTime)) / 60) | int }}
+    uber_eats_readable_eta:
+      friendly_name: "Uber Eats Order Readable ETA"
+      value_template: >
+        {% set eta = state_attr("sensor.uber_eats_order","eta") %}
+    uber_eats_status_desc:
+      friendly_name: "Uber Eats Order Status Description"
+      value_template: '{{ state_attr("sensor.uber_eats_order","order_status_description") }}'

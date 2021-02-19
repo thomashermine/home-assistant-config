@@ -1,0 +1,16 @@
+---
+# Notify when UberEats Courier is nearly here
+#
+# https://gist.github.com/donkawechico/30399f34fa88f0c560f9eb0c756d2efa
+
+alias: ubereats_notify
+trigger:
+  - entity_id:
+      - sensor.uber_eats_new_eta
+    platform: state
+condition: []
+action:
+  - service: script.tts_say_interruption
+    data_template:
+      message: "{{ state_attr('sensor.uber_eats_order','order_status_description') }}. Arrivée prévue {{ state_attr('sensor.uber_eats_order','eta') }}"
+mode: single

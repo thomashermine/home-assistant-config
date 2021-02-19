@@ -1,0 +1,18 @@
+---
+# Automation to increase refresh rate of UberEats sensors
+# when we have an ongoing order
+#
+# https://gist.github.com/donkawechico/30399f34fa88f0c560f9eb0c756d2efa
+
+alias: ubereats_update_sensor
+trigger:
+  - minutes: "*"
+    platform: time_pattern
+condition:
+  - condition: state
+    entity_id: binary_sensor.uber_eats_has_new_order
+    state: "on"
+action:
+  - data: {}
+    entity_id: sensor.uber_eats_orders_json
+    service: homeassistant.update_entity
