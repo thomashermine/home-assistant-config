@@ -29,7 +29,7 @@ action:
         "Caroline arrive",
         ] |random }}
   # Notify Caroline that Thomas is aware of that
-  - service: notify.notify_thomas
+  - service: notify.notify_caroline
     data:
       title: "Bon retour à la maison. 🏡"
       message: Thomas est prévenu de votre arrivée
