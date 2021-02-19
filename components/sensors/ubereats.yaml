@@ -10,7 +10,7 @@
   headers:
     Content-Type: application/json
     X-CSRF-Token: x
-    Cookie: "sid=QA.CAESEHjXd_iQnk7qnyXNY8tU_g0YlJ_eggYiATEqJGJhZjJmODRmLTc2MzgtNDk0My1hMTZiLTc3MzZkZmNlZjEzZDJA9eHhz18548SJ6OXoBBE5Whn_iUyr0bExNxjCQ3vdRn6bPY3M0B9Az06_SfY9_SO7Wtjus4lyNJpWYMDu2RVOcDoBMUINLnViZXJlYXRzLmNvbQ.2JcTyXe4wicxzbsxv7r3ncWH8COY8kmtwHg-9P9ok8w"
+    Cookie: "_userUuid={{ !secret uber_eats_uuid }}; sid={{ !secret uber_eats_sid }};"
   payload: '{"timezone":"America/Los_Angeles"}'
   force_update: true
   value_template: >
