@@ -6,7 +6,7 @@
 alias: ubereats_notify_eta
 trigger:
   - entity_id:
-      - sensor.uber_eats_new_eta
+      - sensor.uber_eats_status_desc
     platform: state
 condition: []
 action:

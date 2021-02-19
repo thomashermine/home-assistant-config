@@ -73,9 +73,8 @@
       value_template: >-
 
         {% if is_state("binary_sensor.uber_eats_has_new_order","on") -%}
-        Une commande UberEats chez **{{ states.sensor.uber_eats_order.attributes.restaurant_name }}** est en cours, elle est attendue à **{{ states.sensor.uber_eats_order.attributes.eta  }}**
+        Une commande UberEats chez **{{ states.sensor.uber_eats_order.attributes.restaurant_name }}** est en cours, elle est attendue à **{{ states.sensor.uber_eats_order.attributes.eta  }}**.
         {%- endif %}
-
         {{states.sensor.summary_temperature_home.state}}
         {% if is_state("binary_sensor.hall_door_contact", "on") %}
         La **porte d'entrée** est ouverte.
