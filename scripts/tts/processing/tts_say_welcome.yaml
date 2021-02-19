@@ -2,6 +2,7 @@ tts_say_welcome:
   sequence:
     - service: script.tts_processing
       data_template:
+        entity_id: "{{ entity_id }}"
         media_player: "{{ media_player }}"
         volume_level: "{{ volume_level|default(1) }}"
         message: >
