@@ -72,10 +72,6 @@
         {% set curTime = states('sensor.date_time_iso')  %}
         {% set orderEta = states("sensor.uber_eats_eta") %}
         {{ ((as_timestamp(orderEta) - as_timestamp(curTime)) / 60) | int }}
-    uber_eats_readable_eta:
-      friendly_name: "Uber Eats Order Readable ETA"
-      value_template: >
-        {% set eta = state_attr("sensor.uber_eats_order","eta") %}
     uber_eats_status_desc:
       friendly_name: "Uber Eats Order Status Description"
       value_template: '{{ state_attr("sensor.uber_eats_order","order_status_description") }}'
