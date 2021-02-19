@@ -10,7 +10,7 @@
   headers:
     Content-Type: application/json
     X-CSRF-Token: x
-    Cookie: "_userUuid=baf2f84f-7638-4943-a16b-7736dfcef13d; sid=QA.CAESEJ2bf4s5dkotn0mkTfa2JXoY_KreggYiATEqJGJhZjJmODRmLTc2MzgtNDk0My1hMTZiLTc3MzZkZmNlZjEzZDJAf6QhgaPjiIB552_JW_glEEdPBmypw5yPGiqll_xPKDCSd52F9dAQ14LyM_pH6H0lETx8mF4BBMEoReUl2ltGMzoBMUINLnViZXJlYXRzLmNvbQ.ydgHpntkO2ZLAJtap3e-ENQc6WHn68hwuNXEC_P3feQ; "
+    Cookie: _userUuid=baf2f84f-7638-4943-a16b-7736dfcef13d; sid=QA.CAESEJ2bf4s5dkotn0mkTfa2JXoY_KreggYiATEqJGJhZjJmODRmLTc2MzgtNDk0My1hMTZiLTc3MzZkZmNlZjEzZDJAf6QhgaPjiIB552_JW_glEEdPBmypw5yPGiqll_xPKDCSd52F9dAQ14LyM_pH6H0lETx8mF4BBMEoReUl2ltGMzoBMUINLnViZXJlYXRzLmNvbQ.ydgHpntkO2ZLAJtap3e-ENQc6WHn68hwuNXEC_P3feQ;
   payload: '{"timezone":"America/Los_Angeles"}'
   force_update: true
   value_template: >
@@ -30,7 +30,7 @@
   headers:
     Content-Type: application/json
     X-CSRF-Token: x
-    Cookie: "_userUuid=baf2f84f-7638-4943-a16b-7736dfcef13d; sid=QA.CAESEJ2bf4s5dkotn0mkTfa2JXoY_KreggYiATEqJGJhZjJmODRmLTc2MzgtNDk0My1hMTZiLTc3MzZkZmNlZjEzZDJAf6QhgaPjiIB552_JW_glEEdPBmypw5yPGiqll_xPKDCSd52F9dAQ14LyM_pH6H0lETx8mF4BBMEoReUl2ltGMzoBMUINLnViZXJlYXRzLmNvbQ.ydgHpntkO2ZLAJtap3e-ENQc6WHn68hwuNXEC_P3feQ; "
+    Cookie: _userUuid=baf2f84f-7638-4943-a16b-7736dfcef13d; sid=QA.CAESEJ2bf4s5dkotn0mkTfa2JXoY_KreggYiATEqJGJhZjJmODRmLTc2MzgtNDk0My1hMTZiLTc3MzZkZmNlZjEzZDJAf6QhgaPjiIB552_JW_glEEdPBmypw5yPGiqll_xPKDCSd52F9dAQ14LyM_pH6H0lETx8mF4BBMEoReUl2ltGMzoBMUINLnViZXJlYXRzLmNvbQ.ydgHpntkO2ZLAJtap3e-ENQc6WHn68hwuNXEC_P3feQ;
   payload: '{"timezone":"America/Los_Angeles"}'
   force_update: true
   value_template: "{{ value_json.data.orders[0].feedCards[0].status.currentProgress }}"
