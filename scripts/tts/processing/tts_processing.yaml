@@ -7,14 +7,14 @@ tts_processing:
     media_player:
       description: "media_player entity to use. Defaults to media_player.bar"
       example: "media_player.bar"
-    volume:
+    volume_level:
       description: "Volume, defaults to 1"
       example: "1"
   sequence:
     - service: media_player.volume_set
       data_template:
         entity_id: "{{ media_player|default('media_player.bar') }}"
-        volume_level: "{{ volume|default(1) }}"
+        volume_level: "{{ volume_level|default(1) }}"
     - service: tts.cloud_say
       data_template:
         entity_id: "{{ media_player|default('media_player.bar') }}"
