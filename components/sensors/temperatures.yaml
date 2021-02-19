@@ -6,18 +6,13 @@
 - platform: template
   sensors:
     living_temperature_int:
-      unit_of_measurement: "celsius"
       value_template: "{{states.sensor.living_tado_temperature.state | int}}"
     chambre_temperature_int:
-      unit_of_measurement: "celsius"
       value_template: "{{states.sensor.chambre_temperature_temperature.state | int}}"
     cuisine_temperature_int:
-      unit_of_measurement: "celsius"
       # TODO: Use  proper sensor
       value_template: "{{states.sensor.bar_switch_temperature.state | int}}"
     salle_de_bain_temperature_int:
-      unit_of_measurement: "celsius"
       value_template: "{{states.sensor.douche_temperature_temperature.state | int}}"
     entresol_temperature_int:
-      unit_of_measurement: "celsius"
       value_template: "{{states.sensor.entresol_temperature.state | int}}"
