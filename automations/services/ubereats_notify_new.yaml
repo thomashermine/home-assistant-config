@@ -12,11 +12,11 @@ condition: []
 action:
   - service: script.tts_processing
     data_template:
-    message: >
-      {{ [
-      "Wouhou! Une commande UberEats chez {{ states.sensor.uber_eats_order.attributes.restaurant_name }} est en cours, elle est attendue dans {{ states.sensor.uber_eats_minutes_eta  }} minutes.",
-      "Génial! Une commande UberEats chez {{ states.sensor.uber_eats_order.attributes.restaurant_name }} est en cours, elle est attendue dans {{ states.sensor.uber_eats_minutes_eta  }} minutes.",
-      "A table! Une commande UberEats chez {{ states.sensor.uber_eats_order.attributes.restaurant_name }} est en cours, elle est attendue dans {{ states.sensor.uber_eats_minutes_eta  }} minutes.",
-      "On va manger! Une commande UberEats chez {{ states.sensor.uber_eats_order.attributes.restaurant_name }} est en cours, elle est attendue dans {{ states.sensor.uber_eats_minutes_eta  }} minutes.",
-      ] |random }}
+      message: >
+        {{ [
+        "Wouhou! Une commande UberEats chez {{ states.sensor.uber_eats_order.attributes.restaurant_name }} est en cours, elle est attendue dans {{ states.sensor.uber_eats_minutes_eta  }} minutes.",
+        "Génial! Une commande UberEats chez {{ states.sensor.uber_eats_order.attributes.restaurant_name }} est en cours, elle est attendue dans {{ states.sensor.uber_eats_minutes_eta  }} minutes.",
+        "A table! Une commande UberEats chez {{ states.sensor.uber_eats_order.attributes.restaurant_name }} est en cours, elle est attendue dans {{ states.sensor.uber_eats_minutes_eta  }} minutes.",
+        "On va manger! Une commande UberEats chez {{ states.sensor.uber_eats_order.attributes.restaurant_name }} est en cours, elle est attendue dans {{ states.sensor.uber_eats_minutes_eta  }} minutes.",
+        ] |random }}
 mode: single
