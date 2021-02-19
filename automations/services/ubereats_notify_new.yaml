@@ -5,9 +5,9 @@
 
 alias: ubereats_notify_new
 trigger:
-  - entity_id:
-      - sensor.uber_eats_new_eta
-    platform: state
+  - platform: state
+    entity_id: binary_sensor.uber_eats_has_new_order
+    to: "on"
 condition: []
 action:
   - service: script.tts_processing
