@@ -4,10 +4,10 @@ tts_say_welcome:
       data_template:
         message: >
           {{ [
-          "Bon retour, " ~ states.sensor.hosts.state,
-          "Bienvenue à la maison, " ~ states.sensor.hosts.state,
-          "Bon retour chez vous, " ~ states.sensor.hosts.state,
-          states.sensor.hosts.state+ ", bon retour à la maison",
+          "Bon retour, " ~ states.sensor.hosts.state+ ".",
+          "Bienvenue à la maison, " ~ states.sensor.hosts.state+ ".",
+          "Bon retour chez vous, " ~ states.sensor.hosts.state+ ".",
+          states.sensor.hosts.state+ ", bon retour à la maison.",
           states.sensor.hosts.state+ ", bienvenue.",
           states.sensor.hosts.state+ ", bon retour chez vous.",
           ] | random }}

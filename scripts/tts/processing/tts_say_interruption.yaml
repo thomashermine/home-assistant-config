@@ -2,6 +2,8 @@ tts_say_interruption:
   sequence:
     - service: script.tts_processing
       data_template:
+        volume_level: "{{ volume_level|default(1) }}"
+        media_player: "{{ media_player|default('media_player.bar') }}"
         message: >
           {{ [
           "Pardonnez-moi, " ~ states.sensor.hosts.state,
