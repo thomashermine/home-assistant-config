@@ -10,3 +10,11 @@ home:
   devices:
     - person.caroline
     - person.thomas
+
+home_caroline:
+  devices:
+    - person.caroline
+
+home_thomas:
+  devices:
+    - person.thomas

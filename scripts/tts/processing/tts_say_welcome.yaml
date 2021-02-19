@@ -1,4 +1,4 @@
-tts_say_interruption:
+tts_say_welcome:
   sequence:
     - service: script.tts_processing
       data_template:
