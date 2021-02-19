@@ -29,14 +29,7 @@ action:
         "Caroline arrive",
         ] |random }}
   # Notify Caroline that Thomas is aware of that
-  - service: script.tts_say_interruption
+  - service: notify.notify_thomas
     data:
-      message: >
-        {{ [
-        "Caroline rentre à la maison dans quelques minutes.",
-        "Caroline arrive à la maison dans quelques minutes.",
-        "Caroline revient à la maison.",
-        "Caroline arrive à la maison",
-        "Caroline revient.",
-        "Caroline arrive",
-        ] |random }}
+      title: "Bon retour à la maison. 🏡"
+      message: Thomas est prévenu de votre arrivée

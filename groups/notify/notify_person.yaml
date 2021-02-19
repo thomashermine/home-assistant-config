@@ -1,0 +1,9 @@
+---
+# groups.persons
+#
+# All the persons we track to set input_select.presence
+
+persons:
+  entities:
+    - person.thomas
+    - person.caroline
