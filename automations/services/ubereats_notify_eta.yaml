@@ -3,7 +3,7 @@
 #
 # https://gist.github.com/donkawechico/30399f34fa88f0c560f9eb0c756d2efa
 
-alias: ubereats_notify
+alias: ubereats_notify_eta
 trigger:
   - entity_id:
       - sensor.uber_eats_new_eta
