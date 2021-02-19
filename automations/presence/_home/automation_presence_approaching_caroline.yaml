@@ -1,15 +1,42 @@
 ---
-# presence_approaching
+# Caroline less than 1km from Home --> warn Thomas (if he is home)
 #
-# All actions triggered when presence --> approaching
+# https://www.home-assistant.io/integrations/proximity
 #
 
-alias: "presence_approaching"
+alias: "presence_approaching_caroline"
 trigger:
-  - platform: state
-    entity_id: input_select.presence
-    to: "approaching"
+  - platform: numeric_state
+    entity_id: proximity.home_caroline
+    below: 0.5
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: person.thomas
+      state: "home"
 action:
-  - service: script.climate_home
-  - service: vacuum.return_to_base
-    entity_id: vacuum.hygie
+  # TTS Announce to Thomas that Caroline is coming back
+  - service: script.tts_say_interruption
+    data:
+      message: >
+        {{ [
+        "Caroline rentre à la maison dans quelques minutes.",
+        "Caroline arrive à la maison dans quelques minutes.",
+        "Caroline revient à la maison.",
+        "Caroline arrive à la maison",
+        "Caroline revient.",
+        "Caroline arrive",
+        ] |random }}
+  # Notify Caroline that Thomas is aware of that
+  - service: script.tts_say_interruption
+    data:
+      message: >
+        {{ [
+        "Caroline rentre à la maison dans quelques minutes.",
+        "Caroline arrive à la maison dans quelques minutes.",
+        "Caroline revient à la maison.",
+        "Caroline arrive à la maison",
+        "Caroline revient.",
+        "Caroline arrive",
+        ] |random }}
