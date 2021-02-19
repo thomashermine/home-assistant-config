@@ -2,24 +2,20 @@ tts_say_interruption:
   sequence:
     - service: script.tts_processing
       data_template:
-        entity_id: "{{ media_player }}"
-        volume_level: "{{ volume|default(1) }}"
+        media_player: "{{ media_player }}"
+        volume_level: "{{ volume_level|default(1) }}"
         message: >
-          {% set hosts = "Thomas" %}
-          {%- macro sentence(hosts) -%}
           {{ [
-          "Pardonnez-moi, " ~ hosts,
-          "Excusez-moi, " ~ hosts,
-          "Pardon, " ~ hosts,
-          "Oh, " ~ hosts+" ?",
-          hosts+ "? Pardon, mais...",
-          hosts+ "? Excusez-moi.",
-          hosts+ "? Pardon d'interrompre.",
-          hosts+ "? Pardon pour l'interruption.",
+          "Pardonnez-moi, " ~ states.sensor.hosts.state,
+          "Excusez-moi, " ~ states.sensor.hosts.state,
+          "Pardon, " ~ states.sensor.hosts.state,
+          "Oh, " ~ states.sensor.hosts.state+" ?",
+          states.sensor.hosts.state+ "? Pardon, mais...",
+          states.sensor.hosts.state+ "? Excusez-moi.",
+          states.sensor.hosts.state+ "? Pardon d'interrompre.",
+          states.sensor.hosts.state+ "? Pardon pour l'interruption.",
           "Oh, pardonnez-moi, je dois vous interrompre...",
           "Pardonnez-moi, je dois vous interrompre...",
           "Excusez-moi, je dois vous interrompre.",
           ] | random }}
-          {%- endmacro -%}
-          "{{sentence(hosts)}}"
           {{ message }}
