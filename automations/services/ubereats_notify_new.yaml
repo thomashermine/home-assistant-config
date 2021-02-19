@@ -14,9 +14,9 @@ action:
     data_template:
       message: >
         {{ [
-        "Wouhou! Une commande UberEats chez " ~states.sensor.uber_eats_order.attributes.restaurant_name~ " est en cours, elle est attendue dans" ~ states.sensor.uber_eats_minutes_eta ~ " minutes.",
-        "Génial! Une commande UberEats chez " ~states.sensor.uber_eats_order.attributes.restaurant_name~ " est en cours, elle est attendue dans" ~ states.sensor.uber_eats_minutes_eta ~ " minutes.",
-        "A table! Une commande UberEats chez " ~states.sensor.uber_eats_order.attributes.restaurant_name~ " est en cours, elle est attendue dans" ~ states.sensor.uber_eats_minutes_eta ~ " minutes.",
-        "On va manger! Une commande UberEats chez " ~states.sensor.uber_eats_order.attributes.restaurant_name~ " est en cours, elle est attendue dans" ~ states.sensor.uber_eats_minutes_eta~ " minutes.",
+        "Wouhou! Une commande UberEats chez " ~states.sensor.uber_eats_order.attributes.restaurant_name~ " est en cours, elle est attendue dans " ~ states.sensor.uber_eats_minutes_eta.state ~ " minutes.",
+        "Génial! Une commande UberEats chez " ~states.sensor.uber_eats_order.attributes.restaurant_name~ " est en cours, elle est attendue dans " ~ states.sensor.uber_eats_minutes_eta.state ~ " minutes.",
+        "A table! Une commande UberEats chez " ~states.sensor.uber_eats_order.attributes.restaurant_name~ " est en cours, elle est attendue dans " ~ states.sensor.uber_eats_minutes_eta.state ~ " minutes.",
+        "On va manger! Une commande UberEats chez " ~states.sensor.uber_eats_order.attributes.restaurant_name~ " est en cours, elle est attendue dans " ~ states.sensor.uber_eats_minutes_eta.state~ " minutes.",
         ] |random }}
 mode: single
