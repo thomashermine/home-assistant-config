@@ -1,0 +1,18 @@
+---
+# Say time out loud every hours
+
+alias: "notify_speakingclock_hours"
+trigger:
+  # Every hours
+  - platform: time_pattern
+    minutes: 0
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_boolean.speakingclock_hours
+      state: "on"
+action:
+  - service: script.tts_processing
+    data_template:
+      message: "Il est {{ states.sensor.time.state }}"
