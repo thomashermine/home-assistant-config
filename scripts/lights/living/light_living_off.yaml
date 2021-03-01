@@ -10,6 +10,7 @@ light_living_off:
       data:
         entity_id:
           - light.hall
+          - light.hall_console
           - light.cuisine
         transition: 3
     - delay:

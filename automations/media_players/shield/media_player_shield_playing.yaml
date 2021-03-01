@@ -20,9 +20,10 @@ action:
         - light.bar
         - light.bar_tablette
         - light.lampe_noire
+        - light.hall_console
         - switch.guirlande_du_living
   - delay:
-      seconds: 3
+      seconds: 1
   - service: script.light_living_off
   - delay:
       seconds: 45
