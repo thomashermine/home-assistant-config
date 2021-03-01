@@ -22,7 +22,6 @@ action:
   - choose:
       - conditions:
           - condition: template
-            entity_id: media_player.nvidia_shield_cast
             value_template: "{{ not is_state('media_player.nvidia_shield_cast', 'playing') }}"
         sequence:
           - service: scene.turn_on
