@@ -31,22 +31,22 @@
 
     summary_temperature_room_chambre:
       value_template: >-
-        Il fait **{{states.sensor.chambre_temperature_temperature.state| int}}°**{% if states.sensor.chambre_heating.state | int > 0 %}, bientôt **{{states.climate.chambre.attributes.temperature | int }}°**{% endif %}.
+        Il fait **{{states.sensor.chambre_temperature_int.state}}°**{% if states.sensor.chambre_heating.state | int > 0 %}, bientôt **{{states.climate.chambre.attributes.temperature | int }}°**{% endif %}.
     summary_temperature_room_living:
       value_template: >-
-        Il fait **{{states.sensor.living_temperature.state| int}}°**{% if states.sensor.living_heating.state | int > 0 %}, bientôt **{{states.climate.living.attributes.temperature | int }}°**{% endif %}.
+        Il fait **{{states.sensor.living_temperature_int.state}}°**{% if states.sensor.living_heating.state | int > 0 %}, bientôt **{{states.climate.living.attributes.temperature | int }}°**{% endif %}.
 
     summary_temperature_room_cuisine: # TODO: Add temperature for cuisine, climate for cuisine
       value_template: >-
-        Il fait **{{states.sensor.living_temperature.state| int}}°**{% if states.sensor.living_heating.state | int > 0 %}, bientôt **{{states.climate.living.attributes.temperature | int }}°**{% endif %}.
+        Il fait **{{states.sensor.living_temperature_int.state}}°**{% if states.sensor.living_heating.state | int > 0 %}, bientôt **{{states.climate.living.attributes.temperature | int }}°**{% endif %}.
 
     summary_temperature_room_salle_de_bain:
       value_template: >-
-        Il fait **{{states.sensor.salle_de_bain_temperature.state| int}}°**{% if states.sensor.salle_de_bain_heating.state | int > 0 %}, bientôt **{{states.climate.salle_de_bain.attributes.temperature | int }}°**{% endif %}.
+        Il fait **{{states.sensor.salle_de_bain_temperature_int.state}}°**{% if states.sensor.salle_de_bain_heating.state | int > 0 %}, bientôt **{{states.climate.salle_de_bain.attributes.temperature | int }}°**{% endif %}.
 
     summary_temperature_home:
       value_template: >-
-        Il fait **{{states.sensor.living_temperature.state| int}}°** à la maison, **{{states.weather.andenne_81.attributes.temperature}}°** dehors.
+        Il fait **{{states.sensor.living_temperature_int.state}}°** à la maison, **{{states.weather.andenne_81.attributes.temperature}}°** dehors.
 
     # Summary - Home
     #  <summary_temperature_home> <major_conditions> <single_condition> <greeting>
