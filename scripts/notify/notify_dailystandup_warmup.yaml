@@ -1,0 +1,42 @@
+---
+# notify_dailystandup_warmup
+#
+# Warm us up 10 minutes before the Daily Standup
+#
+
+notify_dailystandup_warmup:
+  mode: restart
+  sequence:
+    - service: script.tts_processing
+      data_template:
+        message: >
+          {{ [
+          "Thomas, bonjour! Votre Daily va commencer dans 10 minutes.",
+          "Bonjour, Thomas. Le Daily Standup commence dans 10 minutes.",
+          "Thomas, pile le temps pour un dernier café. Le Daily Standup commence dans 10 minutes.",
+          "Thomas, votre Daily Standup commence dans 10 minutes.",
+          ] |random }}
+    - delay:
+        seconds: 15
+    - service: switch.turn_on
+      entity_id: input_boolean.speakingclock_minutes
+    - delay:
+        minutes: 9
+    - service: switch.turn_off
+      entity_id: input_boolean.speakingclock_minutes
+    - service: script.tts_processing
+      data_template:
+        message: >
+          {{ [
+          "Thomas, le Daily Standup commence",
+          "Thomas, Le Daily Standup va démarrer.",
+          "Thomas, Le Daily Standup va débuter.",
+          "Thomas, Le Daily Standup va commencer.",
+          "Thomas, voilà, le Daily Standup commence.",
+          "Thomas, voilà, le Daily Standup démarre.",
+          "Le Daily Standup va démarrer.",
+          "Le Daily Standup va débuter.",
+          "Le Daily Standup va commencer.",
+          "Voilà, le Daily Standup commence.",
+          "Voilà, le Daily Standup démarre.",
+          ] |random }}
