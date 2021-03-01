@@ -5,6 +5,7 @@
 #
 
 light_living_off:
+  mode: restart
   sequence:
     - service: light.turn_off
       data:
@@ -24,12 +25,13 @@ light_living_off:
         transition: 2
     - delay:
         seconds: 3
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.guirlande_du_living
+
     - service: light.turn_off
       data:
         entity_id:
           - light.bar_tablette
         transition: 3
-    - service: switch.turn_off
-      data:
-        entity_id:
-          - switch.guirlande_du_living
