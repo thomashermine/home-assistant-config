@@ -1,0 +1,28 @@
+---
+# Anything playing on Living TV --> Turn off the lights
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+alias: "media_player_shield_playing"
+trigger:
+  - platform: state
+    entity_id: media_player.nvidia_shield_cast
+    to: "playing"
+action:
+  - service: scene.create
+    data:
+      scene_id: living_before_playing
+      snapshot_entities:
+        - light.hall
+        - light.cuisine
+        - light.plan_de_travail
+        - light.bar
+        - light.bar_tablette
+        - light.lampe_noire
+        - switch.guirlande_du_living
+  - delay:
+      seconds: 3
+  - service: script.light_living_off
+  - delay:
+      seconds: 45
