@@ -11,6 +11,14 @@ trigger:
   - platform: state
     entity_id: media_player.nvidia_shield_cast
     to: "playing"
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: "{{ not is_state_attr('media_player.nvidia_shield_cast', 'app_name', 'Spotify') }}"
+    - condition: state
+      entity_id: input_boolean.theatre_lights
+      state: "off"
 action:
   - service: system_log.write
     data:
