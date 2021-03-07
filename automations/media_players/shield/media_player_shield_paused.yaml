@@ -17,7 +17,7 @@ condition:
       value_template: "{{ not is_state_attr('media_player.nvidia_shield_cast', 'app_name', 'Spotify') }}"
     - condition: state
       entity_id: input_boolean.theatre_lights
-      state: "off"
+      state: "on"
 action:
   # Imediately turn on the tablet of the bar
   # - service: light.turn_on //TODO: Re-enable once power adapter fixed

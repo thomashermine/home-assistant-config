@@ -16,7 +16,7 @@ condition:
       value_template: "{{ not is_state_attr('media_player.nvidia_shield_cast', 'app_name', 'Spotify') }}"
     - condition: state
       entity_id: input_boolean.theatre_lights
-      state: "off"
+      state: "on"
 action:
   - delay:
       seconds: 1 # Let media_player_shield_playing_save save stuff
