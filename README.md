@@ -1,5 +1,7 @@
 # Home Assistant Config 
 
+![5cdd36a4b9ad44e38d6e2239c5ed0b04_13_1920](https://user-images.githubusercontent.com/4315469/110234559-69c87c00-7f2b-11eb-8c5f-2d506cd05d8c.jpg)
+
 I’ve been working on my smart home since 2013, in 3 different flats.
 
 It all started with a cheap connected MiLight Light bulb... \
