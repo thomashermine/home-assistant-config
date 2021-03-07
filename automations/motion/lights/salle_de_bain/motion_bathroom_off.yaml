@@ -17,10 +17,15 @@ condition:
     - condition: state
       entity_id:
         - binary_sensor.salle_de_bain_door_occupancy
+      state: "off"
+      for:
+        minutes: 5
+    - condition: state
+      entity_id:
         - binary_sensor.salle_de_bain_motion_shower_occupancy
       state: "off"
       for:
-        minutes: 2
+        minutes: 5
 action:
   service: homeassistant.turn_off
   entity_id: light.salle_de_bain
