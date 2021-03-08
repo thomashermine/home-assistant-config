@@ -20,11 +20,9 @@ condition:
       state: "on"
 action:
   # Imediately turn on the tablet of the bar
-  # - service: light.turn_on //TODO: Re-enable once power adapter fixed
-  - service: switch.turn_on
+  - service: light.turn_on
     data:
-      # entity_id: light.bar_tablette //TODO: Re-enable once power adapter fixed
-      entity_id: switch.guirlande_du_living
+      entity_id: light.bar_tablette
   # Stil not playing after 15 seconds of interruption?
   # Turn all lights back on
   - delay:
