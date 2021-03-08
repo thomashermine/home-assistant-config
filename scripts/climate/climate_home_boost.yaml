@@ -9,6 +9,6 @@ climate_home_boost:
   sequence:
     - service: tado.set_climate_timer
       data_template:
-        entity_id: climate.living, climate.chambre, climate.bureau
+        entity_id: climate.living, climate.cuisine, climate.chambre, climate.bureau
         temperature: "{{ states.input_number.climate_home_temperature.state }}"
         time_period: "{{ states.input_text.climate_boost_duration.state }}"

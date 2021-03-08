@@ -7,9 +7,9 @@ climate_on_trip:
   sequence:
     - service: climate.set_temperature
       data_template:
-        entity_id: climate.bureau, climate.living, climate.chambre, climate.salle_de_bain
+        entity_id: climate.bureau, climate.living, climate.cuisine, climate.chambre, climate.salle_de_bain
         temperature: "{{ states.input_number.climate_on_trip_temperature.state }}"
     - service: climate.set_hvac_mode
       data:
-        entity_id: climate.bureau, climate.living, climate.chambre
+        entity_id: climate.bureau, climate.living, climate.cuisine, climate.chambre
         hvac_mode: "heat"
