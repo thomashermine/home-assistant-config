@@ -11,6 +11,7 @@ trigger:
       - switch.bar_switch_right
       - switch.chambre_switch_left
       - switch.chambre_switch_right
+    to: "off"
 
 action:
   - service: home_assistant.turn_on
