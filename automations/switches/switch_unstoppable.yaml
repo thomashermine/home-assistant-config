@@ -11,7 +11,7 @@ trigger:
       - switch.bar_switch_right
       - switch.chambre_switch_left
       - switch.chambre_switch_right
-    to: "off"
+    from: "on"
     for: "00:00:03"
 action:
   - service: switch.turn_on
