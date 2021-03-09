@@ -15,5 +15,5 @@ trigger:
     for: "00:00:03"
 action:
   - service: switch.turn_on
-    target:
+    data_template:
       entity_id: "{{ trigger.entity_id }}"
