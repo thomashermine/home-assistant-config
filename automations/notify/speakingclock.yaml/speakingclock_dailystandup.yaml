@@ -11,6 +11,9 @@ condition:
   condition: and
   conditions:
     - condition: state
+      entity_id: calendar.thomas_work_offday
+      state: "off"
+    - condition: state
       entity_id: person.thomas
       state: "home"
     - condition: time
@@ -20,6 +23,5 @@ condition:
         - wed
         - thu
         - fri
-  # TODO: Add work day sensor based on "Thomas --off" event in calendar
 action:
   - service: script.notify_dailystandup_warmup
