@@ -5,7 +5,7 @@ alias: "calendar_thermostat_off"
 trigger:
   - platform: state
     entity_id: calendar.andenne_81_thermostat
-    to: "on"
+    to: "off"
 action:
   # Turn on heating
   - service: script.climate_home

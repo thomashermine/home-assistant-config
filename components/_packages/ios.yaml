@@ -1,0 +1,16 @@
+ios:
+  push:
+    categories:
+      - name: Climate
+        identifier: "climate"
+        actions:
+          - identifier: "CLIMATE_AWAY"
+            title: "Eteindre le Thermostat"
+            activationMode: "background"
+            authenticationRequired: false
+            destructive: true
+          - identifier: "CLIMATE_HOME"
+            title: "Allumer le Thermostat"
+            activationMode: "background"
+            authenticationRequired: true
+            destructive: false
