@@ -1,0 +1,16 @@
+---
+# Actions when an event with text "Thermostat" in home calendar starts
+
+alias: "calendar_thermostat_on"
+trigger:
+  - platform: state
+    entity_id: calendar.andenne_81_thermostat
+    to: "on"
+action:
+  # Turn on heating
+  - service: script.climate_home
+  # Notify
+  - service: script.push_processing
+    data_template:
+      title: "Calendrier : Thermostat 🌡️"
+      message: "Le thermostat est reglé sur {{ states.input_number.climate_home_temperature.state | int}}°"
