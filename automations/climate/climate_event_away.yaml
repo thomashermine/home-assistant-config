@@ -14,6 +14,6 @@ action:
   - service: script.push_processing
     data_template:
       title: "Thermostat 🌡️"
-      message: "Le thermostat est reglé sur {{ states.climate.living.attributes.temperature | int}}°"
+      message: "Le thermostat est réglé sur {{ states.climate.living.attributes.temperature | int}}°."
       identifier: "climate_main"
       category: "climate_home_on_trip"

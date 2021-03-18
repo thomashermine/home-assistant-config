@@ -8,12 +8,12 @@ ios:
             title: "Eteindre le Thermostat"
             activationMode: "background"
             authenticationRequired: false
-            destructive: false
+            destructive: true
           - identifier: "CLIMATE_ON_TRIP"
             title: "❄️ Frost Protection"
             activationMode: "background"
             authenticationRequired: false
-            destructive: true
+            destructive: false
       - name: Climate (home & away)
         identifier: "climate_home_away"
         actions:
@@ -21,7 +21,7 @@ ios:
             title: "Allumer le Thermostat"
             activationMode: "background"
             authenticationRequired: false
-            destructive: true
+            destructive: false
           - identifier: "CLIMATE_AWAY"
             title: "Eteindre le Thermostat"
             activationMode: "background"
@@ -34,9 +34,9 @@ ios:
             title: "Allumer le Thermostat"
             activationMode: "background"
             authenticationRequired: false
-            destructive: true
+            destructive: false
           - identifier: "CLIMATE_ON_TRIP"
             title: "❄️ Frost Protection"
             activationMode: "background"
             authenticationRequired: false
-            destructive: true
+            destructive: false
