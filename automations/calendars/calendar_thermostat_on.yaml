@@ -14,3 +14,4 @@ action:
     data_template:
       title: "Calendrier : Thermostat 🌡️"
       message: "Le thermostat est reglé sur {{ states.input_number.climate_home_temperature.state | int}}°"
+      category: "climate_off"

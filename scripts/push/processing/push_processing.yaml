@@ -12,6 +12,9 @@ push_processing:
       data_template:
         title: "{{ title }}"
         message: "{{ message }}"
+        data:
+          push:
+            category: "{{ category }}"
 
 push_processing_critical:
   sequence:

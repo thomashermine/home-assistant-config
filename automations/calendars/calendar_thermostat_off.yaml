@@ -14,3 +14,4 @@ action:
     data_template:
       title: "Fin de l'évènement : Thermostat 🌡️"
       message: "Voulez-vous éteindre le chauffage?"
+      category: "climate_off"
