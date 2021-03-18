@@ -16,3 +16,4 @@ action:
       title: "Thermostat 🌡️"
       message: "Le thermostat est reglé sur {{ states.climate.living.attributes.temperature | int}}°"
       identifier: "climate_main"
+      category: "climate_home_away"

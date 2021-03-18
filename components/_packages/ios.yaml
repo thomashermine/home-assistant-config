@@ -8,9 +8,35 @@ ios:
             title: "Eteindre le Thermostat"
             activationMode: "background"
             authenticationRequired: false
+            destructive: false
+          - identifier: "CLIMATE_ON_TRIP"
+            title: "❄️ Frost Protection"
+            activationMode: "background"
+            authenticationRequired: false
+            destructive: true
+      - name: Climate (home & away)
+        identifier: "climate_home_away"
+        actions:
+          - identifier: "CLIMATE_HOME"
+            title: "Allumer le Thermostat"
+            activationMode: "background"
+            authenticationRequired: false
+            destructive: true
+          - identifier: "CLIMATE_AWAY"
+            title: "Eteindre le Thermostat"
+            activationMode: "background"
+            authenticationRequired: false
+            destructive: true
+      - name: Climate (home & on_trip)
+        identifier: "climate_home_on_trip"
+        actions:
+          - identifier: "CLIMATE_HOME"
+            title: "Allumer le Thermostat"
+            activationMode: "background"
+            authenticationRequired: false
             destructive: true
           - identifier: "CLIMATE_ON_TRIP"
             title: "❄️ Frost Protection"
             activationMode: "background"
             authenticationRequired: false
-            destructive: false
+            destructive: true

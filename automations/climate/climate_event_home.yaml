@@ -1,19 +1,19 @@
 ---
-# Turn climate away when receiving push notification event
+# Turn climate on trip when receiving push notification event
 
-alias: "climate_event_away"
+alias: "climate_event_home"
 trigger:
   - platform: event
     event_type: "ios.notification_action_fired"
     event_data:
-      actionName: CLIMATE_AWAY
+      actionName: CLIMATE_HOME
 action:
   # Turn heating away
-  - service: script.climate_away
+  - service: script.climate_home
   # Notify
   - service: script.push_processing
     data_template:
       title: "Thermostat 🌡️"
       message: "Le thermostat est reglé sur {{ states.climate.living.attributes.temperature | int}}°"
       identifier: "climate_main"
-      category: "climate_home_on_trip"
+      category: "climate_off"
