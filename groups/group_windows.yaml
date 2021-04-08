@@ -5,5 +5,7 @@
 
 windows:
   entities:
+    - binary_sensor.cuisine_window_contact
+    - binary_sensor.balcon_door_contact
+    - binary_sensor.living_window_contact
     - binary_sensor.terrasse_door
-    - binary_sensor.hall_door_contact
