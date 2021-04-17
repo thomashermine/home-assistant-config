@@ -1,0 +1,8 @@
+radio_reset_delayed:
+  sequence:
+    - delay:
+        seconds: 15
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio_station
+        option: "Choisir..."

@@ -1,0 +1,16 @@
+---
+# radio_player
+# Allows selection of any player for a radio to play on
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+radio_station:
+  name: Radio Station
+  options:
+    - l'Appartement
+    - Cuisine
+    - Living
+    - Chambre
+    - Salle de Bain
+  icon: mdi:cast-audio

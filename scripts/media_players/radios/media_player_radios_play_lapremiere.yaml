@@ -1,0 +1,11 @@
+radio_play_lapremiere:
+  alias: LaPremière
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio_player
+        option: "L'Appartement"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio_station
+        option: "LaPremière"

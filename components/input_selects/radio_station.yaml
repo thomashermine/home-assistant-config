@@ -1,0 +1,24 @@
+---
+# radio_station
+# Allows selection of any radio station a script will then play
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+radio_station:
+  name: Radio Station
+  options:
+    - Nova
+    - LaPremière
+    - Vivacité Bruxelles
+    - Vivacité Liège
+    - PureFM
+    - France Inter
+    - Le Mouv'
+    - Classic21
+    - BelRTL
+    - NRJ
+    - Nostalgie
+    - Contact
+    - Fun Radio
+  icon: mdi:radio-tower

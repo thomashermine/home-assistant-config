@@ -1,0 +1,68 @@
+alias: media_player_radio
+trigger:
+  - platform: state
+    entity_id: input_select.radio_station
+condition:
+  - condition: template
+    value_template: "{% if not is_state('input_select.radio_station', 'Choisir...') %}true{% endif %}"
+action:
+  - service: script.turn_on
+    entity_id: script.radio_reset_delayed
+  - service: media_player.volume_set
+    entity_id: media_player.living
+    data:
+      volume_level: 0.10
+  - service: media_player.volume_set
+    entity_id: media_player.chambre
+    data:
+      volume_level: 0.10
+  - service: media_player.volume_set
+    entity_id: media_player.salle_de_bain
+    data:
+      volume_level: 0.10
+  - service: media_player.play_media
+    data_template:
+      entity_id: >
+        {% if is_state("input_select.radio_player", "L'Appartement") %}
+          media_player.l_appartement
+        {%-elif is_state("input_select.radio_player", "Living") %}
+          media_player.living
+        {%-elif is_state("input_select.radio_player", "Cuisine") %}
+          media_player.cuisine
+        {%-elif is_state("input_select.radio_player", "Chambre") %}
+          media_player.chambre          
+        {%-elif is_state("input_select.radio_player", "Salle de Bain") %}
+          media_player.salle_de_bain
+        {% else %}
+          none
+        {% endif %}
+      # Must be in sync with input_select.radio_station
+      media_content_id: >
+        {% if is_state("input_select.radio_station", "PureFM") %}
+          https://radios.rtbf.be/pure-128.mp3
+        {% elif is_state("input_select.radio_station", "Nova") %}
+          http://novazz.ice.infomaniak.ch/novazz-128.mp3
+        {% elif is_state("input_select.radio_station", "LaPremière") %}
+          https://radios.rtbf.be/laprem1ere-128.mp3
+        {% elif is_state("input_select.radio_station", "Vivacité Bruxelles") %}
+          https://radios.rtbf.be/vivabxl-128.mp3
+        {% elif is_state("input_select.radio_station", "Vivacité Liège") %}
+          https://radios.rtbf.be/vivaliege-128.mp3
+        {% elif is_state("input_select.radio_station", "France Inter") %}
+          http://chai5she.lb.vip.cdn.dvmr.fr/franceinter-midfi.mp3
+        {% elif is_state("input_select.radio_station", "Le Mouv'") %}
+          http://direct.mouv.fr/live/mouv-midfi.mp3
+        {% elif is_state("input_select.radio_station", "Classic21") %}
+          https://radios.rtbf.be/classic21-128.mp3
+        {% elif is_state("input_select.radio_station", "BelRTL") %}
+          http://audiostream.rtl.be/belrtl128
+        {% elif is_state("input_select.radio_station", "NRJ") %}
+          http://stream.nrj.be/nrjbe-player.mp3
+        {% elif is_state("input_select.radio_station", "Nostalgie") %}
+          http://nostalgiepremium.ice.infomaniak.ch/nostalgiepremium-128.mp3
+        {% elif is_state("input_select.radio_station", "Contact") %}
+          http://audiostream.rtl.be/contactfr192
+        {% elif is_state("input_select.radio_station", "Fun Radio") %}
+          http://live.funradio.be/funradiobe-high.mp3
+        {% endif %}
+      media_content_type: "MUSIC"
