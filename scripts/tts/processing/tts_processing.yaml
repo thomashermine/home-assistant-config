@@ -5,17 +5,17 @@ tts_processing:
       description: "The message to be broadcasted"
       example: "Hello, world"
     media_player:
-      description: "media_player entity to use. Defaults to media_player.bar"
-      example: "media_player.bar"
+      description: "media_player entity to use. Defaults to media_player.living"
+      example: "media_player.living"
     volume_level:
       description: "Volume, defaults to 0.75"
       example: "1"
   sequence:
     - service: media_player.volume_set
       data_template:
-        entity_id: "{{ media_player|default('media_player.bar') }}"
+        entity_id: "{{ media_player|default('media_player.living') }}"
         volume_level: "{{ volume_level|default(0.75) }}"
     - service: tts.cloud_say
       data_template:
-        entity_id: "{{ media_player|default('media_player.bar') }}"
+        entity_id: "{{ media_player|default('media_player.living') }}"
         message: "{{ message }}"

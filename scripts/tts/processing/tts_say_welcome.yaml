@@ -3,7 +3,7 @@ tts_say_welcome:
     - service: script.tts_processing
       data_template:
         volume_level: "{{ volume_level|default(0.75) }}"
-        media_player: "{{ media_player|default('media_player.bar') }}"
+        media_player: "{{ media_player|default('media_player.living') }}"
         message: >
           {{ [
           "Bon retour, " ~ states.sensor.hosts.state+ ".",

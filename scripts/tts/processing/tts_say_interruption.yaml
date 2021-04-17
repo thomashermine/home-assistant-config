@@ -3,7 +3,7 @@ tts_say_interruption:
     - service: script.tts_processing
       data_template:
         volume_level: "{{ volume_level|default(0.75) }}"
-        media_player: "{{ media_player|default('media_player.bar') }}"
+        media_player: "{{ media_player|default('media_player.living') }}"
         message: >
           {{ [
           "Pardonnez-moi, " ~ states.sensor.hosts.state,
