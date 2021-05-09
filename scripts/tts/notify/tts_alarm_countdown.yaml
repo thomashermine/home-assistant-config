@@ -7,58 +7,69 @@
 tts_alarm_countdown:
   sequence:
     - service: script.tts_processing
-      data_template:
+      data:
         message: "Alarme activée. Dans 30 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
       entity_id: media_player.living
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
-      data_template:
+      data:
         message: "Alarme activée. Dans 25 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
       entity_id: media_player.living
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
-      data_template:
+      data:
         message: "Alarme activée. Dans 20 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
       entity_id: media_player.living
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
-      data_template:
+      data:
         message: "Alarme activée. Dans 15 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
       entity_id: media_player.living
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
-      data_template:
+      data:
         message: "Alarme activée. Dans 10 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
       entity_id: media_player.living
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
-      data_template:
+      data:
         message: "Alarme activée. Dans 5 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme. Dernier avertissement."
+    - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
       entity_id: media_player.l_appartement
