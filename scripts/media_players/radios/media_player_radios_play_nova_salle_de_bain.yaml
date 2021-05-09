@@ -1,0 +1,12 @@
+radio_play_nova_salle_de_bain:
+  alias: Nova
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio_player
+        option: "Salle de Bain"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio_station
+        option: "Nova"
+    - service: script.radio_play_selected
