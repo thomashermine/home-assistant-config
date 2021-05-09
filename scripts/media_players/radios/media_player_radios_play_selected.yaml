@@ -4,7 +4,6 @@ radio_play_selected:
   sequence:
     - service: script.tts_processing
       data_template:
-        title: "C'est parti {{ states.input_select.radio_station.state }}"
         message: >
           {{ [
           "C'est parti pour " ~states.input_select.radio_station.state ~ ".",
@@ -27,7 +26,7 @@ radio_play_selected:
           {% endif %}
 
     - delay:
-        seconds: 3
+        seconds: 8
     - service: media_player.play_media
       data_template:
         entity_id: >
