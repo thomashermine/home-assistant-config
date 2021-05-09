@@ -1,5 +1,5 @@
 radio_play_lapremiere_chambre:
-  alias: LaPremière
+  alias: LaPremière (Chambre)
   sequence:
     - service: input_select.select_option
       data:
