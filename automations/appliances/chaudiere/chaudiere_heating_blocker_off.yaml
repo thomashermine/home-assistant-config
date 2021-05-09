@@ -15,7 +15,6 @@ condition:
   conditions:
     - condition: numeric_state
       entity_id: sensor.home_heating
-      below: below
       above: 0
 action:
   - service: switch.turn_on
