@@ -4,9 +4,9 @@
 # TTS message saying some is trying to contact us.
 # Used by automation "notify_pokeme"
 #
-tts_pokeme:
+tts_alarm_countdown:
   sequence:
-    - service: script.tts_say_interruption
+    - service: script.tts_processing
       data_template:
         message: "Alarme activée. Dans 30 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
     - service: media_player.play_media
@@ -14,7 +14,7 @@ tts_pokeme:
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
-    - service: script.tts_say_interruption
+    - service: script.tts_processing
       data_template:
         message: "Alarme activée. Dans 25 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
     - service: media_player.play_media
@@ -22,7 +22,7 @@ tts_pokeme:
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
-    - service: script.tts_say_interruption
+    - service: script.tts_processing
       data_template:
         message: "Alarme activée. Dans 20 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
     - service: media_player.play_media
@@ -30,7 +30,7 @@ tts_pokeme:
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
-    - service: script.tts_say_interruption
+    - service: script.tts_processing
       data_template:
         message: "Alarme activée. Dans 15 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
     - service: media_player.play_media
@@ -38,7 +38,7 @@ tts_pokeme:
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
-    - service: script.tts_say_interruption
+    - service: script.tts_processing
       data_template:
         message: "Alarme activée. Dans 10 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
     - service: media_player.play_media
@@ -46,7 +46,7 @@ tts_pokeme:
       data:
         media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
         media_content_type: music
-    - service: script.tts_say_interruption
+    - service: script.tts_processing
       data_template:
         message: "Alarme activée. Dans 5 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme. Dernier avertissement."
     - service: media_player.play_media
