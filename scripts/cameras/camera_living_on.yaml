@@ -4,6 +4,7 @@
 # Put camera living in an enabled PTZ position
 
 camera_living_on:
+  icon: mdi:camera
   sequence:
     - service: onvif.ptz
       data:

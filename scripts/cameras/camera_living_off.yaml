@@ -4,6 +4,7 @@
 # Put camera living in a disabled PTZ position
 
 camera_living_off:
+  icon: mdi:camera-off
   sequence:
     - service: onvif.ptz
       data:

@@ -19,5 +19,3 @@ tts_processing:
       data_template:
         entity_id: "{{ media_player|default('media_player.living') }}"
         message: "{{ message }}"
-        extra:
-          title: Annonce
