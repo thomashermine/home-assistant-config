@@ -2,9 +2,6 @@ alias: media_player_radio
 trigger:
   - platform: state
     entity_id: input_select.radio_station, input_select.radio_player
-condition:
-  - condition: template
-    value_template: "{% if not is_state('input_select.radio_station', 'Choisir...') %}true{% endif %}"
 action:
   - service: script.turn_on
     entity_id: script.radio_reset_delayed
