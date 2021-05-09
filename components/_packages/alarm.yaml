@@ -1,4 +1,5 @@
 alarm_control_panel:
   - platform: manual
     name: Alarme
-    code: 1234
+    code: !secret alarm_pin
+    code_arm_required: false

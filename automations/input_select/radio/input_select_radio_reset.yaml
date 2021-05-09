@@ -16,7 +16,7 @@ action:
     data:
       entity_id: input_select.radio_station
       option: "Choisir..."
-  - service: input_select.radio_player
+  - service: input_select.select_option
     data:
-      entity_id: input_select.presence
+      entity_id: input_select.radio_player
       option: "Choisir..."
