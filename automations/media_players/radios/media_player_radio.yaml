@@ -83,3 +83,4 @@ action:
           {% elif is_state("input_select.radio_station", "Fun Radio") %}
             https://upload.wikimedia.org/wikipedia/commons/2/21/Fun_Radio_2020.png
           {% endif %}
+        title: "{{ states.input_select.radio_station.state }}"
