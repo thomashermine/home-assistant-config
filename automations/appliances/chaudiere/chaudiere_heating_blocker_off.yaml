@@ -1,0 +1,22 @@
+---
+# chaudiere_heating_blocker_off
+# Chaudiere Blocker turned off, turn on Chaudiere if needed
+#
+# https://www.home-assistant.io/docs/automation/trigger/#numeric-state-trigger
+#
+
+alias: chaudiere_heating_blocker_off
+trigger:
+  - platform: state
+    entity_id: input_boolean.chaudiere_blocker
+    to: "off"
+condition:
+  condition: and
+  conditions:
+    - condition: numeric_state
+      entity_id: sensor.home_heating
+      below: below
+      above: 0
+action:
+  - service: switch.turn_on
+    entity_id: switch.chaudiere
