@@ -6,7 +6,7 @@
 #
 
 radio_player:
-  name: Radio Station
+  name: Radio Player
   options:
     - Choisir...
     - l'Appartement
