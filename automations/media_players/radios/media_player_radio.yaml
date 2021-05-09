@@ -2,13 +2,15 @@ alias: media_player_radio
 trigger:
   - platform: state
     entity_id: input_select.radio_player
+  - platform: state
+    entity_id: input_select.radio_station
 action:
   - service: script.turn_on
     entity_id: script.radio_reset_delayed
   - service: media_player.play_media
     data_template:
       entity_id: >
-        {% if is_state("input_select.radio_player", "L'Appartement") %}
+        {% if is_state("input_select.radio_player", "l'Appartement") %}
           media_player.l_appartement
         {%-elif is_state("input_select.radio_player", "Living") %}
           media_player.living
