@@ -76,6 +76,9 @@
         Une commande UberEats chez **{{ states.sensor.uber_eats_order.attributes.restaurant_name }}** est en cours, elle est attendue à **{{ states.sensor.uber_eats_order.attributes.eta  }}**.
         {%- endif %}
         {{states.sensor.summary_temperature_home.state}}
+        {% if is_state("binary_sensor.chaudiere_blocked", "on") %}
+        Le **thermostat** est bloqué car les fenêtres sont ouvertes.
+        {% endif %}
         {% if is_state("binary_sensor.hall_door_contact", "on") %}
         La **porte d'entrée** est ouverte.
         {% endif %}
