@@ -12,6 +12,12 @@ trigger:
     above: 0
     for:
       minutes: 2
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: input_boolean.chaudiere_blocker
+      state: "off"
 action:
   - service: switch.turn_on
     entity_id: switch.chaudiere

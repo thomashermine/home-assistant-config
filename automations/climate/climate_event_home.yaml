@@ -1,5 +1,5 @@
 ---
-# Turn climate on trip when receiving push notification event
+# Turn climate on when receiving push notification event
 
 alias: "climate_event_home"
 trigger:
@@ -8,7 +8,7 @@ trigger:
     event_data:
       actionName: CLIMATE_HOME
 action:
-  # Turn heating away
+  # Turn heating on
   - service: script.climate_home
   # Notify
   - service: script.push_processing
