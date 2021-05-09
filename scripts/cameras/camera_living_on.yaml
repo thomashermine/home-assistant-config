@@ -1,0 +1,12 @@
+---
+# camera_living_on
+#
+# Put camera living in an enabled PTZ position
+
+camera_living_on:
+  sequence:
+    - service: onvif.ptz
+      data:
+        entity_id: camera.living
+        preset: Preset1
+        move_mode: GotoPreset

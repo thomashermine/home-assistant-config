@@ -12,3 +12,4 @@ presence_coming_home_on:
     - light.applique_de_la_chambre
     - light.lampadaire_de_la_chambre
     - light.cuisine
+    - script.camera_living_off

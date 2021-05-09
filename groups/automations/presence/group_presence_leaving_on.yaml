@@ -1,0 +1,9 @@
+---
+# group_presence_leaving_on
+#
+# Any item in this group will be turned on
+# when presence is set to leaving
+
+presence_leaving_on:
+  entities:
+    - script.camera_living_on

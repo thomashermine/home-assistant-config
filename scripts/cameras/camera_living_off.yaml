@@ -1,0 +1,12 @@
+---
+# camera_living_off
+#
+# Put camera living in a disabled PTZ position
+
+camera_living_off:
+  sequence:
+    - service: onvif.ptz
+      data:
+        entity_id: camera.living
+        preset: Preset3
+        move_mode: GotoPreset

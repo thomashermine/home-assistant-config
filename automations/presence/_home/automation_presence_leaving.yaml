@@ -10,5 +10,7 @@ trigger:
     entity_id: input_select.presence
     to: "leaving"
 action:
-  service: homeassistant.turn_off
-  entity_id: group.presence_leaving_off
+  - service: homeassistant.turn_off
+    entity_id: group.presence_leaving_off
+  - service: homeassistant.turn_on
+    entity_id: group.presence_leaving_on
