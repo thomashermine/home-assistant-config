@@ -5,7 +5,7 @@
 # https://www.home-assistant.io/integrations/input_select/
 #
 
-radio_station:
+radio_player:
   name: Radio Station
   options:
     - l'Appartement
