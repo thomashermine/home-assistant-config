@@ -2,6 +2,14 @@ radio_play_selected:
   alias: Lancer la Radio
   icon: mdi:play
   sequence:
+    - condition: not
+      conditions:
+        - condition: state
+          entity_id: input_select.radio_station
+          state: "Choisir..."
+        - condition: state
+          entity_id: input_select.radio_player
+          state: "Choisir..."
     - service: script.tts_processing
       data_template:
         message: >
@@ -9,6 +17,7 @@ radio_play_selected:
           "C'est parti pour " ~states.input_select.radio_station.state ~ ".",
           "" ~states.input_select.radio_station.state ~ ", c'est parti.",
           "Nous allons écouter " ~states.input_select.radio_station.state ~ ".",
+          "On écoute " ~states.input_select.radio_station.state ~ ".",
           ] |random }}
         media_player: >
           {% if is_state("input_select.radio_player", "l'Appartement") %}
@@ -179,5 +188,3 @@ radio_play_selected:
               https://upload.wikimedia.org/wikipedia/commons/2/21/Fun_Radio_2020.png
             {% endif %}
           title: "{{ states.input_select.radio_station.state }}"
-    - service: script.turn_on
-      entity_id: script.radio_reset_delayed
