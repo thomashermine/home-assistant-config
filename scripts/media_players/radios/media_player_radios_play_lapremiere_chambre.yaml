@@ -1,5 +1,6 @@
 radio_play_lapremiere_chambre:
   alias: LaPremière (Chambre)
+  icon: mdi:play
   sequence:
     - service: input_select.select_option
       data:

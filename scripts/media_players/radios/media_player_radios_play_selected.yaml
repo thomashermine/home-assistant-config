@@ -1,5 +1,6 @@
 radio_play_selected:
   alias: Lancer la Radio
+  icon: mdi:play
   sequence:
     - service: script.tts_processing
       data_template:
@@ -24,6 +25,9 @@ radio_play_selected:
           {% else %}
             none
           {% endif %}
+
+    - delay:
+        seconds: 3
     - service: media_player.play_media
       data_template:
         entity_id: >
