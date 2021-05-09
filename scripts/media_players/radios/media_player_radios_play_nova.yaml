@@ -4,7 +4,7 @@ radio_play_nova:
     - service: input_select.select_option
       data:
         entity_id: input_select.radio_player
-        option: "L'Appartement"
+        option: "l'Appartement"
     - service: input_select.select_option
       data:
         entity_id: input_select.radio_station

@@ -1,7 +1,7 @@
 alias: media_player_radio
 trigger:
   - platform: state
-    entity_id: input_select.radio_station, input_select.radio_player
+    entity_id: input_select.radio_player
 action:
   - service: script.turn_on
     entity_id: script.radio_reset_delayed
