@@ -1,0 +1,81 @@
+radio_play_selected:
+  alias: Lancer la Radio
+  sequence:
+    - service: script.turn_on
+      entity_id: script.radio_reset_delayed
+    - service: media_player.play_media
+      data_template:
+        entity_id: >
+          {% if is_state("input_select.radio_player", "l'Appartement") %}
+            media_player.l_appartement
+          {%-elif is_state("input_select.radio_player", "Living") %}
+            media_player.living
+          {%-elif is_state("input_select.radio_player", "Cuisine") %}
+            media_player.cuisine
+          {%-elif is_state("input_select.radio_player", "Chambre") %}
+            media_player.chambre          
+          {%-elif is_state("input_select.radio_player", "Salle de Bain") %}
+            media_player.salle_de_bain
+          {% else %}
+            none
+          {% endif %}
+        # Must be in sync with input_select.radio_station
+        media_content_id: >
+          {% if is_state("input_select.radio_station", "Tipik") %}
+            https://radios.rtbf.be/pure-128.mp3
+          {% elif is_state("input_select.radio_station", "Nova") %}
+            http://novazz.ice.infomaniak.ch/novazz-128.mp3
+          {% elif is_state("input_select.radio_station", "LaPremière") %}
+            https://radios.rtbf.be/laprem1ere-128.mp3
+          {% elif is_state("input_select.radio_station", "Vivacité Bruxelles") %}
+            https://radios.rtbf.be/vivabxl-128.mp3
+          {% elif is_state("input_select.radio_station", "Vivacité Liège") %}
+            https://radios.rtbf.be/vivaliege-128.mp3
+          {% elif is_state("input_select.radio_station", "France Inter") %}
+            http://chai5she.lb.vip.cdn.dvmr.fr/franceinter-midfi.mp3
+          {% elif is_state("input_select.radio_station", "Le Mouv'") %}
+            http://direct.mouv.fr/live/mouv-midfi.mp3
+          {% elif is_state("input_select.radio_station", "Classic21") %}
+            https://radios.rtbf.be/classic21-128.mp3
+          {% elif is_state("input_select.radio_station", "BelRTL") %}
+            http://audiostream.rtl.be/belrtl128
+          {% elif is_state("input_select.radio_station", "NRJ") %}
+            http://stream.nrj.be/nrjbe-player.mp3
+          {% elif is_state("input_select.radio_station", "Nostalgie") %}
+            http://nostalgiepremium.ice.infomaniak.ch/nostalgiepremium-128.mp3
+          {% elif is_state("input_select.radio_station", "Contact") %}
+            http://audiostream.rtl.be/contactfr192
+          {% elif is_state("input_select.radio_station", "Fun Radio") %}
+            http://live.funradio.be/funradiobe-high.mp3
+          {% endif %}
+        media_content_type: "MUSIC"
+        extra:
+          thumb: >
+            {% if is_state("input_select.radio_station", "Tipik") %}
+              https://upload.wikimedia.org/wikipedia/commons/1/1c/Tipikrtbf.png
+            {% elif is_state("input_select.radio_station", "Nova") %}
+              https://upload.wikimedia.org/wikipedia/commons/5/52/Nova_radio.png
+            {% elif is_state("input_select.radio_station", "LaPremière") %}
+              https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/RTBF_La_Premi%C3%A8re_logo.svg/1200px-RTBF_La_Premi%C3%A8re_logo.svg.png
+            {% elif is_state("input_select.radio_station", "Vivacité Bruxelles") %}
+              https://upload.wikimedia.org/wikipedia/fr/thumb/a/aa/Vivacite.svg/1200px-Vivacite.svg.png
+            {% elif is_state("input_select.radio_station", "Vivacité Liège") %}
+              https://upload.wikimedia.org/wikipedia/fr/thumb/a/aa/Vivacite.svg/1200px-Vivacite.svg.png
+            {% elif is_state("input_select.radio_station", "France Inter") %}
+              http://chai5she.lb.vip.cdn.dvmr.fr/franceinter-midfi.mp3
+            {% elif is_state("input_select.radio_station", "Le Mouv'") %}
+              https://upload.wikimedia.org/wikipedia/commons/1/12/Logo_Mouv%27.jpg
+            {% elif is_state("input_select.radio_station", "Classic21") %}
+              https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/RTBF_Classic_21_logo.svg/1200px-RTBF_Classic_21_logo.svg.png
+            {% elif is_state("input_select.radio_station", "BelRTL") %}
+              https://upload.wikimedia.org/wikipedia/fr/1/1a/Bel_RTL_logo_2018.png
+            {% elif is_state("input_select.radio_station", "NRJ") %}
+              https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FNRJ&psig=AOvVaw2lCw99rhlb2zhhy_hzxXgz&ust=1620651781816000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMC3q8DUvPACFQAAAAAdAAAAABAD
+            {% elif is_state("input_select.radio_station", "Nostalgie") %}
+              https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Nostalgie_Vlaanderen.png/640px-Nostalgie_Vlaanderen.png
+            {% elif is_state("input_select.radio_station", "Contact") %}
+              https://upload.wikimedia.org/wikipedia/en/e/e6/Radio_Contact_logo.png
+            {% elif is_state("input_select.radio_station", "Fun Radio") %}
+              https://upload.wikimedia.org/wikipedia/commons/2/21/Fun_Radio_2020.png
+            {% endif %}
+          title: "{{ states.input_select.radio_station.state }}"

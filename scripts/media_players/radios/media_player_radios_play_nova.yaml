@@ -9,3 +9,4 @@ radio_play_nova:
       data:
         entity_id: input_select.radio_station
         option: "Nova"
+    - service: script.radio_play_selected

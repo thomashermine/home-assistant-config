@@ -9,3 +9,4 @@ radio_play_lapremiere:
       data:
         entity_id: input_select.radio_station
         option: "LaPremière"
+    - service: script.radio_play_selected
