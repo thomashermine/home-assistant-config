@@ -12,3 +12,7 @@ trigger:
 action:
   - service: homeassistant.turn_on
     entity_id: group.presence_coming_home_on
+  - service: alarm_control_panel.alarm_disarm
+    data:
+      entity_id: alarm_control_panel.alarme
+      code: !secret alarm_pin

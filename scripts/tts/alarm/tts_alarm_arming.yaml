@@ -1,9 +1,7 @@
 ---
-# tts_pokeme
+# tts_alarm_pending
 #
-# TTS message saying some is trying to contact us.
-# Used by automation "notify_pokeme"
-#
+# TTS message & sounds when the alarm will be armed
 tts_alarm_arming:
   sequence:
     - service: script.tts_say_interruption

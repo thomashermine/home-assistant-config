@@ -1,0 +1,10 @@
+---
+# tts_alarm_pending
+#
+# TTS message & sounds when the alarm will be triggered
+#
+tts_alarm_pending:
+  sequence:
+    - service: script.tts_processing
+      data:
+        message: "Alarme activée. Dans 5 secondes, l'alarme sera declenchée. Quitter les lieux, ou désactiver l'alarme."

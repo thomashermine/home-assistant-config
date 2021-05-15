@@ -1,0 +1,14 @@
+---
+# alarm_arming
+# Action when the alarm is arming
+#
+# https://www.home-assistant.io/integrations/manual/
+#
+
+alias: alarm_arming
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.alarme
+    to: "arming"
+action:
+  - service: script.tts_alarm_arming

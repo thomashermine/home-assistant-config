@@ -1,0 +1,14 @@
+---
+# alarm_triggering
+# Any reason to trigger the alarm
+#
+# https://www.home-assistant.io/integrations/manual/
+#
+
+alias: alarm_triggering
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.alarme
+    to: "pending"
+action:
+  - service: script.tts_alarm_pending
