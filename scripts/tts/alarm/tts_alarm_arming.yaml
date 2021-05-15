@@ -15,14 +15,14 @@ tts_alarm_arming:
             entity_id: alarm_control_panel.alarme
             state: "arming"
         sequence:
-          - service: script.tts_say_interruption
+          - service: script.tts_say
             data:
               message: "L'alarme va être activée."
           - delay: 5
           - wait_template: "{{ is_state('media_player.living', 'idle') }}"
 
           - service: media_player.play_media
-            entity_id: media_player.l_appartement
+            entity_id: media_player.living
             data:
               media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
               media_content_type: music

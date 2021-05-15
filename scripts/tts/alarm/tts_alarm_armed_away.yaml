@@ -1,8 +1,8 @@
 ---
-# tts_alarm_arming
+# tts_alarm_arming_away
 #
 # TTS message & sounds when the alarm will be armed
-tts_alarm_armed:
+tts_alarm_armed_away:
   sequence:
     - service: script.tts_say
       data:
