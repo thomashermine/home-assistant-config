@@ -1,0 +1,16 @@
+---
+# Play a sound when HA restarts
+#
+# https://www.home-assistant.io/docs/automation/trigger/#home-assistant-trigger
+
+alias: homeassistant_restart_sound
+trigger:
+  - platform: homeassistant
+    event: start
+condition: []
+action:
+  - service: media_player.play_media
+    entity_id: media_player.living
+    data:
+      media_content_id: "http://192.168.1.10:8123/local/notification-restart.mp3"
+      media_content_type: music
