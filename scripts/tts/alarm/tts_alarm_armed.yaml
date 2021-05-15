@@ -1,0 +1,9 @@
+---
+# tts_alarm_arming
+#
+# TTS message & sounds when the alarm will be armed
+tts_alarm_armed:
+  sequence:
+    - service: script.tts_say
+      data:
+        message: "L'alarme est activée. Tout mouvement, tout ouverture de porte va provoquer une alarme."

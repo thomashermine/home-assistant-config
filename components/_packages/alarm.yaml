@@ -3,5 +3,5 @@ alarm_control_panel:
     name: Alarme
     code: !secret alarm_pin
     code_arm_required: false
-    arming_time: 30
+    arming_time: 60
     delay_time: 5
