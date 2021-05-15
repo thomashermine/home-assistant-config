@@ -13,18 +13,18 @@ trigger:
   - platform: state
     entity_id: binary_sensor.terrasse_door
     to: "on"
-  - platform: state
-    entity_id: binary_sensor.entresol_door_contact
-    to: "on"
-  - platform: state
-    entity_id: binary_sensor.cuisine_occupancy
-    to: "on"
-  - platform: state
-    entity_id: binary_sensor.salle_de_bain_door_occupancy
-    to: "on"
-  - platform: state
-    entity_id: binary_sensor.salle_de_bain_motion_shower_occupancy
-    to: "on"
+  # - platform: state
+  #   entity_id: binary_sensor.entresol_door_contact
+  #   to: "on"
+  # - platform: state
+  #   entity_id: binary_sensor.cuisine_occupancy
+  #   to: "on"
+  # - platform: state
+  #   entity_id: binary_sensor.salle_de_bain_door_occupancy
+  #   to: "on"
+  # - platform: state
+  #   entity_id: binary_sensor.salle_de_bain_motion_shower_occupancy
+  #   to: "on"
 condition:
   - condition: state
     entity_id: alarm_control_panel.alarme

@@ -11,5 +11,9 @@ trigger:
     entity_id: alarm_control_panel.alarme
     to: "triggered"
 action:
+  - service: script.turn_off
+    entity_id: script.tts_alarm_pending
+  - service: script.turn_off
+    entity_id: script.tts_alarm_arming
   - service: script.push_alarm_triggered
   - service: script.tts_alarm_triggered
