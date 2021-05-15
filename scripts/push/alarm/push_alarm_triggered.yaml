@@ -10,3 +10,4 @@ push_alarm_triggered:
       data:
         title: "ALARME 🚨"
         message: "L'alarme vient de se déclencher"
+        entity_id: "camera.living"

@@ -13,4 +13,4 @@ trigger:
 action:
   - service: script.turn_off
     entity_id: script.tts_alarm_arming
-  - service: script.tts_alarm_armed
+  - service: script.tts_alarm_armed_away

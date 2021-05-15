@@ -13,8 +13,10 @@ tts_alarm_triggered:
           - service: script.tts_processing
             data:
               message: "Alarme déclenchée. Propriétaire prévenu. Police prévenue. Quitter les lieux."
+              media_player: "media_player.l_appartement"
+              volume_level: 1
           - delay: 5
-          - wait_template: "{{ is_state('media_player.living', 'idle') }}"
+          - wait_template: "{{ is_state('media_player.l_appartement', 'idle') }}"
 
           - service: media_player.play_media
             entity_id: media_player.l_appartement
