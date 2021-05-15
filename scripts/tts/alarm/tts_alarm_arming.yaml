@@ -15,7 +15,7 @@ tts_alarm_arming:
             entity_id: alarm_control_panel.alarme
             state: "arming"
         sequence:
-          - service: script.tts_say
+          - service: script.tts_processing
             data:
               message: "L'alarme va être activée."
           - delay: 5
