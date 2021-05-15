@@ -1,0 +1,12 @@
+---
+# push_alarm_disarmed
+#
+# Push notification used when alarm is disarmed, and we are not home.
+#
+
+push_alarm_disarmed:
+  sequence:
+    - service: script.push_processing
+      data:
+        title: "Alarme désactivée"
+        message: "L'alarme vient d'être désactivée."

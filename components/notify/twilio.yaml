@@ -1,0 +1,14 @@
+---
+# twilio
+# Twilio notify by SMS or Phone service
+#
+# https://www.home-assistant.io/integrations/twilio_sms
+#
+
+- name: twilio_sms
+  platform: twilio_sms
+  from_number: +32495649999
+
+- name: twilio_call
+  platform: twilio_call
+  from_number: +32495649999

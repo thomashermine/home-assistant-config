@@ -24,4 +24,4 @@ condition:
         - thu
         - fri
 action:
-  - service: script.notify_dailystandup_warmup
+  - service: script.tts_dailystandup_warmup

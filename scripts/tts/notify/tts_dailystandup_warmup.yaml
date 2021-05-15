@@ -1,10 +1,10 @@
 ---
-# notify_dailystandup_warmup
+# tts_dailystandup_warmup
 #
 # Warm us up 10 minutes before the Daily Standup
 #
 
-notify_dailystandup_warmup:
+tts_dailystandup_warmup:
   mode: restart
   sequence:
     - service: script.tts_processing

@@ -1,0 +1,35 @@
+---
+# alarm_triggering
+# Any reason to trigger the alarm
+#
+# https://www.home-assistant.io/integrations/manual/
+#
+
+alias: alarm_triggering
+trigger:
+  - platform: state
+    entity_id: binary_sensor.hall_door_contact
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.terrasse_door
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.entresol_door_contact
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.cuisine_occupancy
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.salle_de_bain_door_occupancy
+    to: "on"
+  - platform: state
+    entity_id: binary_sensor.salle_de_bain_motion_shower_occupancy
+    to: "on"
+condition:
+  - condition: state
+    entity_id: alarm_control_panel.alarme
+    state: armed_away
+action:
+  service: alarm_control_panel.alarm_trigger
+  target:
+    entity_id: alarm_control_panel.alarme

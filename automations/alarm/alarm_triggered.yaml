@@ -1,0 +1,15 @@
+---
+# alarm_triggering
+# Any reason to trigger the alarm
+#
+# https://www.home-assistant.io/integrations/manual/
+#
+
+alias: alarm_triggering
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.alarme
+    to: "triggered"
+action:
+  - service: script.push_alarm_triggered
+  - service: script.tts_alarm_triggered

@@ -3,3 +3,4 @@ alarm_control_panel:
     name: Alarme
     code: !secret alarm_pin
     code_arm_required: false
+    arming_time: 15

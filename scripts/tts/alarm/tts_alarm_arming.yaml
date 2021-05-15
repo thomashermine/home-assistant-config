@@ -4,11 +4,11 @@
 # TTS message saying some is trying to contact us.
 # Used by automation "notify_pokeme"
 #
-tts_alarm_countdown:
+tts_alarm_arming:
   sequence:
-    - service: script.tts_processing
+    - service: script.tts_say_interruption
       data:
-        message: "Alarme activée. Dans 30 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+        message: "L'alarme va être activée dans 30 secondes. Tout mouvement, tout ouverture de porte provoquera alors une alarme."
     - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
@@ -20,7 +20,7 @@ tts_alarm_countdown:
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
       data:
-        message: "Alarme activée. Dans 25 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+        message: "Alarme activée dans 25 secondes."
     - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
@@ -32,7 +32,7 @@ tts_alarm_countdown:
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
       data:
-        message: "Alarme activée. Dans 20 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+        message: "Alarme activée dans 20 secondes."
     - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
@@ -44,7 +44,7 @@ tts_alarm_countdown:
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
       data:
-        message: "Alarme activée. Dans 15 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+        message: "Alarme activée dans 15 secondes."
     - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
@@ -56,7 +56,7 @@ tts_alarm_countdown:
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
       data:
-        message: "Alarme activée. Dans 10 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme."
+        message: "Alarme activée dans 10 secondes."
     - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: media_player.play_media
@@ -68,11 +68,6 @@ tts_alarm_countdown:
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
     - service: script.tts_processing
       data:
-        message: "Alarme activée. Dans 5 secondes, l'alarme va sonner. Quitter les lieux, ou désactiver l'alarme. Dernier avertissement."
+        message: "Alarme activée. Tout mouvement, tout ouverture de porte va provoquer une alarme."
     - delay: 5
     - wait_template: "{{ is_state('media_player.living', 'idle') }}"
-    - service: media_player.play_media
-      entity_id: media_player.l_appartement
-      data:
-        media_content_id: "http://192.168.1.10:8123/local/alarm.wav"
-        media_content_type: music
