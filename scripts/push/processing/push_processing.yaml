@@ -13,6 +13,7 @@ push_processing:
         title: "{{ title }}"
         message: "{{ message }}"
         data:
+          entity_id: "{{ entity_id }}"
           push:
             category: "{{ category }}"
           apns_headers:
@@ -25,6 +26,7 @@ push_processing_critical:
         title: "{{ title }}"
         message: "{{ message }}"
         data:
+          entity_id: "{{ entity_id }}"
           push:
             sound:
               name: default
