@@ -5,7 +5,7 @@
 
 media_players_google_home:
   entities:
-    - media_player.bar
+    - media_player.living
     - media_player.chambre
     - media_player.salle_de_bain
-    - media_player.hub
+    - media_player.cuisine

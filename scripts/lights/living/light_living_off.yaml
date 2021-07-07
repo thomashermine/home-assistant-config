@@ -1,0 +1,37 @@
+---
+# light_living_off
+#
+# Turning all lights in living, hall and cuisine off with a nice looking sequence
+#
+
+light_living_off:
+  mode: restart
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.hall
+          - light.hall_console
+          - light.cuisine
+        transition: 3
+    - delay:
+        seconds: 1
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.lampe_noire
+          - light.plan_de_travail
+          - light.bar
+        transition: 2
+    - delay:
+        seconds: 3
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.guirlande_du_living
+
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.bar_tablette
+        transition: 3

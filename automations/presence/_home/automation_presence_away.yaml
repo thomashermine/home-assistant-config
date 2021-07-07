@@ -1,0 +1,15 @@
+---
+# presence_away
+#
+# All actions triggered when presence --> away
+#
+
+alias: "presence_away"
+trigger:
+  - platform: state
+    entity_id: input_select.presence
+    to: "away"
+action:
+  - service: vacuum.start
+    entity_id: vacuum.hygie
+  - service: script.climate_away

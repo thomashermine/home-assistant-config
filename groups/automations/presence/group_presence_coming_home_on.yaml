@@ -7,3 +7,9 @@
 presence_coming_home_on:
   entities:
     - light.hall
+    - light.bar
+    - light.boule_lumineuse
+    - light.applique_de_la_chambre
+    - light.lampadaire_de_la_chambre
+    - light.cuisine
+    - script.camera_living_off

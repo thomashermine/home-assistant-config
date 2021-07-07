@@ -1,0 +1,13 @@
+radio_play_nova:
+  alias: Nova
+  icon: mdi:play
+  sequence:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio_player
+        option: "l'Appartement"
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.radio_station
+        option: "Nova"
+    - service: script.radio_play_selected

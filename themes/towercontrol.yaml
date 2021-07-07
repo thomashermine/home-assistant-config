@@ -1,0 +1,307 @@
+# TowerControl Theme (202012)
+# ==============================================================================
+# A SoftUI infused theme.
+# Heavily inspired by :
+# - https://github.com/KTibow/lovelace-dark-soft-ui-theme/
+# - https://github.com/KTibow/lovelace-light-soft-ui-theme/
+# - https://github.com/N-l1/lovelace-soft-ui
+#
+# Rely on :
+# - https://github.com/thomasloven/lovelace-card-mod
+#
+# Forked from dark-soft-ui-theme, then...
+# - Customized fonts & colors to my own liking
+# - Bring back a lot of custom style from N-l1 directly there, so custom style in every card is not needed
+# - Removed code for entities I don't use
+towercontrol:
+  card-mod-theme: "towercontrol" # Must be the name of the theme!
+  # Colors
+  primary-color: "#B58000" # Actually kinda used as accent color
+  light-primary-color: var(--primary-color)
+  accent-color: "#B58000"
+  mdc-theme-secondary: var(--accent-color)
+  success-color: "#77EB60"
+  info-color: var(--primary-color)
+  warning-color: "#EBEB60"
+  error-color: "#D18941"
+
+  # Background
+  primary-background-color: "#222222"
+  secondary-background-color: var(--primary-background-color)
+
+  # Text
+  primary-text-color: "#F7F8FA"
+  secondary-text-color: "#B58E32"
+  codemirror-meta: var(--primary-text-color)
+  material-secondary-text-color: var(--secondary-text-color)
+  text-primary-color: "#FFFFFF"
+  disabled-text-color: "#616387"
+
+  # Fonts
+  paper-font-headline_-_font-family: system-ui
+  paper-font-headline_-_font-weight: "600"
+  paper-font-subhead_-_font-family: system-ui
+  paper-font-subhead_-_font-weight: "550"
+  paper-font-subhead_-_line-height: 2.2em
+  paper-font-body1_-_font-family: system-ui
+  ha-card-header-font-family: system-ui
+  ha-card-header-font-weight: "600"
+  code-font-family: monospace
+  paper-font-common-code_-_font-family: var(--code-font-family)
+
+  # Sidebar
+  sidebar-icon-color: var(--primary-text-color)
+  sidebar-text-color: var(--primary-text-color)
+  sidebar-selected-icon-color: var(--light-primary-color)
+  sidebar-selected-text-color: var(--light-primary-color)
+  sidebar-background-color: var(--primary-background-color)
+  sidebar-selected-background-color: var(--primary-background-color)
+  divider-color: var(--primary-background-color)
+
+  # Header
+  app-header-background-color: var(--primary-background-color)
+  app-header-text-color: var(--primary-text-color)
+
+  # Icons
+  state-icon-color: var(--primary-text-color)
+  state-icon-active-color: var(--accent-color)
+  state-icon-unavailable-color: var(--disabled-text-color)
+
+  # Sliders
+  paper-slider-knob-color: var(--primary-color)
+  paper-slider-knob-start-color: var(--primary-color)
+  paper-slider-pin-color: var(--primary-color)
+  paper-slider-active-color: var(--accent-color)
+  paper-slider-secondary-color: var(--light-primary-color)
+
+  # Labels
+  label-badge-background-color: var(--primary-background-color)
+  label-badge-text-color: var(--primary-text-color)
+  label-badge-red: "#EB6065"
+  label-badge-green: "#60EB67"
+  label-badge-blue: "#60B1EB"
+  label-badge-yellow: "#EBC860"
+  label-badge-gray: "#666F80"
+
+  # Cards
+  ha-card-box-shadow: 0
+  card-background-color: var(--primary-background-color)
+  paper-card-background-color: var(--primary-background-color)
+  paper-listbox-background-color: var(--primary-background-color)
+  paper-item-icon-active-color: var(--accent-color)
+
+  # Switches
+  switch-checked-button-color: var(--primary-color)
+  switch-checked-track-color: var(--primary-color)
+  switch-unchecked-button-color: "#FFFFFF"
+  switch-unchecked-track-color: "#FFFFFF"
+  paper-toggle-button-checked-button-color: var(--primary-color)
+  paper-toggle-button-checked-bar-color: var(--primary-color)
+  paper-toggle-button-unchecked-button-color: "#FFFFFF"
+  paper-toggle-button-unchecked-bar-color: "#FFFFFF"
+
+  # Tables
+  table-row-background-color: var(--primary-background-color)
+  table-row-alternative-background-color: var(--primary-background-color)
+  data-table-background-color: var(--primary-background-color)
+
+  # Dropdowns
+  material-background-color: var(--primary-background-color)
+  material-secondary-background-color: rgba(255, 255, 255, 0.1)
+  mdc-theme-surface: var(--primary-background-color)
+
+  # Convenience
+  box-shadow-main: -5px -5px 8px rgba(50, 50, 50, .2), 5px 5px 8px rgba(0, 0, 0, .08)
+  box-shadow-soft: -5px -5px 6px rgba(45, 45, 45, .2), 5px 5px 6px rgba(0, 0, 0, .08)
+  primary-name-text-color: grey
+  primary-state-text-color: grey
+  primary-icon-color: grey
+  primary-yellow: "#FAD46B"
+  dark-primary-yellow: "#DAB44B"
+  tertiary-background-color: "#323545"
+  ha-label-badge-title-font-size: 1em
+  # Cards
+  card-mod-card-yaml: |
+    $: |
+      #root > * {
+          flex: inherit!important;
+      }
+    ha-markdown:
+      $: |
+        ha-markdown-element {
+          letter-spacing: 0;
+        }
+
+        h1 {
+          font-size: 20px !important;
+        }
+
+        h2 {
+          font-size: 15px !important;
+        }
+
+        strong {
+          color: var(--accent-color);
+        }
+
+        ha-card.type-thermostat #temperature {
+          top: 55%!important;
+        }    
+      
+        ha-card.type-thermostat #set-values {
+          display: none!important;
+        }    
+        ha-card.type-thermostat #info {
+          display: none!important;
+        }  
+          
+    .: |
+      ha-card > .card-header {
+        letter-spacing: 0;
+        font-size: 20px !important;
+        font-weight: 700;
+      }
+
+      ha-card.type-glance {
+        --mdc-icon-size: 40px;  
+      }
+
+      ha-card.type-glance .entities {
+        padding: 0;
+      }
+      ha-card.type-glance .entity {
+        border-radius: 13.75px;
+        border-color: var(--primary-color);
+        border-width: 3px ;
+        margin: 8px;
+        width: 96px;
+        height: 96px;
+        padding-top: 20px;
+        box-shadow: var(--box-shadow-main);
+      }
+
+      ha-card.type-button {
+        border-radius: 16px;
+        border-color: var(--primary-color);
+        border-width: 3px ;
+        align-items: flex-start;
+        justify-content: flex-start; 
+        width: 96px;
+        height: 96px;
+        padding: 16px;
+        margin: 8px;
+        box-shadow: var(--box-shadow-main);
+        overflow: hidden;
+      }  
+      ha-card.type-button span, ha-card.type-button span.state {
+        font-size: 15px!important;
+        font-family: system-ui!important;
+        text-align: left!important;
+      }
+      ha-card.type-button span:not(.state) {
+        max-width: 100%;
+        overflow: hidden;
+      }
+      ha-card.type-button span.state {
+        font-weight: 700;
+        text-transform: lowercase;
+      }
+
+      ha-card.type-weather-forecast,  ha-card.type-map, ha-card.type-picture-entity, ha-card.type-media-control {
+        box-shadow: var(--box-shadow-soft);
+      }
+
+      ha-card.type-thermostat #slider {
+        box-shadow: var(--box-shadow-soft);
+        border-radius: 150px;
+        padding: 4px;
+      }
+
+      ha-card.type-media-control .off.background {
+        filter: none;
+      }
+
+  card-mod-root-yaml: |
+    .: |
+      /* This moves the header up. */
+      app-header {
+        transform: translate3d(0px, -48px, 0px);
+      }
+      /* Let's change the background. */
+      app-header, app-toolbar {
+        background: var(--primary-background-color) !important;
+        color: var(--primary-text-color) !important;
+      }
+      /* We're still going to need a way to see that we're in edit mode. */
+      app-header.edit-mode {
+        padding-bottom: calc(var(--ha-card-border-width, 2px) * 2);
+        border-bottom: var(--ha-card-border-width, 2px) solid var(--primary-color);
+      }
+      /* This changes the color of the currently selected tab. */
+      ha-tabs {
+        --paper-tabs-selection-bar-color: var(--primary-color) !important;
+      }
+      paper-tab[aria-selected=true] {
+        color: var(--primary-color) !important;
+      }
+      /* This hides the help button. */
+      a.menu-link[target="_blank"] {
+        display: none;
+      }
+      /* This makes the plus color the same as the background. */
+      #add-view {
+        color: var(--primary-background-color);
+      }
+      /* This hides the title. */
+      [main-title] {
+        display: none;
+      }
+      /* This hides the app-toolbar in edit mode. */
+      app-toolbar.edit-mode {
+        height: 0;
+      }
+      /* This moves the edit mode buttons back in. */
+      app-toolbar.edit-mode > mwc-icon-button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+      app-toolbar.edit-mode > ha-button-menu {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+      }
+      /* This adds a bit more padding, mainly for unused entities. */
+      app-header.edit-mode > div {
+        padding-left: 5px;
+      }
+  # Badges
+  card-mod-badge-yaml: |
+    .: |
+      :host {
+        border-radius: 5px;
+        padding: 11px 8px;
+        margin: 11px 12px 24px 12px;
+        display: inline-block;
+        --label-badge-blue: {% if not states(config.entity) %} var(--theme-blue);
+          {% elif is_state(config.entity, 'on') %} var(--theme-green);
+          {% elif is_state(config.entity, 'open') %} var(--theme-green);
+          {% elif is_state(config.entity, 'unlocked') %} var(--theme-green);
+          {% elif is_state(config.entity, 'off') %} var(--theme-red);
+          {% elif is_state(config.entity, 'closed') %} var(--theme-red);
+          {% elif is_state(config.entity, 'locked') %} var(--theme-red);
+          {% else %} var(--theme-blue); {% endif %}
+        --label-badge-red: teal;
+        box-shadow: var(--ha-card-box-shadow);
+      }
+    ha-state-label-badge$ha-label-badge$: |
+      .label-badge {
+        background: none;
+      }
+      .title {
+        -webkit-line-clamp: 1;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+      }

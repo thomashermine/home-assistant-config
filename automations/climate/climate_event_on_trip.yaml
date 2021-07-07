@@ -1,0 +1,19 @@
+---
+# Turn climate on trip when receiving push notification event
+
+alias: "climate_event_away"
+trigger:
+  - platform: event
+    event_type: "ios.notification_action_fired"
+    event_data:
+      actionName: CLIMATE_ON_TRIP
+action:
+  # Turn heating away
+  - service: script.climate_on_trip
+  # Notify
+  - service: script.push_processing
+    data_template:
+      title: "Thermostat 🌡️"
+      message: "Le thermostat est reglé sur {{ states.climate.living.attributes.temperature | int}}°"
+      identifier: "climate_main"
+      category: "climate_home_away"

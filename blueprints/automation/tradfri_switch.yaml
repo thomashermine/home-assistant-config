@@ -1,0 +1,43 @@
+blueprint:
+  name: TRÅDFRI Switch
+  description: |
+    Allow control of an IKEA TRÅDFRI Switch
+  domain: automation
+  input:
+    remote:
+      name: Click for Remote
+      description: Click of the  IKEA TRÅDFRI Remote
+      selector:
+        entity:
+          domain: sensor
+          integration: mqtt
+    on_action:
+      name: "ON"
+      description: Action to run when pressing ON
+      default: []
+      selector:
+        action: {}
+    off_action:
+      name: "OFF"
+      description: Action to run when pressing OFF
+      default: []
+      selector:
+        action: {}
+mode: restart
+max_exceeded: silent
+
+trigger:
+  - platform: state
+    entity_id: !input "remote"
+    attribute: action
+
+action:
+  - variables:
+      command: "{{ trigger.to_state.state }}"
+  - choose:
+      - conditions:
+          - "{{ command == 'on' }}"
+        sequence: !input "on_action"
+      - conditions:
+          - "{{ command == 'single_right' }}"
+        sequence: !input "off_action"

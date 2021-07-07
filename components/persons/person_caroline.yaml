@@ -1,2 +1,4 @@
 name: Caroline
 id: caroline
+device_trackers:
+  - device_tracker.caroline_iphone

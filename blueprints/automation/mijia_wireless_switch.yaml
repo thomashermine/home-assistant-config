@@ -1,0 +1,81 @@
+blueprint:
+  name: Mijia Wireless Switch
+  domain: automation
+  description: |
+    Allow control a Mijia Wireless Switch.
+    NOTE: On the Wireless Wall Switch, only SIMPLE, DOUBLE and HOLD are supported.  domain: automation
+  input:
+    switch:
+      name: Switch
+      description: Action sensor of Aqara Wireless Switch to use
+      selector:
+        entity:
+          domain: sensor
+          integration: mqtt
+
+    press_single:
+      name: Single button press
+      description: Action to run on single button press
+      default: []
+      selector:
+        action: {}
+
+    hold:
+      name: Hold button
+      description: Action to run on holding button
+      default: []
+      selector:
+        action: {}
+
+    press_double:
+      name: Double button press
+      description: Action to run on double button press
+      default: []
+      selector:
+        action: {}
+
+    press_triple:
+      name: Triple button press
+      description: Action to run on double triple press
+      default: []
+      selector:
+        action: {}
+
+    press_quadruple:
+      name: Quadruple button press
+      description: Action to run on double quadruple press
+      default: []
+      selector:
+        action: {}
+
+mode: restart
+max_exceeded: silent
+trigger:
+  - platform: state
+    entity_id: !input switch
+    attribute: action
+
+action:
+  - variables:
+      command: "{{ trigger.to_state.state }}"
+
+  - choose:
+      - conditions:
+          - "{{ command == 'single' }}"
+        sequence: !input press_single
+
+      - conditions:
+          - "{{ command == 'hold' }}"
+        sequence: !input hold
+
+      - conditions:
+          - "{{ command == 'double' }}"
+        sequence: !input press_double
+
+      - conditions:
+          - "{{ command == 'triple' }}"
+        sequence: !input press_triple
+
+      - conditions:
+          - "{{ command == 'quadruple' }}"
+        sequence: !input press_quadruple

@@ -1,0 +1,19 @@
+# Re-enable any unstoppable switch as soon as its turned off
+#
+alias: switch_unstoppable
+trigger:
+  - platform: state
+    entity_id:
+      - switch.living_switch_left
+      - switch.hall_switch_left
+      - switch.hall_switch_right
+      - switch.bar_switch_left
+      - switch.bar_switch_right
+      - switch.chambre_switch_left
+      - switch.chambre_switch_right
+    from: "on"
+    for: "00:00:03"
+action:
+  - service: switch.turn_on
+    data_template:
+      entity_id: "{{ trigger.entity_id }}"

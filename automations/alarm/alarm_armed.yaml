@@ -1,0 +1,16 @@
+---
+# alarm_armed
+# Action when the alarm is armed (away)
+#
+# https://www.home-assistant.io/integrations/manual/
+#
+
+alias: alarm_armed
+trigger:
+  - platform: state
+    entity_id: alarm_control_panel.alarme
+    to: "armed_away"
+action:
+  - service: script.turn_off
+    entity_id: script.tts_alarm_arming
+  - service: script.tts_alarm_armed_away

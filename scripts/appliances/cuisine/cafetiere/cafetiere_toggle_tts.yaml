@@ -1,0 +1,47 @@
+---
+# cafetiere_toggle_tts
+#
+# Toggle boucle_cafetiere w/ a prior TTS
+
+cafetiere_toggle_tts:
+  sequence:
+    - choose:
+        # Cafetiere Off --> On
+        - conditions:
+            - condition: state
+              entity_id: switch.cafetiere
+              state: "off"
+          sequence:
+            - service: input_boolean.turn_on
+              entity_id: input_boolean.cafetiere_loop
+            - service: script.tts_processing
+              data_template:
+                media_player: media_player.chambre
+                volume_level: 0.5
+                message: >
+                  {{ [
+                  "Bonjour! La cafetière est allumée",
+                  "Hep, La cafetière est maintenant allumée",
+                  "Hello! La cafetière vient d'être allumée",
+                  "Bonjour! Je viens d'allumer la cafetière",
+                  ] |random }}
+
+        # Cafetiere On --> Off
+        - conditions:
+            - condition: state
+              entity_id: switch.cafetiere
+              state: "on"
+          sequence:
+            - service: input_boolean.turn_off
+              entity_id: input_boolean.cafetiere_loop
+            - service: script.tts_processing
+              data_template:
+                media_player: media_player.chambre
+                volume_level: 0.6
+                message: >
+                  {{ [
+                  "La cafetière est éteinte",
+                  "La cafetière est maintenant éteinte",
+                  "La cafetière vient d'être éteinte",
+                  "Je viens d'éteindre la cafetière",
+                  ] |random }}

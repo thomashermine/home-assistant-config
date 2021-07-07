@@ -1,0 +1,13 @@
+---
+# push_alarm_triggered
+#
+# Critical Push notification used by automation "notify_pokeme"
+#
+
+push_alarm_triggered:
+  sequence:
+    - service: script.push_processing_critical
+      data:
+        title: "ALARME 🚨"
+        message: "L'alarme vient de se déclencher"
+        entity_id: "camera.living"

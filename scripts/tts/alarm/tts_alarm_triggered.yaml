@@ -1,0 +1,27 @@
+---
+# tts_alarm_pending
+#
+# TTS message & sounds when the alarm is triggered
+tts_alarm_triggered:
+  sequence:
+    - repeat:
+        while:
+          - condition: state
+            entity_id: alarm_control_panel.alarme
+            state: "triggered"
+        sequence:
+          - service: script.tts_processing
+            data:
+              message: "Alarme déclenchée. Propriétaire prévenu. Police prévenue. Quitter les lieux."
+              media_player: "media_player.l_appartement"
+              volume_level: 1
+          - delay: 5
+          - wait_template: "{{ is_state('media_player.l_appartement', 'idle') }}"
+
+          - service: media_player.play_media
+            entity_id: media_player.l_appartement
+            data:
+              media_content_id: "http://192.168.1.10:8123/local/alarm.wav"
+              media_content_type: music
+          - delay: 5
+          - wait_template: "{{ is_state('media_player.living', 'idle') }}"

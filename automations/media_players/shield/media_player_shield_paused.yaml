@@ -1,0 +1,37 @@
+---
+# Stopped playing on Living TV --> Turn back the lights on in two phases
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+alias: "media_player_shield_paused"
+mode: restart
+trigger:
+  - platform: state
+    entity_id: media_player.nvidia_shield_cast
+    from: "playing"
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: "{{ not is_state_attr('media_player.nvidia_shield_cast', 'app_name', 'Spotify') }}"
+    - condition: state
+      entity_id: input_boolean.theatre_lights
+      state: "on"
+action:
+  # Imediately turn on the tablet of the bar
+  - service: light.turn_on
+    data:
+      entity_id: light.bar_tablette
+  # Stil not playing after 15 seconds of interruption?
+  # Turn all lights back on
+  - delay:
+      seconds: 15
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ not is_state('media_player.nvidia_shield_cast', 'playing') }}"
+        sequence:
+          - service: scene.turn_on
+            data:
+              entity_id: scene.living_before_playing

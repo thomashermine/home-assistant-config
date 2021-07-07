@@ -1,0 +1,8 @@
+platform: mqtt
+schema: json
+name: Salle de Bain
+command_topic: "zigbee2mqtt/salle_de_bain/set"
+state_topic: "zigbee2mqtt/salle_de_bain"
+color_temp: true
+brightness: true
+rgb: false

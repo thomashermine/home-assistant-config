@@ -1,10 +1,21 @@
 tts_processing:
+  description: Processing message w/ text to speech
+  fields:
+    message:
+      description: "The message to be broadcasted"
+      example: "Hello, world"
+    media_player:
+      description: "media_player entity to use. Defaults to media_player.living"
+      example: "media_player.living"
+    volume_level:
+      description: "Volume, defaults to 0.75"
+      example: "1"
   sequence:
     - service: media_player.volume_set
-      entity_id: group.media_players_tts
-      data:
-        volume_level: 1
-    - service: tts.watson_tts_say
       data_template:
-        entity_id: group.media_players_tts
+        entity_id: "{{ media_player|default('media_player.living') }}"
+        volume_level: "{{ volume_level|default(0.75) }}"
+    - service: tts.cloud_say
+      data_template:
+        entity_id: "{{ media_player|default('media_player.living') }}"
         message: "{{ message }}"

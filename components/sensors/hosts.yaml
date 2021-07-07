@@ -1,0 +1,11 @@
+- platform: template
+  sensors:
+    hosts:
+      value_template: >-
+        {% if (is_state("person.caroline", "home") and not is_state("person.thomas", "home")) -%}
+        Caroline
+        {% elif (not is_state("person.caroline", "home") and is_state("person.thomas", "home")) -%}
+        Thomas
+        {% else %}
+        Caroline et Thomas
+        {% endif %}

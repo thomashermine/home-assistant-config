@@ -1,10 +1,21 @@
 tts_say_interruption:
   sequence:
-    - service: script.turn_on
-      entity_id: script.tts_interruption
-    - delay: "00:00:02"
-    - wait_template: "{{ is_state('group.media_players_tts', 'off') }}"
     - service: script.tts_processing
       data_template:
-        entity_id: group.media_players_tts
-        message: "{{ message }}"
+        volume_level: "{{ volume_level|default(0.75) }}"
+        media_player: "{{ media_player|default('media_player.living') }}"
+        message: >
+          {{ [
+          "Pardonnez-moi, " ~ states.sensor.hosts.state,
+          "Excusez-moi, " ~ states.sensor.hosts.state,
+          "Pardon, " ~ states.sensor.hosts.state,
+          "Oh, " ~ states.sensor.hosts.state+" ?",
+          states.sensor.hosts.state+ "? Pardon, mais...",
+          states.sensor.hosts.state+ "? Excusez-moi.",
+          states.sensor.hosts.state+ "? Pardon d'interrompre.",
+          states.sensor.hosts.state+ "? Pardon pour l'interruption.",
+          "Oh, pardonnez-moi, je dois vous interrompre...",
+          "Pardonnez-moi, je dois vous interrompre...",
+          "Excusez-moi, je dois vous interrompre.",
+          ] | random }}
+          {{ message }}

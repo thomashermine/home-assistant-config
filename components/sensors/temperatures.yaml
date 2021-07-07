@@ -1,0 +1,23 @@
+---
+# Temperatures
+#
+# A canonical Int sensor for every room with temperature without any decimal
+
+- platform: template
+  sensors:
+    living_temperature_int:
+      value_template: "{{states.sensor.living_tado_temperature.state | int}}"
+      unit_of_measurement: "°C"
+    chambre_temperature_int:
+      value_template: "{{states.sensor.chambre_temperature_temperature.state | int}}"
+      unit_of_measurement: "°C"
+    cuisine_temperature_int:
+      # TODO: Use  proper sensor
+      value_template: "{{states.sensor.bar_switch_temperature.state | int}}"
+      unit_of_measurement: "°C"
+    salle_de_bain_temperature_int:
+      value_template: "{{states.sensor.douche_temperature_temperature.state | int}}"
+      unit_of_measurement: "°C"
+    entresol_temperature_int:
+      value_template: "{{states.sensor.entresol_temperature.state | int}}"
+      unit_of_measurement: "°C"

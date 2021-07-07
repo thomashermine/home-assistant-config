@@ -1,0 +1,22 @@
+---
+# Actions when period is set to "early_morning"
+#    and we are home
+
+alias: "early_morning"
+trigger:
+  - platform: state
+    entity_id: input_select.period
+    to: "early_morning"
+condition:
+  condition: or
+  conditions:
+    - condition: state
+      entity_id: input_select.presence
+      state: "home"
+    - condition: state
+      entity_id: input_boolean.guests
+      state: "on"
+action:
+  # Start heating
+  - service: script.climate_home
+  - service: script.climate_salle_de_bain

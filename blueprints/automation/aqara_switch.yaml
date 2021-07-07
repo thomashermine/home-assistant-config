@@ -1,0 +1,41 @@
+blueprint:
+  name: Aqara Double-Gang
+  description: |
+    Allow control of an Aqara Double-Gang Switch
+  domain: automation
+  input:
+    switch:
+      name: Action for Switch
+      description: Action sensor of the  Aqara Wireless Switch to use
+      selector:
+        entity:
+          domain: sensor
+          integration: mqtt
+    press_left_single:
+      name: Left Button (Press)
+      description: Action to run on single press, for Left Button
+      default: []
+      selector:
+        action: {}
+    press_right_single:
+      name: Right Button (Press)
+      description: Action to run on single press, for Right Button
+      default: []
+      selector:
+        action: {}
+mode: restart
+max_exceeded: silent
+trigger:
+  - platform: state
+    entity_id: !input "switch"
+    attribute: action
+action:
+  - variables:
+      command: "{{ trigger.to_state.state }}"
+  - choose:
+      - conditions:
+          - "{{ command == 'single_left' }}"
+        sequence: !input "press_left_single"
+      - conditions:
+          - "{{ command == 'single_right' }}"
+        sequence: !input "press_right_single"

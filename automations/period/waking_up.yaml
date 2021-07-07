@@ -1,0 +1,23 @@
+---
+# Actions when period is set to "waking_up"
+#
+
+alias: "waking_up"
+trigger:
+  - platform: state
+    entity_id: input_select.period
+    to: "waking_up"
+action:
+  # Update input_datetime.wake_up_time
+  - service: input_datetime.set_datetime
+    data_template:
+      entity_id: input_datetime.wake_up_time
+      datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+  # Save in Google Calendar
+  - service: google.add_event
+    data_template:
+      calendar_id: !secret calendar_activity_id
+      summary: "#WokeUp"
+      description: "Woke up at {{ now().strftime('%H:%M:%S') }}"
+      start_date_time: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+      end_date_time: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"

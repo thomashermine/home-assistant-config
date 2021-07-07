@@ -1,0 +1,27 @@
+---
+# Turn on speaking clock every working day from 9:50 to 10 am.
+
+alias: "speakingclock_dailystandup_on"
+trigger:
+  # At 9:50 every work day
+  - platform: time_pattern
+    hours: 9
+    minutes: 50
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: calendar.thomas_work_offday
+      state: "off"
+    - condition: state
+      entity_id: person.thomas
+      state: "home"
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+action:
+  - service: script.tts_dailystandup_warmup

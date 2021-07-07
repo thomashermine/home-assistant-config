@@ -11,4 +11,4 @@ trigger:
       minutes: 2
 action:
   service: homeassistant.turn_on
-  entity_id: switch.extracteur_d_air
+  entity_id: switch.extracteur_d_air_salle_de_bain

@@ -1,0 +1,10 @@
+---
+# chaudiere_blocker
+#
+# If on, it will prevent chaudiere from ever turning on
+# https://www.home-assistant.io/integrations/input_boolean/
+#
+
+chaudiere_blocker:
+  name: Chaudière — Blocage
+  icon: mdi:water-boiler-off

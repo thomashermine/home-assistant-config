@@ -1,0 +1,30 @@
+---
+# tts_alarm_arming
+#
+# TTS message & sounds when the alarm will be armed
+tts_alarm_arming:
+  sequence:
+    - service: script.tts_say_interruption
+      data:
+        message: "L'alarme va être activée. Tout mouvement, tout ouverture de porte provoquera alors une alarme."
+    - delay: 5
+    - wait_template: "{{ is_state('media_player.living', 'idle') }}"
+    - repeat:
+        while:
+          - condition: state
+            entity_id: alarm_control_panel.alarme
+            state: "arming"
+        sequence:
+          - service: script.tts_processing
+            data:
+              message: "L'alarme va être activée."
+          - delay: 5
+          - wait_template: "{{ is_state('media_player.living', 'idle') }}"
+
+          - service: media_player.play_media
+            entity_id: media_player.living
+            data:
+              media_content_id: "http://192.168.1.10:8123/local/countdown.wav"
+              media_content_type: music
+          - delay: 5
+          - wait_template: "{{ is_state('media_player.living', 'idle') }}"

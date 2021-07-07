@@ -1,0 +1,12 @@
+---
+# Binary Sensor for UberEats orders
+
+# https://gist.github.com/donkawechico/30399f34fa88f0c560f9eb0c756d2efa
+
+platform: template
+sensors:
+  uber_eats_has_new_order:
+    friendly_name: "Uber Eats has a new order"
+    value_template: >
+      {% set orders_count = states("sensor.uber_eats_orders_count") | int %}
+      {{ orders_count != 'unknown' and orders_count > 0 }}

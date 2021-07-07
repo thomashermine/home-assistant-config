@@ -1,0 +1,12 @@
+---
+# media_player_handover
+#
+# Handover to media_player.lappartement whatever is/was playing on Spotify
+
+media_player_handover:
+  alias: "Spotify Handover"
+  sequence:
+    - service: spotcast.start
+      data:
+        device_name: "l'Appartement"
+        force_playback: true

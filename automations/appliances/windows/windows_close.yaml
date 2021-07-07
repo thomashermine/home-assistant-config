@@ -1,0 +1,11 @@
+---
+# Actions performed when all windows are closed
+#
+alias: "windows_close"
+trigger:
+  - platform: state
+    entity_id: group.windows
+    to: "off"
+action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.chaudiere_blocker

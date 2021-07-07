@@ -7,7 +7,21 @@
 presence_leaving_off:
   entities:
     - light.cuisine
+    - light.plan_de_travail
+    - light.bar
+    - light.bar_tablette
+    - light.lampe_noire
     - light.salle_de_bain
     - light.hall
-    - light.plan_de_travail
     - light.lampadaire_de_la_chambre
+    - light.applique_de_la_chambre
+    - light.boule_lumineuse
+    - light.garde_robe_encadrement
+    - switch.cafetiere
+    - switch.hotte
+    - switch.guirlande_du_living
+    - media_player.living
+    - media_player.cuisine
+    - media_player.chambre
+    - media_player.salle_de_bain
+    - media_player.l_appartement

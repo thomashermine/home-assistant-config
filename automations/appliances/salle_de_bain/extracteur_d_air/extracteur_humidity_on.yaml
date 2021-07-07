@@ -1,12 +1,12 @@
 ---
 # When we have high humidity
-# --> Start extracteur_d_air
+# --> Start extracteur_d_air_salle_de_bain
 #
 alias: extracteur_humidity_off
 trigger:
   - platform: numeric_state
-    entity_id: sensor.bathroom_floating_humidity
+    entity_id: sensor.douche_temperature_humidity
     above: 70
 action:
   - service: switch.turn_on
-    entity_id: switch.extracteur_d_air
+    entity_id: switch.extracteur_d_air_salle_de_bain

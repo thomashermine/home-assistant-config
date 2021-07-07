@@ -5,28 +5,27 @@
 alias: "motion_bathroom_off"
 trigger:
   - platform: state
-    entity_id: binary_sensor.bathroom_motion
+    entity_id:
+      - binary_sensor.salle_de_bain_door_occupancy
+      - binary_sensor.salle_de_bain_motion_shower_occupancy
     to: "off"
     for:
-      minutes: 2
-  - platform: state
-    entity_id: binary_sensor.bathroom_motion_floating
-    to: "off"
-    for:
-      minutes: 2
+      minutes: 5
 condition:
   condition: and
   conditions:
     - condition: state
-      entity_id: binary_sensor.bathroom_motion
+      entity_id:
+        - binary_sensor.salle_de_bain_door_occupancy
       state: "off"
       for:
-        minutes: 2
+        minutes: 5
     - condition: state
-      entity_id: binary_sensor.bathroom_motion_floating
+      entity_id:
+        - binary_sensor.salle_de_bain_motion_shower_occupancy
       state: "off"
       for:
-        minutes: 2
+        minutes: 5
 action:
   service: homeassistant.turn_off
   entity_id: light.salle_de_bain

@@ -1,0 +1,23 @@
+---
+# Anything playing on Living TV --> Turn off the lights
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+alias: "media_player_shield_playing"
+trigger:
+  - platform: state
+    entity_id: media_player.nvidia_shield_cast
+    to: "playing"
+condition:
+  condition: and
+  conditions:
+    - condition: template
+      value_template: "{{ not is_state_attr('media_player.nvidia_shield_cast', 'app_name', 'Spotify') }}"
+    - condition: state
+      entity_id: input_boolean.theatre_lights
+      state: "on"
+action:
+  - delay:
+      seconds: 1 # Let media_player_shield_playing_save save stuff
+  - service: script.light_living_off

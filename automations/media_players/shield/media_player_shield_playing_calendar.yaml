@@ -1,0 +1,17 @@
+---
+# Title of content on nvidia_shield change --> Save to calendar
+#
+
+alias: "https://www.home-assistant.io/docs/automation/trigger/"
+trigger:
+  - platform: state
+    entity_id: media_player.nvidia_shield_cast
+    attribute: media_title
+action:
+  - service: google.add_event
+    data_template:
+      calendar_id: !secret calendar_activity_id
+      summary: "#Watched #{{states.media_player.nvidia_shield_cast.attributes.app_name}} {{states.media_player.nvidia_shield_cast.attributes.media_title}}"
+      description: "{{states.media_player.nvidia_shield_cast.attributes.media_title}}"
+      start_date_time: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
+      end_date_time: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"

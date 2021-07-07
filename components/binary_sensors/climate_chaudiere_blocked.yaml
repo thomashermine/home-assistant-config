@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  chaudiere_blocked:
+    friendly_name: "Chaudiere — Bloquée"
+    value_template: >-
+      {{ is_state('input_boolean.chaudiere_blocker', 'on') and states.sensor.home_heating.state| int > 0 }}

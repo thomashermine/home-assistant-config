@@ -1,0 +1,12 @@
+---
+#
+#
+# https://www.home-assistant.io/integrations/input_select/
+#
+
+room_cuisine_light:
+  name: Cuisine — (Scenes)
+  options:
+    - chill
+    - focus
+    - off

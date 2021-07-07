@@ -2,13 +2,13 @@
   entities:
     light.salle_de_bain_1:
       state: on
-      brightness: 10
+      brightness: 0
     light.salle_de_bain_2:
       state: on
-      brightness: 10
+      brightness: 0
     light.salle_de_bain_3:
       state: on
-      brightness: 10
+      brightness: 0
     light.salle_de_bain_4:
       state: on
       brightness: 255

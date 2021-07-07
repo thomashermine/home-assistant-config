@@ -1,12 +1,12 @@
 ---
-# When extracteur_d_air is turned off
+# When extracteur_d_air_salle_de_bain is turned off
 # --> Cancel timer
 #
-alias: switch_timer_extracteur_d_air_off
+alias: switch_timer_extracteur_d_air_salle_de_bain_off
 trigger:
   - platform: state
-    entity_id: switch.extracteur_d_air
+    entity_id: switch.extracteur_d_air_salle_de_bain
     to: "off"
 action:
   - service: timer.cancel
-    entity_id: timer.extracteur_d_air
+    entity_id: timer.extracteur_d_air_salle_de_bain

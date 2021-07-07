@@ -8,10 +8,16 @@
 
 push_processing:
   sequence:
-    - service: notify.notify
+    - service: notify.notify_thomas
       data_template:
         title: "{{ title }}"
         message: "{{ message }}"
+        data:
+          entity_id: "{{ entity_id }}"
+          push:
+            category: "{{ category }}"
+          apns_headers:
+            apns-collapse-id: "{{ identifier }}"
 
 push_processing_critical:
   sequence:
@@ -20,6 +26,7 @@ push_processing_critical:
         title: "{{ title }}"
         message: "{{ message }}"
         data:
+          entity_id: "{{ entity_id }}"
           push:
             sound:
               name: default

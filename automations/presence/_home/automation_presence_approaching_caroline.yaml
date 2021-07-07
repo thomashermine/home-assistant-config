@@ -1,0 +1,37 @@
+---
+# Caroline less than 1km from Home --> warn Thomas (if he is home)
+#
+# https://www.home-assistant.io/integrations/proximity
+#
+
+alias: "presence_approaching_caroline"
+trigger:
+  - platform: numeric_state
+    entity_id: proximity.home_caroline
+    below: 0.5
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: person.thomas
+      state: "home"
+    - condition: template
+      value_template: "{{ not is_state('person.caroline', 'home') }}"
+action:
+  # TTS Announce to Thomas that Caroline is coming back
+  - service: script.tts_say_interruption
+    data:
+      message: >
+        {{ [
+        "Caroline rentre à la maison dans quelques minutes.",
+        "Caroline arrive à la maison dans quelques minutes.",
+        "Caroline revient à la maison.",
+        "Caroline arrive à la maison",
+        "Caroline revient.",
+        "Caroline arrive",
+        ] |random }}
+  # Notify Caroline that Thomas is aware of that
+  - service: notify.notify_caroline
+    data:
+      title: "Bon retour à la maison. 🏡"
+      message: Thomas est prévenu de votre arrivée

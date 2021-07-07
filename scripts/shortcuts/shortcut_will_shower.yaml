@@ -1,0 +1,6 @@
+---
+# shortcut "I Will take Shower"
+
+shortcut_will_shower:
+  sequence:
+    - service: script.climate_salle_de_bain

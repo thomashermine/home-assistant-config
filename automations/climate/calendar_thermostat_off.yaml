@@ -1,0 +1,18 @@
+---
+# Actions when an event with text "Thermostat" in home calendar ends
+
+alias: "calendar_thermostat_off"
+trigger:
+  - platform: state
+    entity_id: calendar.andenne_81_thermostat
+    to: "off"
+action:
+  # Turn on heating
+  - service: script.climate_home
+  # Notify
+  - service: script.push_processing
+    data_template:
+      title: "Fin de l'évènement : Thermostat 🌡️"
+      message: "Voulez-vous éteindre le chauffage?"
+      category: "climate_off"
+      identifier: "climate_main"

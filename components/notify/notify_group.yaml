@@ -1,0 +1,16 @@
+---
+# notify_group
+# Canonical target per person for push notificiation
+#
+# https://www.home-assistant.io/integrations/proximity/
+#
+
+- name: notify_thomas
+  platform: group
+  services:
+    - service: mobile_app_craig
+
+- name: notify_caroline
+  platform: group
+  services:
+    - service: mobile_app_iphone_de_caroline

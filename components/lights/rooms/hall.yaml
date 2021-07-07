@@ -1,0 +1,8 @@
+platform: mqtt
+schema: json
+name: Hall
+command_topic: "zigbee2mqtt/hall/set"
+state_topic: "zigbee2mqtt/hall"
+color_temp: true
+brightness: true
+rgb: false

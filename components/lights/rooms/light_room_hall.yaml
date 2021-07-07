@@ -1,5 +1,0 @@
-platform: group
-name: Hall
-entities:
-  - light.hall_1
-  - light.hall_2

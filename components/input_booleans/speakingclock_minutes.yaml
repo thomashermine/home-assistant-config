@@ -1,0 +1,11 @@
+---
+# speakingclock_minutes
+#
+# Enable time to be said out loud every minute
+#
+# https://www.home-assistant.io/integrations/input_boolean/
+#
+
+speakingclock_minutes:
+  name: Horloge Parlante (Minutes)
+  icon: mdi:clock-alert-outline

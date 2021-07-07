@@ -1,0 +1,11 @@
+---
+# theatre_lights
+#
+# Enable time to be said out loud every minute
+#
+# https://www.home-assistant.io/integrations/input_boolean/
+#
+
+theatre_lights:
+  name: Mode Théatre
+  icon: mdi:theater

@@ -12,18 +12,6 @@ trigger:
   - platform: numeric_state
     entity_id: proximity.home
     below: 1
-condition:
-  condition: or
-  conditions:
-    - condition: state
-      entity_id: input_select.presence
-      state: "away"
-    - condition: state
-      entity_id: input_select.presence
-      state: "on_trip"
-    - condition: state
-      entity_id: input_select.presence
-      state: "back_from_trip"
 action:
   - service: input_select.select_option
     data:
